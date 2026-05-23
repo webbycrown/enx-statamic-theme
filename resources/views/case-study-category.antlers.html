@@ -1,0 +1,118 @@
+ <!-- Hero section -->
+{{ setting }}
+        <section class="relative 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div
+                class="relative w-full 3xl:h-[496px] md:h-[450px] h-[380px] 2xl:pt-[90px] xl:pt-[85px] lg:pt-20 sm:pt-[60px] pt-[55px] pb-20">
+                <!-- Gradient overlay -->
+                <div
+                    class="absolute inset-0 bg-[linear-gradient(113.82deg,#F7F8FD_40%,rgba(245,245,245,0.48)_67.16%)] z-10">
+                </div>
+                <!-- Background image -->
+                {{ if background_image }}
+        <div class="absolute inset-0 bg-cover bg-center z-0"
+            style="background-image: url('{{ background_image:url }}')"></div>
+        {{ else }}
+        <div
+            class="absolute inset-0 bg-[url('{{ theme:asset }}assets/image/vector.png')] bg-auto bg-bottom bg-no-repeat z-0">
+        </div>
+        {{ /if }}
+                <!-- Content area -->
+                <div class="container h-full">
+                    <div class="flex md:py-12.5 sm:py-6 py-5 h-full">
+                        <div class="relative flex items-cente z-20 w-full h-full">
+                            <div class="absolute top-0 left-0">
+                                <!-- BREADCRUMB -->
+                                <div class="flex items-center gap-2.5 2xl:mb-9 1xl:mb-7.5 mb-6">
+                                    <div class="flex items-center lg:gap-3 gap-2" data-aos="fade-right">
+                                        {{ if breadcrumb }}
+                                {{ breadcrumb }}
+                                {{ if url }}
+                                <a href="{{ url }}" class="p2 opacity-60">{{ title }}</a>
+                                {{ else }}
+                                <span class="p2 text-black-100">{{ title }}</span>
+                                {{ /if }}
+                                {{ if !last }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g opacity="0.6">
+                                        <path d="M5 14L12 8L5 2" stroke="#000000" stroke-linecap="square" />
+                                    </g>
+                                </svg>
+                                {{ /if }}
+                                {{ /breadcrumb }}
+                                {{ /if }}
+                                    </div>
+                                </div>
+                                <div class="flex justify-center flex-col h-full">
+                                    <h1 class="2xl:mb-[30px] mb-5" data-aos="fade-right">{{ heading  }}</h1>
+                                    <div data-aos="fade-right" class="flex items-start lg:gap-3 gap-2">
+                                        <span
+                                            class="dash border-primary xl:mt-[13px] mt-[11px] lg:w-9! md:w-6! w-5! block"></span>
+                                        <p class="p2 2xl:max-w-[70.5%] lg:max-w-3/5 sm:max-w-[84%] w-full text-black-100">
+                                            {{ description  }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{{ /setting }}
+        <!--/ End Hero section -->
+
+
+        <!-- Case studies section -->
+        <section class="3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5">
+            <div class="container">
+                <!-- grid column -->
+              {{ collection:case_studies as="case_studies" category:contains="{ category_slug }" paginate="true" limit="6" }}
+                <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[34px] gap-6 grid-main-div">
+                    <!-- grid-1 -->
+                  {{ case_studies }}
+                    <div class="grid-item-append {{ if index % 3 == 0 }} bg-[#FAF0EB] {{ else }} bg-[#F4F3FF] {{ /if }} xl:px-[35px] lg:px-6 md:px-5 sm:px-6 xl:pt-[40px] pt-[30px] px-[15px] pb-0 flex flex-col items-start group"
+                        data-aos="fade-up">
+                        <div>
+                            <div class="flex items-center md:gap-[18px] gap-1.5 xl:mb-[22px] mb-3">
+                                <span class="dash border border-primary"></span>
+                                {{ category limit="1" }}
+                        <p class="text-[#868686] uppercase p2 max-sm:text-[15px]">
+                            {{ title }}</p>
+                        {{ /category }}
+                            </div>
+                            <a href="/case-study/{{ slug }}">
+                                <h4 class="2xl:mb-[22px] xl:mb-6 mb-5 w-full group-hover:text-primary">
+                                   {{ title }}</h4>
+                            </a>
+                        </div>
+                        <div class="relative overflow-hidden group w-full h-full">
+                            <a href="/case-study/{{ slug }}"
+                                class="lg:before:pt-[55%] md:before:pt-[66%] before:pt-[57%] before:block w-full h-full">
+                                {{ banner_image }}<img loading="lazy" src="{{ url }}" alt="Case Study"
+                            class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-in-out absolute top-0 left-0" />{{
+                        /banner_image }}
+                            </a>
+                        </div>
+                    </div>
+
+                   
+                   {{ /case_studies }}
+                </div>
+
+                {{ paginate }}
+        		<input type="hidden" class="lastPage" value="{{ total_pages }}">
+        		{{ if next_page }}
+       			<div class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid"> Load More
+            		<span class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+                		<a href="{{ next_page }}" class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500 ">
+							<img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more" class="">
+                      	</a>
+            		</span>
+        	</div>
+        {{ /if }}
+        {{ /paginate }}
+
+        {{ /collection:case_studies }}
+            </div>
+        </section>

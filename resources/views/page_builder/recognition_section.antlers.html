@@ -1,0 +1,83 @@
+  <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="relative 2xl:pt-20 2xl:pb-[105px] lg:pt-[70px] lg:pb-[95px] md:py-[60px] pt-12.5 pb-[56px]">
+                <!-- Background image -->
+                <div class="absolute inset-0 bg-[url('../image/about-us-bg.svg')] bg-cover bg-left z-0"></div>
+
+                <!-- Content area -->
+                <div class="container h-full">
+                    <div
+                        class="relative z-20 flex items-center lg:flex-row flex-col justify-between w-full md:gap-7 gap-[30px]">
+                        <div class="1xl:w-1/2 lg:w-[42%] w-full" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5 lg:mb-[35px] md:mb-5 mb-3">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ subtitle }}</p>
+                            </div>
+                            <h3 class="3xl:mb-[25px] xl:mb-7 lg:mb-5 mb-3">
+                                {{ title | explode(highlight_word) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /title | explode }}
+                            </h3>
+                            <p class="p2 3xl:mb-[35px] xl:mb-7 lg:mb-5 xl:max-w-2xl">
+                                {{ description }}
+                            </p>
+                            <!-- Recognition button  -->
+                            <div class="flex">
+                                {{ if button_text }}
+                                <a href="{{ button_url }}"
+                                    class="btn btn-primary all-btn rounded-full group lg:flex hidden w-fit lg:mt-0 mt-5">
+                                    {{ button_text }}
+                                    <span
+                                        class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                            <g clip-path="url(#clip0_421_92)">
+                                                <path
+                                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                                {{ /if }}
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 w-full">
+                            <div class="lg:max-w-[508px] lg:ml-auto lg:mr-0">
+                                <div class="grid grid-cols-3 2xl:gap-x-12.5 2xl:gap-y-10 lg:gap-8.5 gap-6">
+                                    {{ logos }}
+                                    <div
+                                        class="2xl:max-w-[136px] 1xl:max-w-[124px] lg:max-w-[115px] md:max-w-[120px] sm:max-w-[110px] max-w-[100px] w-full h-full lg:ml-auto lg:mr-0">
+                                        {{ image }}<img loading="lazy" src="{{ url }}" alt="{{ alt_text }}"
+                                            class="w-full lg:h-auto h-full object-contain" />{{ /image }}
+                                    </div>
+                                    {{ /logos }}
+                                    
+                                </div>
+                                <!-- responsive btn -->
+                                {{ if mobile_button_text }}
+                                <a href="{{ mobile_button_url }}" aria-label="Open Page"
+                                    class="btn btn-primary p-1 1xl:ps-[27px] ps-5 1xl:gap-3 gap-2 rounded-full group flex lg:hidden mt-[30px] w-fit">
+                                    {{ mobile_button_text }}
+                                    <span
+                                        class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                            <g clip-path="url(#clip0_421_92)">
+                                                <path
+                                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

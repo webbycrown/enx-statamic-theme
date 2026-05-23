@@ -1,0 +1,53 @@
+<section>
+    <div class="container">
+        <!-- sub_title -->
+        <div
+            class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5 sm:border-0 border-b border-gray-100">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ subtitle }}</p>
+                </div>
+                <h3>
+                    {{ title | explode(highlight_word) }}
+                    {{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /title | explode }}
+
+                </h3>
+            </div>
+            <p class="p2 2xl:max-w-[37%] xl:max-w-[450px] md:max-w-1/2 w-full" data-aos="fade-left">
+                {{ description }}
+            </p>
+        </div>
+    </div>
+  
+    <!-- grid column -->
+    <div class="{{if segment_2 == 'financial-services'}}container{{else}}max-sm:px-4{{/if}}">
+        <div
+            class="{{if segment_1 == 'why-enx'}}lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:divide-y-0 divide-y{{else}} md:grid-cols-3 grid-cols-1 md:divide-y-0 divide-y{{/if}} grid md:divide-x divide-gray-100 sm:border-x border-gray-100
+                    relative before:content-[''] before:absolute before:top-0 before:left-[-100vw] before:w-[200vw] sm:before:border-b sm:before:border-gray-100
+                   after:content-[''] after:absolute after:bottom-0 after:left-[-100vw] after:w-[200vw] sm:after:border-b sm:after:border-gray-100">
+            {{ items }}
+            <div class="3xl:py-[70px] 2xl:py-16 lg:py-11 sm:py-6 py-[30px] 3xl:px-12.5 2xl:px-10 1xl:px-8.5 xl:px-7 lg:px-4 sm:px-5 flex flex-col justify-center {{ if reverse_layout }}sm:flex-col flex-col-reverse {{ /if }} items-start"
+                data-aos="fade-up">
+                {{ if reverse_layout }}
+                <p class="p2">{{ description }}</p>
+                <span
+                    class="block 3xl:w-[120px] w-20 border border-primary 2xl:my-[35px] lg:my-7 sm:my-6 my-[18px]"></span>
+                <h4>{{ title }}</h4>
+                {{ else }}
+                <h4>{{ title }}</h4>
+                <span
+                    class="block 3xl:w-[120px] w-20 border border-primary 2xl:my-[35px] lg:my-7 sm:my-6 my-[18px]"></span>
+                <p class="p2">{{ description }}</p>
+                {{ /if }}
+            </div>
+            {{ /items }}
+        </div>
+    </div>
+
+</section>

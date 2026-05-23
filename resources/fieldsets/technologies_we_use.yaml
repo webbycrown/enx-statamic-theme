@@ -1,0 +1,45 @@
+title: 'Technologies We Use'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: technologies_list
+    field:
+      type: replicator
+      display: 'Technologies List'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: technology_name
+                  field:
+                    type: text
+                    display: 'Technology Name'
+                -
+                  handle: icons
+                  field:
+                    container: assets
+                    type: assets
+                    display: Icons

@@ -1,0 +1,8 @@
+title: 'Error Page'
+data:
+  image:
+    - image/404.webp
+  section_title: 'This Page Doesn’t Exist'
+  description: 'The content you’re looking for may have been moved, deleted, or never existed. Let’s get you back to something useful and relevant.'
+  button_text: 'Return to Homepage'
+  button_url: /

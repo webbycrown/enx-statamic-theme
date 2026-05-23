@@ -1,0 +1,182 @@
+<!-- HERO-->
+          <section class="2xl:pt-[160px] xl:pt-[140px] lg:pt-[120px] sm:pt-[100px] pt-[74px] 1xl:pb-11 md:pb-9 pb-7">
+            <div class="container" data-aos="fade-right">
+                <!-- BREADCRUMB -->
+                <div class="flex items-center gap-3 2xl:mb-[45px] sm:mb-[25px] mb-3">
+                    <a href="/" class="p2 opacity-60">Home</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <g opacity="0.6">
+                            <path d="M5 14L12 8L5 2" stroke="#000000" stroke-linecap="square" />
+                        </g>
+                    </svg>
+                    <span class="p2">Case Studies</span>
+                </div>
+                <h1 class="h2">
+                    {{ title }}
+                </h1>
+            </div>
+            <div class="2xl:mt-[60px] sm:mt-[30px] mt-5" data-aos="fade-up">
+                {{ banner_image }}<img loading="lazy" src="{{ url }}" alt="single case study"
+                    class="w-full 3xl:h-[735px] 1xl:h-[635px] xl:h-[560px] md:h-[500px] sm:h-[430px] h-full object-cover" />{{ /banner_image }}
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <div class="case-study relative 2xl:pb-[120px] xl:pb-[100px] lg:pb-[90px] md:pb-20 sm:pb-14 pb-12.5">
+            <div class="xl:max-w-[1132px] container w-full">
+                <section
+                    class="2xl:space-y-11 1xl:space-y-9 xl:space-y-7 space-y-6 2xl:mb-12.5 lg:mb-10 md:mb-8 mb-7.5">
+
+                    <div class="flex sm:flex-row flex-col items-start justify-between w-full sm:gap-4 gap-2.5 2xl:pb-9 sm:pb-7 pb-5 border-b border-gray-100"
+                        data-aos="fade-up">
+                        {{ details }}
+                        <div
+                            class="flex sm:flex-col flex-row max-sm:justify-between max-sm:w-full items-start 1xl:gap-3 xl:gap-2.5 gap-2">
+                            <h6>{{ label }}</h6>
+                            <p class="p2 max-sm:text-right">{{ value }}</p>
+                        </div>
+                        {{ /details }}
+                    </div>
+
+                    <div data-aos="fade-up" class="cms-content">
+                        <h4 class="case-title">{{ about_title }}</h4>                        
+                      <p>{{ about_content }}</p>                       
+                    </div>
+
+                    <div data-aos="fade-up">
+                        <h4 class="case-title">{{ goals_title }}</h4>
+                        <p class="2xl:mb-4.5 1xl:mb-4 md:mb-3 mb-2 p2">
+                            {{ goals_intro }}
+                        </p>
+                        <ul class="filter-marker 1xl:space-y-2.5 space-y-2 lg:pl-5 sm:pl-4">
+                            {{ goals }}
+                            <li class="flex items-start 1xl:gap-2.5 gap-2">
+                                <p class="p2"><span class="text-black-100 font-bold">{{ title }}</span>
+                                    {{ description }}
+                                </p>
+                            </li>
+                            {{ /goals }}
+                            
+                        </ul>
+                    </div>
+
+                    <div data-aos="fade-up">
+                        <h4 class="case-title">{{ section_title }}</h4>
+                     
+                      <p> {{ tech_intro }}</p>
+                        <div class="sm:grid sm:grid-cols-5 flex flex-wrap 2xl:my-7.5 md:my-6.5 my-4.5 lg:gap-6 gap-3.5">
+                            {{ technologies }}
+                            <div
+                                class="border border-gray-100 rounded-[10px] flex flex-col items-center justify-center lg:gap-4.5 gap-1.5 xl:h-[190px] lg:h-[171px] md:h-[136px] max-sm:w-[110px] h-auto sm:p-4 p-3">
+                                <div class="xl:size-17.5 md:size-15 size-11.5">
+
+                                    {{ icon }}<img src="{{ url }}" class="w-full h-full object-contain"> {{ /icon }}
+                                    
+                                </div>
+                                {{ if name }}
+                                <p class="p2 font-medium text-black-100 text-center">{{ name }}</p>
+                                {{ /if }}
+                            </div>
+                            {{ /technologies }}
+                            
+                        </div>
+                      
+                        {{ tech_description }}
+                    </div>
+
+                    <div data-aos="fade-up">
+                        <h4 class="case-title">{{ challenges_title }}</h4>
+                        <p class="2xl:mb-4.5 1xl:mb-4 md:mb-3 mb-2 p2">
+                            {{ challenges_intro }}
+                        </p>
+                        <ul class="filter-marker 1xl:space-y-2.5 space-y-2 lg:pl-5 sm:pl-4">
+                            {{ challenges }}
+                            <li class="flex items-start 1xl:gap-2.5 gap-2">
+                                <p class="p2"><span class="text-black-100 font-bold">{{ title }}</span>
+                                    {{ description }}
+                                </p>
+                            </li>
+                            {{ /challenges }}
+                            
+
+                        </ul>
+                    </div>
+
+                    <div data-aos="fade-up">
+                        <h4 class="case-title">{{ solutions_title }}</h4>
+                        <p class="2xl:mb-4.5 1xl:mb-4 md:mb-3 mb-2 p2">
+                          {{ solutions_intro }}
+                        </p>
+                       
+                        <div class="2xl:my-7.5 md:my-6.5 my-4.5 gap-6">
+                            {{ image }}<img src="{{ url }}" alt="" class="w-full h-full object-cover" />{{ /image }}
+                        </div>
+                        {{ paragraphs }}
+                        <p class="2xl:mb-4.5 1xl:mb-4 md:mb-3 mb-2 p2">
+                            {{ text }}
+                        </p>
+                        {{ /paragraphs }}
+                       
+                    </div>
+
+                    <div data-aos="fade-up">
+                        <h4 class="case-title">{{ conclusion_title }}</h4>
+                        {{ conclusion_paragraphs }}
+                        <div class="2xl:mb-4.5 1xl:mb-4 md:mb-3 mb-2 p">
+                           {{ text }}
+                        </div>
+                        {{ /conclusion_paragraphs }}
+                       
+                    </div>
+                </section>
+
+                <!-- RELATED CASE STUDY -->
+                <section class="border-t border-gray-100">
+                    <div class="flex items-start flex-wrap 1xl:py-[35px] lg:py-7 py-5 md:gap-4 gap-2.5" data-aos="fade-up">
+                        {{ category }}
+                        <a href="/case-study/category/{{slug}}"
+                            class="border-2 border-[#FAF0EB] hover:bg-[#FAF0EB] xl:px-5 sm:px-4 px-3 xl:py-[6px] py-1 rounded-[5px] transition-all ease-in-out">
+                            <span class="p2 group-hover:text-primary transition-all ease-in-out">{{ title }}</span>
+                        </a>
+                        {{ /category }}
+                    </div>
+                   {{ if (related_case_studies | count) > 0 }}
+                    <h4 class="1xl:pb-[35px] md:pb-7 pb-5 3xl:pt-[35px] 1xl:pt-5 md:pt-4">
+                       {{ related_title }}</h4>
+                    <div class="grid md:grid-cols-2 grid-cols-1 1xl:gap-7.5 lg:gap-7 gap-6">
+                        <!-- grid-3 -->
+                        {{ related_case_studies limit="2" }}
+                        <div class="{{ if index % 3 == 0 }}
+        bg-[#FAF0EB]
+    {{ else }}
+        bg-[#F4F3FF]
+    {{ /if }} sm:p-6 p-4 pb-0 flex flex-col items-start justify-between group" data-aos="fade-up"
+                            >
+                            <div>
+                                <div class="flex items-center gap-3 sm:mb-[14px] mb-1">
+                                    <span class="dash border border-primary"></span>
+                                    {{ category limit="1" }}
+                                    <p class="text-[#6E7485] p2 max-sm:text-sm uppercase"> {{ title }}</p>
+                                    {{ /category }}
+                                </div>
+                                <a href="/case-study/{{slug }}">
+                                    <h6 class="sm:mb-5 mb-4 w-full group-hover:text-primary transition-all ease-in-out">
+                                        {{ title }}
+                                    </h6>
+                                </a>
+                            </div>
+                            <div class="relative overflow-hidden group w-full h-auto">
+                                <a href="/case-study/{{slug }}"
+                                    class="lg:before:pt-[55%] md:before:pt-[66%] before:pt-[57%] before:block w-full h-full before:block block">
+                                   {{ banner_image }} <img loading="lazy" src="{{ url }}" alt="Case Study"
+                                        class="block transition-all group-hover:scale-110 duration-500 absolute top-0 left-0 w-full h-full object-cover" />{{ /banner_image }}
+                                </a>
+                            </div>
+                        </div>
+                        {{ /related_case_studies }}
+                        
+                    </div>
+                    {{ /if }}
+                </section>
+            </div>
+        </div>

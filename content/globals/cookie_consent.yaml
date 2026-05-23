@@ -1,0 +1,48 @@
+title: 'Cookie Consent'
+data:
+  popup_title: 'Your Privacy Matters'
+  popup_description: 'We use cookies to improve your browsing experience, analyze site traffic, and support our marketing efforts. You can accept all cookies or manage your preferences anytime.'
+  accept_all_label: 'Accept All'
+  settings_label: Settings
+  reject_all_label: 'Reject All'
+  sidebar_title: 'Manage Cookie'
+  sidebar_description: 'Choose which types of cookies you want to allow. You can change your settings at any time.'
+  save_now_label: 'Save Now'
+  cancel_label: Cancel
+  categories:
+    -
+      id: mpdz1jc6
+      key: essential
+      title: 'Essential Cookies'
+      description: 'Required for core website functionality, security, and basic operation. These cannot be disabled.'
+      enabled_by_default: true
+      required: true
+      type: cookie_category
+      enabled: true
+    -
+      id: mpdz2lxp
+      key: performance
+      title: 'Performance Cookies'
+      description: 'Help us understand how visitors interact with the website so we can improve speed, usability, and experience.'
+      enabled_by_default: false
+      required: false
+      type: cookie_category
+      enabled: true
+    -
+      id: mpdz2wv9
+      key: functional
+      title: 'Functional Cookies'
+      description: 'Enable enhanced features such as saved preferences, language settings, and smoother interactions.'
+      enabled_by_default: false
+      required: false
+      type: cookie_category
+      enabled: true
+    -
+      id: mpdz36jp
+      key: targeting
+      title: 'Targeting Cookies'
+      description: 'Used to deliver relevant ads, measure campaign performance, and personalize promotional content.'
+      enabled_by_default: false
+      required: false
+      type: cookie_category
+      enabled: true

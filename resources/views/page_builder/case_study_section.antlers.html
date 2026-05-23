@@ -1,0 +1,352 @@
+{{ if show_type == 'case-study-one' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+        <!-- grid column -->
+        {{ if collections == "case_studies" }}
+        {{ collection:case_studies as="case_studies" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-[34px] gap-6 grid-main-div">
+            <!-- grid-1 -->
+            {{ case_studies }}
+            <div class="{{ if index % 3 == 0 }}
+        bg-[#FAF0EB]
+    {{ else }}
+        bg-[#F4F3FF]
+    {{ /if }} xl:px-[35px] lg:px-6 md:px-5 sm:px-6 xl:pt-10 pt-7.5 px-[15px] pb-0 flex flex-col items-start justify-between group grid-item-append"
+                data-aos="fade-up">
+                <div>
+                    <div class="flex items-center md:gap-[18px] gap-1.5 xl:mb-5.5 mb-3">
+                        <span class="dash border border-primary"></span>
+                        {{ category limit="1" }}
+                        <p class="text-[#868686] uppercase p2 max-sm:text-[15px]">
+                            {{ title }}</p>
+                        {{ /category }}
+                    </div>
+                    <a href="/case-study/{{ slug }}">
+                        <h4 class="2xl:mb-5.5 xl:mb-6 mb-5 w-full group-hover:text-primary">
+                            {{ title }}</h4>
+                    </a>
+                </div>
+                <div class="relative overflow-hidden group w-full h-auto flex">
+                    <a href="/case-study/{{ slug }}"
+                        class="overflow-hidden block relative before:block before:content-[''] 2xl:before:pt-[380px] 1xl:before:pt-[340px] xl:before:pt-[310px] lg:before:pt-[275px] md:before:pt-[240px] sm:before:pt-[290px] before:pt-[185px] w-full h-auto">
+                        {{ banner_image }}<img loading="lazy" src="{{ url }}" alt="Case Study"
+                            class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-in-out absolute top-0 left-0" />{{
+                        /banner_image }}
+                    </a>
+                </div>
+            </div>
+            {{ /case_studies }}
+        </div>
+
+        <!-- Case studies btn -->
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div
+            class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid">
+            Load More
+            <span class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}"
+                    class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500 ">
+
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more" class="">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "case_studies" }}
+        {{ /collection:case_studies }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == 'case-study-two' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <!-- container -->
+    <div class="container">
+        {{ if collections == "case_studies" }}
+        {{ collection:case_studies as="case_studies" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+
+        <div class="grid md:grid-cols-2 grid-cols-1 2xl:gap-8.5 xl:gap-7 md:gap-6 gap-5 grid-main-div">
+            <!-- column-grid -->
+            {{ case_studies }}
+            <div class="{{ if index % 3 == 0 }}
+        bg-[#FAF0EB]
+    {{ else }}
+        bg-[#F4F3FF]
+    {{ /if }} flex 1xl:flex-row flex-col items-center group grid-item-append" data-aos="fade-up">
+                <a href="/case-study/{{ slug }}"
+                    class="overflow-hidden 1xl:h-full h-auto 1xl:min-h-full xl:max-h-[340px] sm:max-h-[300px] max-h-[200px] 1xl:max-w-[275px] max-w-full w-full shrink-0">
+                    {{ banner_image }}<img loading="lazy" src="{{ url }}" alt="Case Study"
+                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all ease-in-out">{{
+                    /banner_image }}
+                </a>
+                <div class="lg:p-7.5 md:p-5 py-[25px] px-[15px]">
+                    <div class="flex items-start 2xl:gap-4.5 xl:gap-3.5 gap-1.5 lg:mb-5.5 mb-4.5">
+                        <span class="dash border border-primary 1xl:mt-3.5 sm:mt-3 mt-2.5"></span>
+                        {{ category limit="1" }}
+                        <p class="uppercase text-[#6E7485] sm:text-base text-sm">{{ slug }}</p>
+                        {{ /category }}
+                    </div>
+                    <a href="/case-study/{{ slug }}">
+                        <h5 class="xl:mb-[15px] mb-2.5 group-hover:text-primary tracking-normal">
+                            {{ title }}</h5>
+                        <p class="p2">{{ short_description }}</p>
+                        <div class="lg:mt-[25px] mt-5">
+                            {{ if button_text }}
+                            <a class="read-more btn w-fit text-primary hover:text-black font-normal tracking-wide 2xl:text-lg text-md 2xl:leading-8.5 leading-6.5"
+                                href="/case-study/{{ slug }}">{{ button_text }}
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                    class="lg:ml-2.5 ml-2 1xl:size-[15px] size-3" mlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7077_4647)">
+                                        <path
+                                            d="M0.376871 13.7997L12.6481 1.52849L2.12991 1.52849L2.03975 0.116041L15.0623 0.116043L15.0623 13.1386L13.6499 13.0484L13.6499 2.53022L1.37861 14.8015L0.376871 13.7997Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            {{ /if }}
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            {{ /case_studies }}
+
+        </div>
+
+        <!-- Case studies btn -->
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div 
+            class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid">
+            Load More
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}"
+                    class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "case_studies" }}
+        {{ /collection:case_studies }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}
+
+{{ if show_type == 'home-page' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+        <!-- sub_title -->
+        <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ heading }}</p>
+                </div>
+                <h3>{{ subtitle | explode:highlight_word }}{{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /subtitle | explode }}
+                </h3>
+            </div>
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+
+        <!-- grid column -->
+        <div class="grid md:grid-cols-2 grid-cols-1 lg:gap-8.5 gap-[25px]">
+            <!-- grid-1 -->
+            {{ entries limit="{limit}" }}
+            <div class="{{ if index % 3 == 1 }}
+            bg-[#F4F3FF]
+        {{ else }}
+            bg-[#FAF0EB]
+        {{ /if }} xl:px-[35px] lg:px-6 md:px-5 sm:px-6 xl:pt-10 pt-7.5 px-[15px] pb-0 flex flex-col items-start justify-between group"
+                data-aos="fade-up">
+                <div>
+                    <div class="flex items-center md:gap-4.5 gap-1.5 xl:mb-5.5 mb-3">
+                        <span class="dash border border-primary"></span>
+                        {{ category limit="1" }}
+                        <p class="text-[#868686] uppercase lg:text-base lg:leading-5 text-sm">{{ title }}</p>
+                        {{ /category }}
+                    </div>
+                    <a href="/case-study/{{ slug }}">
+                        <h4 class="2xl:mb-[22px] xl:mb-6 mb-5 w-full group-hover:text-primary ">
+                            {{ title }}</h4>
+                    </a>
+                </div>
+                <a href="/case-study/{{ slug }}"
+                    class="overflow-hidden block relative before:block before:content-[''] 2xl:before:pt-[380px] 1xl:before:pt-[340px] xl:before:pt-[310px] lg:before:pt-[275px] md:before:pt-[240px] sm:before:pt-[290px] before:pt-[185px] w-full h-auto">
+                    {{ banner_image }}<img loading="lazy" src="{{ url }}" alt="Case Study"
+                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-500 ease-in-out absolute top-0 left-0" />{{
+                    /banner_image }}
+                </a>
+            </div>
+            {{ /entries }}
+
+        </div>
+        {{ if button_text }}
+        <a href="{{ button_url }}" aria-label="Open Page"
+            class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group flex sm:hidden mt-7.5 w-fit">
+            {{ button_text }}
+            <span
+                class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    class="1xl:size-5.5 xl:size-5 size-4">
+                    <g clip-path="url(#clip0_421_92)">
+                        <path
+                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                            fill="currentColor" />
+                    </g>
+                </svg>
+            </span>
+        </a>
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}
+
+
+{{ if show_type == 'home-two-page' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <!-- container -->
+    <div class="container">
+        <!-- sub_title -->
+        <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col lg:gap-8 1xl:gap-7 gap-5" data-aos="fade-right">
+                <div class="flex items-center md:gap-4.5 gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ heading }}</p>
+                </div>
+                <h3>{{ subtitle | explode:highlight_word }}{{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /subtitle | explode }}
+                </h3>
+            </div>
+            <!-- sub_button -->
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit" data-aos="fade-left">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor"></path>
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+        <!-- grid column -->
+        <div class="grid md:grid-cols-2 grid-cols-1 2xl:gap-[34px] xl:gap-7 md:gap-6 gap-5">
+            <!-- column-grid -->
+            {{ entries limit="{limit}" }}
+            <div class="{{ if index % 3 == 0 }}
+        bg-[#FAF0EB]
+    {{ else }}
+        bg-[#F4F3FF]
+    {{ /if }} flex 1xl:flex-row flex-col items-center group" data-aos="fade-up">
+                <a href="/case-study/{{ slug }}"
+                    class="overflow-hidden 1xl:h-full h-auto 1xl:max-h-full xl:max-h-[340px] sm:max-h-[300px] max-h-[200px] 1xl:max-w-[275px] max-w-full w-full shrink-0">
+                    {{ banner_image }}<img loading="lazy" src="{{ url }}" alt="Case Study"
+                        class="w-full h-full object-cover scale-100 group-hover:scale-105 transition-all ease-in-out">
+                    {{ /banner_image }}
+                </a>
+                <div class="lg:p-7.5 md:p-5 py-[25px] px-[15px]">
+                    <div class="flex items-start 2xl:gap-4.5 xl:gap-3.5 gap-1.5 lg:mb-5.5 mb-4.5">
+                        <span class="dash border border-primary 1xl:mt-3.5 sm:mt-3 mt-2.5"></span>
+                        {{ category limit="1" }}
+                        <p class="uppercase text-[#6E7485] sm:text-base text-sm">{{ title }}</p>
+                        {{ /category }}
+                    </div>
+                    <a href="/case-study/{{ slug }}">
+                        <h5 class="xl:mb-[15px] mb-2.5 group-hover:text-primary tracking-normal">
+                            {{ title }}</h5>
+                        <p class="p2">
+                            {{ short_description }}
+                        </p>
+                        {{ if button_text }}
+                        <div class="lg:mt-[25px] mt-5">
+                            <a class="read-more btn w-fit text-primary hover:text-black font-normal tracking-wide 2xl:text-lg text-md 2xl:leading-[34px] leading-[26px]"
+                                href="/case-study/{{ slug }}">{{ button_text }}
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                    class="lg:ml-2.5 ml-2 1xl:size-[15px] size-3" mlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7077_4647)">
+                                        <path
+                                            d="M0.376871 13.7997L12.6481 1.52849L2.12991 1.52849L2.03975 0.116041L15.0623 0.116043L15.0623 13.1386L13.6499 13.0484L13.6499 2.53022L1.37861 14.8015L0.376871 13.7997Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        {{ /if }}
+                    </a>
+                </div>
+
+            </div>
+            {{ /entries }}
+        </div>
+        <!-- responsive btn -->
+        {{ if button_text }}
+        <a href="{{ button_url }}" aria-label="Open Page"
+            class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group flex sm:hidden mt-[32px] mx-auto w-fit">
+            {{ button_text }}
+            <span
+                class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    class="1xl:size-5.5 xl:size-5 size-4">
+                    <g clip-path="url(#clip0_421_92)">
+                        <path
+                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                            fill="currentColor" />
+                    </g>
+                </svg>
+            </span>
+        </a>
+        {{ /if }}
+    </div>
+</section>
+
+{{ /if }}

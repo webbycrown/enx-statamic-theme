@@ -1,0 +1,102 @@
+  <!-- HERO -->
+        <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="bg-purple-100 2xl:pt-[90px] xl:pt-[85px] lg:pt-20 md:pt-[75px] sm:pt-15 pt-[55px]">
+                <div class="container">
+                    <div
+                        class="flex justify-between w-full md:flex-row flex-col-reverse 3xl:gap-[110px] 2xl:gap-[95px] xl:gap-[75px] lg:gap-[52px] sm:gap-7.5 gap-5 2xl:pt-[100px] 1xl:pt-[75px] xl:pt-16 lg:pt-14 lg:pb-0 md:py-[55px] sm:py-10 pt-6 pb-10">
+                        <div class="md:w-[59%] w-full 2xl:pb-[100px] 1xl:pb-[75px] xl:pb-16 lg:pb-14"
+                            data-aos="fade-right">
+                            <h1 class="h3 1xl:mb-6 xl:mb-5 sm:mb-4 mb-2.5">{{ title }}</h1>
+                            <div class="flex items-center gap-3 1xl:mb-6 sm:mb-5 mb-3.5">
+                                <span class="dash border-primary block"></span>
+                                <p class="2xl:max-w-[70%] lg:max-w-[64%] sm:max-w-[84%] w-full uppercase p2">
+                                   {{ designation }}
+                                </p>
+                            </div>
+                            <p class="p2 font-normal text-neutral-700 2xl:mb-7.5 1xl:mb-6 md:mb-4 mb-[18px]">
+                                {{ short_description }}
+                            </p>
+                            <ul class="filter-marker mt-0 space-y-2">
+                                {{ details }}
+                                <li class="flex items-start xl:gap-2.5 gap-2">
+                                    <p class="p2"><span class="text-black-100 font-bold">{{ label }} </span>
+                                        {{ value }}
+                                    </p>
+                                </li>
+                                {{ /details }}
+                            </ul>
+                        </div>
+                        <div class="md:w-[41%] 2xl:-mb-[100px] 1xl:-mb-[90px] xl:-mb-20 lg:-mb-14 relative before:block before:content-[''] 2xl:before:pt-[680px] 1xl:before:pt-[628px] xl:before:pt-[588px] lg:before:pt-[557px] md:before:pt-[490px] before:pt-[100%] w-full lg:h-full h-auto"
+                            data-aos="fade-left">
+                            {{ profile_image }}<img loading="lazy" src="{{ url }}" alt="Founder"
+                                class="w-full h-full object-cover z-10 absolute top-0 left-0" />{{ /profile_image }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="3xl:pb-12.5 2xl:pb-11 xl:pb-9 lg:pb-8 pb-7.5">
+            <div class="container">
+                <div data-aos="fade-up">
+                    <h3 class="3xl:mb-7.5 2xl:mb-5.5 xl:mb-5 mb-4">{{ biography_title }}</h3>
+                    <div class="3xl:space-y-5 2xl:space-y-4.5 space-y-3.5">
+                       {{ biography }}
+                    </div>
+                </div>
+                {{ skills_section }}
+                <div
+                    class="w-full h-full object-cover 3xl:my-12.5 2xl:my-11 1xl:my-10 md:my-8.5 mb-7.5 mt-6 flex md:flex-row flex-col-reverse items-stretch justify-between 3xl:gap-20 2xl:gap-17 1xl:gap-14 xl:gap-12.5 lg:gap-10 md:gap-7 gap-7.5">
+                    <div class="md:w-[48%] w-full h-auto" data-aos="fade-right">
+                       {{ skills_section:skills_image }} <img loading="lazy" src="{{ url }}" alt="banner"
+                            class="w-full h-full object-cover" />{{ /skills_section:skills_image }}
+                    </div>
+                    <div class="md:w-[52%] w-full lg:py-4.5 md:py-3 my-auto" data-aos="fade-left">
+                        <h3 class="3xl:mb-5 2xl:mb-4.5 lg:mb-4 mb-2.5">{{ skills_section:skills_heading }}</h3>
+                        <p class="p2 3xl:mb-9 2xl:mb-7.5 mb-4.5">
+                           {{ skills_section:skills_description }}
+                        </p>
+                        <div class="3xl:space-y-9 2xl:space-y-7 space-y-5">
+                            <!-- 1st skill -->
+                            {{ skills_section:skills }}
+                            <div class="3xl:space-y-4 2xl:space-y-3 space-y-2">
+                                <div class="flex items-center justify-between gap-4">
+                                    <p class="p2 font-medium text-black-100">{{ skill_name }}</p>
+                                    <p class="p2 font-medium text-black-100">{{ percentage }}%</p>
+                                </div>
+                                <div class="w-full sm:h-2 h-1.5 relative bg-[#FAF0EB] rounded-full overflow-hidden">
+                                    <div class="absolute bg-primary rounded-full h-full top-0 left-0"   style="width: {{ percentage }}%;"></div>
+                                </div>
+                            </div>
+                            {{ /skills_section:skills }}
+                            
+                        </div>
+                    </div>
+                </div>
+                {{ /skills_section }}
+                {{ extra_content }}
+                <p class="p2 3xl:mb-5 2xl:mb-4.5 mb-3.5" data-aos="fade-up">
+                  {{ extra_content:bottom_content  }}
+                </p>
+                {{ /extra_content }}
+                
+            </div>
+        </section>
+
+        <!-- FOLLOW -->
+        <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5" data-aos="fade-up">
+            <div class="container">
+                <h4>Follow:</h4>
+                {{ social_share }}
+                <div class="flex items-start flex-wrap 2xl:pt-7.5 xl:pt-6 sm:pt-4 pt-3 sm:gap-[15px] gap-[5px]">
+                    {{ socials }}
+                    <a href="{{ url }} {{config:app.url}}team/{{ slug }}" target="_blank" class="border-2 border-[#FAF0EB] hover:bg-[#FAF0EB] xl:px-5 sm:px-4 px-3 xl:py-[6px] py-1 rounded-[5px] transition-all ease-in-out">
+                        <span class="p2 ! text-neutral-700 font-normal">{{ title }}</span>
+                    </a>
+                    {{ /socials }}
+                    
+                </div>
+                {{ /social_share }}
+            </div>
+        </section>

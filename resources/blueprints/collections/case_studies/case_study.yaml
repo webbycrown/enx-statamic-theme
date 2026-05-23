@@ -1,0 +1,304 @@
+title: 'Case Study'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Hero
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate:
+                - required
+          -
+            handle: banner_image
+            field:
+              type: assets
+              display: 'Banner Image'
+              container: assets
+              max_files: 1
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: button_text
+            field:
+              default: 'READ MORE'
+              type: text
+              display: 'Button Text'
+      -
+        display: Overview
+        fields:
+          -
+            handle: details
+            field:
+              type: replicator
+              display: Details
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: label
+                          field:
+                            type: text
+                            display: Label
+                        -
+                          handle: value
+                          field:
+                            type: text
+                            display: Value
+      -
+        display: 'About Details'
+        fields:
+          -
+            handle: about_title
+            field:
+              default: 'About Details'
+              type: text
+              display: 'About Title'
+          -
+            handle: about_content
+            field:
+              type: bard
+              display: 'About Content'
+      -
+        display: 'Client Goals'
+        fields:
+          -
+            handle: goals_title
+            field:
+              default: 'Client Goal'
+              type: text
+              display: 'Goals Title'
+          -
+            handle: goals_intro
+            field:
+              type: textarea
+              display: 'Intro Text'
+          -
+            handle: goals
+            field:
+              type: replicator
+              display: 'Goals List'
+              sets:
+                goal:
+                  display: Goal
+                  fields:
+                    -
+                      handle: title
+                      field:
+                        type: text
+                        display: 'Goal Title'
+                    -
+                      handle: description
+                      field:
+                        type: textarea
+                        display: Description
+      -
+        display: Technologies
+        fields:
+          -
+            handle: section_title
+            field:
+              type: text
+              display: 'Section Title'
+              default: 'Technologies We Use'
+          -
+            handle: tech_intro
+            field:
+              type: textarea
+              display: 'Intro Text'
+          -
+            handle: tech_description
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              remove_empty_nodes: false
+              type: bard
+              display: Description
+          -
+            handle: technologies
+            field:
+              type: replicator
+              display: 'Technologies List'
+              sets:
+                tech:
+                  display: Technology
+                  fields:
+                    -
+                      handle: name
+                      field:
+                        type: text
+                        display: 'Technology Name'
+                    -
+                      handle: icon
+                      field:
+                        type: assets
+                        display: Icon
+                        container: assets
+                        max_files: 1
+      -
+        display: Challenges
+        fields:
+          -
+            handle: challenges_title
+            field:
+              default: Challenges
+              type: text
+              display: 'Challenges Title'
+          -
+            handle: challenges_intro
+            field:
+              type: textarea
+              display: 'Intro Text'
+          -
+            handle: challenges
+            field:
+              type: replicator
+              display: 'Challenges List'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: description
+                          field:
+                            type: textarea
+                            display: Description
+      -
+        display: Solutions
+        fields:
+          -
+            handle: solutions_title
+            field:
+              default: Solutions
+              type: text
+              display: 'Solutions Title'
+          -
+            handle: solutions_intro
+            field:
+              type: textarea
+              display: 'Intro Text'
+          -
+            handle: paragraphs
+            field:
+              type: replicator
+              display: Paragraphs
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: text
+                          field:
+                            type: textarea
+                            display: Text
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+      -
+        display: Conclusion
+        fields:
+          -
+            handle: conclusion_title
+            field:
+              default: Conclusion
+              type: text
+              display: 'Conclusion Title'
+          -
+            handle: conclusion_paragraphs
+            field:
+              type: replicator
+              display: 'Conclusion Paragraphs'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: text
+                          field:
+                            type: textarea
+                            display: text
+      -
+        display: 'Related Case Studies'
+        fields:
+          -
+            handle: related_title
+            field:
+              type: text
+              display: 'Related Title'
+              default: 'Related Case Studies'
+          -
+            handle: related_case_studies
+            field:
+              mode: select
+              collections:
+                - case_studies
+              type: entries
+              display: 'Related Case Studies'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: category
+            field:
+              mode: select
+              taxonomies:
+                - case_study_category
+              type: terms
+              display: Category

@@ -1,0 +1,104 @@
+title: 'Insight Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: insight-one
+          value: 'Insight One Page'
+        -
+          key: insight-two
+          value: 'Insight Two Page'
+        -
+          key: home-page
+          value: 'Home Page'
+        -
+          key: home-two-page
+          value: 'Home Two Page'
+      default: insight-one
+      type: select
+      display: 'Show Type'
+  -
+    handle: section_label
+    field:
+      default: 'Browse all Posts'
+      type: text
+      display: 'Section Label'
+      unless:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: filter_label
+    field:
+      default: 'Browse By'
+      type: text
+      display: 'Filter Label'
+      unless:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: collections_field
+    field:
+      max_items: 1
+      mode: select
+      type: collections
+      display: Collections
+      unless:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination
+      unless:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: entries
+    field:
+      mode: select
+      collections:
+        - insights
+      type: entries
+      display: Entries
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      if:
+        show_type: 'contains_any home-page,home-two-page'

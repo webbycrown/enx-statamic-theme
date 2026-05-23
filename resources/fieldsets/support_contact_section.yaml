@@ -1,0 +1,81 @@
+title: 'Support Contact Section'
+fields:
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: support_cards
+    field:
+      type: replicator
+      display: 'Support Cards'
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            card:
+              display: Card
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Card Title'
+                    validate: required
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: 'Card Description'
+                -
+                  handle: icon_image
+                  field:
+                    type: assets
+                    display: 'Icon Image'
+                    container: assets
+                    max_files: 1
+                -
+                  handle: link_type
+                  field:
+                    type: select
+                    display: 'Link Type'
+                    options:
+                      email: Email
+                      tel: Phone
+                      url: URL
+                    default: url
+                -
+                  handle: link_label
+                  field:
+                    type: text
+                    display: 'Link Label'
+                    instructions: 'Example: Email:, Chat:, Call:'
+                -
+                  handle: link_value
+                  field:
+                    type: text
+                    display: 'Link Value'
+                    instructions: 'Email / Phone / URL'
+                -
+                  handle: link_text
+                  field:
+                    type: text
+                    display: 'Link Text'
+                    instructions: 'Display text (e.g. support@company.com)'

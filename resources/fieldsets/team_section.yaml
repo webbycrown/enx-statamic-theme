@@ -1,0 +1,35 @@
+title: 'Team Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: team-page
+          value: 'Team One Page'
+        -
+          key: team-two-page
+          value: 'Team Two Page'
+      default: team-page
+      type: select
+      display: 'Show Type'
+  -
+    handle: collections
+    field:
+      type: collections
+      display: 'Select Collection'
+      max_items: 1
+      mode: select
+      if:
+        team_entries: 'equals empty'
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination

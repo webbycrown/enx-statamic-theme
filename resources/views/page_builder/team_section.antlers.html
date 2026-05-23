@@ -1,0 +1,113 @@
+{{ if show_type == 'team-page' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-16 pb-12">
+    <div class="container">
+        {{ if collections == "teams" }}
+        {{ collection:teams as="team" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+        <div class="grid relative grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 3xl:gap-x-8.5 2xl:gap-x-7.5 lg:gap-x-6.5 gap-5.5 3xl:gap-y-10 2xl:gap-y-9 xl:gap-y-8 lg:gap-y-7.5 items-center xl:mb-20 mb-14 grid-main-div">
+            <!-- Card 1 -->
+            {{ team }}
+
+            <div class="block relative group h-full overflow-hidden grid-item-append" data-aos="fade-up">
+                <a href="/team/{{ slug }}" class="relative before:block before:content-[''] before:pt-[123%] w-full h-full">
+                    {{ profile_image }} <img loading="lazy" src="{{ url }}" alt="Camilo" class="w-full h-full object-cover absolute top-0 left-0 group-hover:scale-105 transition-all ease-in-out" />{{ /profile_image }}
+                </a>
+                <a href="/team/{{ slug }}" class="px-6 2xl:py-7.5 py-4.5 absolute bottom-0 left-0 flex items-start justify-end flex-col w-full h-[67%] bg-linear-to-t from-black/75 via-black/50 to-transparent">
+                    {{ if slug }}
+                    <h6 class="2xl:mb-2 xl:mb-1.5 mb-1 group-hover:text-primary transition-all ease-in-out text-white">
+                       {{ slug | replace('-', ' ') | title }}
+                    </h6>
+                    {{ /if }}
+                    <p class="p2 text-white font-normal">{{ designation }}</p>
+                </a>
+            </div>
+            {{ /team }}
+        </div>
+
+        <!-- Case studies btn -->
+
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid">
+            Load More
+            <span class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}" class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "teams" }}
+        {{ /collection:teams }}
+        {{ /if }}
+    </div>
+</section>
+{{ elseif show_type == 'team-two-page' }}
+
+
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-16 pb-12">
+            <div class="container">
+                {{ if collections == "teams" }}
+        {{ collection:teams as="team" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+                <div
+                    class="grid grid-cols-1 min-[440px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:gap-8.5 1xl:gap-7.5 sm:gap-6 gap-5 items-center xl:mb-20 mb-14 grid-main-div">
+                    <!-- Card 1 -->
+                    {{ team }}
+                    <div class="group grid-item-append" data-aos="fade-up">
+                        <a href="/team/{{ slug }}"
+                            class="block relative before:block before:content-[''] lg:before:pt-[110%] md:before:pt-[128%] before:pt-[115%] w-full h-full overflow-hidden before:overflow-hidden 2xl:mb-5 xl:mb-4 sm:mb-3 mb-2">
+                            {{ profile_image }}<img loading="lazy" src="{{ url }}" alt="Camilo"
+                                class="w-full h-full object-cover absolute bottom-0 left-0 group-hover:scale-105 transition-all ease-in-out" />{{ /profile_image }}
+                        </a>
+                        <div class="flex items-start justify-between w-full">
+                            <div>
+                                <a href="/team/{{ slug }}">
+                                    <h6
+                                        class="1xl:mb-2 xl:mb-1.5 mb-1 group-hover:text-primary transition-all ease-in-out font-light text-black-100">
+                                        {{ slug | replace('-', ' ') | title }}
+                                    </h6>
+                                </a>
+                                <p class="p2 text-[#868686] font-normal">{{ designation }}</p>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                class="1xl:size-7 size-[24px]" fill="none">
+                                <g clip-path="url(#clip0_316_377)">
+                                    <path
+                                        d="M4.29965 22.6539L19.9176 7.03591L6.53079 7.03591L6.41605 5.23825L22.9902 5.23825L22.9902 21.8124L21.1925 21.6977L21.1925 8.31084L5.57459 23.9288L4.29965 22.6539Z"
+                                        fill="#FF8343" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    {{ /team }}
+                    
+                </div>
+
+                
+                {{ paginate }}
+                <input type="hidden" class="lastPage" value="{{ total_pages }}">
+                {{ if next_page }}
+                <div class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid">
+                    Load More
+                    <span class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <a href="{{ next_page }}" class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+
+                            <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more">
+                        </a>
+                    </span>
+                </div>
+                {{ /if }}
+                {{ /paginate }}
+                {{ if collections == "teams" }}
+                {{ /collection:teams }}
+                {{ /if }}
+            </div>
+        </section>
+
+{{ /if }}

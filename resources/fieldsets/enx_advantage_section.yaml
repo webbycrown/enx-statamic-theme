@@ -1,0 +1,52 @@
+title: 'ENX Advantage Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'ENX ADVANTAGE'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'What Sets ENX Apart'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      instructions: 'Word to highlight (e.g. ENX)'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: items
+    field:
+      type: replicator
+      display: 'Advantage Items'
+      instructions: 'Add advantage blocks'
+      sets:
+        item:
+          display: Item
+          fields:
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+            -
+              handle: description
+              field:
+                type: textarea
+                display: Description
+            -
+              handle: reverse_layout
+              field:
+                type: toggle
+                display: 'Reverse Layout (Title Below)'
+                instructions: 'Enable for alternate design'
+                default: false

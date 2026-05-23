@@ -1,0 +1,222 @@
+title: 'All Page Builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      display: 'Page Builder'
+      collapse: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            social_section:
+              display: 'Social Section'
+              fields:
+                -
+                  import: social_section
+            sitemap_header:
+              display: 'Sitemap Header'
+              fields:
+                -
+                  import: sitemap_header
+            sitemap_links_section:
+              display: 'Sitemap Links Section'
+              fields:
+                -
+                  import: sitemap_links_section
+            policy_section:
+              display: 'Policy Section'
+              fields:
+                -
+                  import: policy_section
+            support_options_section:
+              display: 'Support Options Section'
+              fields:
+                -
+                  import: support_options_section
+            support_contact_section:
+              display: 'Support Contact Section'
+              fields:
+                -
+                  import: support_contact_section
+            support_ticket_section:
+              display: 'Support Ticket Section'
+              fields:
+                -
+                  import: support_ticket_section
+            get_started_section:
+              display: 'Get Started Section'
+              fields:
+                -
+                  import: get_started_section
+            support_faq_section:
+              display: 'Support FAQ Section'
+              fields:
+                -
+                  import: support_faq_section
+            split_content_block:
+              display: 'Split Content Block'
+              fields:
+                -
+                  import: split_content_block
+            hiring_process_section:
+              display: 'Hiring Process Section'
+              fields:
+                -
+                  import: hiring_process_section
+            open_positions_section:
+              display: 'Open Positions Section'
+              fields:
+                -
+                  import: open_positions_section
+            careers_application:
+              display: 'Careers Application'
+              fields:
+                -
+                  import: careers_application
+            business_plan_section:
+              display: 'Business Plan Section'
+              fields:
+                -
+                  import: business_plan_section
+            contact_section:
+              display: 'Contact Section'
+              fields:
+                -
+                  import: contact_section
+            team_section:
+              display: 'Team Section'
+              fields:
+                -
+                  import: team_section
+            case_study_section:
+              display: 'Case Study Section'
+              fields:
+                -
+                  import: case_study_section
+            who_we_are_section:
+              display: 'Who We Are Section'
+              fields:
+                -
+                  import: who_we_are_section
+            about_sections_builder:
+              display: 'About Sections Builder'
+              fields:
+                -
+                  import: about_sections_builder
+            impact_section:
+              display: 'Impact Section'
+              fields:
+                -
+                  import: impact_section
+            recognition_section:
+              display: 'Recognition Section'
+              fields:
+                -
+                  import: recognition_section
+            work_process_section:
+              display: 'Work Process Section'
+              fields:
+                -
+                  import: work_process_section
+            enx_advantage_section:
+              display: 'ENX Advantage Section'
+              fields:
+                -
+                  import: enx_advantage_section
+            organizational_setup_section:
+              display: 'Organizational Setup Section'
+              fields:
+                -
+                  import: organizational_setup_section
+            testimonials_section:
+              display: 'Testimonials Section'
+              fields:
+                -
+                  import: testimonials_section
+            service_section:
+              display: 'Service Section'
+              fields:
+                -
+                  import: service_section
+            video_hero_section:
+              display: 'Video Hero Section'
+              fields:
+                -
+                  import: video_hero_section
+            how_we_work_section:
+              display: 'How We Work Section'
+              fields:
+                -
+                  import: how_we_work_section
+            benefits_section:
+              display: 'Benefits Section'
+              fields:
+                -
+                  import: benefits_section
+            services_we_offer:
+              display: 'Services We Offer'
+              fields:
+                -
+                  import: services_we_offer
+            technology_stack_section:
+              display: 'Technology Stack Section'
+              fields:
+                -
+                  import: technology_stack_section
+            service_offerings_section:
+              display: 'Service Offerings Section'
+              fields:
+                -
+                  import: service_offerings_section
+            certified_technologies:
+              display: 'Certified Technologies'
+              fields:
+                -
+                  import: certified_technologies
+            media_solutions_section:
+              display: 'Media Solutions Section'
+              fields:
+                -
+                  import: media_solutions_section
+            digital_services:
+              display: 'Digital Services'
+              fields:
+                -
+                  import: digital_services
+            technologies_we_use:
+              display: 'Technologies We Use'
+              fields:
+                -
+                  import: technologies_we_use
+            insight_section:
+              display: 'Insight Section'
+              fields:
+                -
+                  import: insight_section
+            hero_section:
+              display: 'Hero Section'
+              fields:
+                -
+                  import: hero_section
+            our_clients_section:
+              display: 'Our Clients Section'
+              fields:
+                -
+                  import: our_clients_section
+            meet_our_team:
+              display: 'Meet Our Team'
+              fields:
+                -
+                  import: meet_our_team
+            lets_talk_section:
+              display: 'Lets Talk Section'
+              fields:
+                -
+                  import: lets_talk_section
+            landing_showcase:
+              display: 'Landing Showcase'
+              fields:
+                -
+                  import: landing_showcase

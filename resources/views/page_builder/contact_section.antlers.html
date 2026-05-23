@@ -1,0 +1,239 @@
+ <!-- CONTACT US FORM -->
+        <section class="relative z-5 bg-white overflow-hidden z-10">
+            <div>
+                <img loading="lazy" loading="lazy" src="{{ theme:asset }}assets/image/bg-map.webp" alt="map"
+                    class="w-full h-full object-cover absolute">
+                <div class="w-full h-full relative 3xl:py-25 2xl:py-[90px] 1xl:py-20 xl:py-16 lg:py-14 md:py-12 py-9">
+                    <div class="container">
+                        <div class="flex justify-between md:flex-row flex-col">
+                            <div class="xl:max-w-[865px] lg:max-w-[800px] md:max-w-[660px] w-full"
+                                data-aos="fade-right">
+                                <div class="w-full">
+                                    <div class="flex items-center gap-[18px]">
+                                        <span class="dash border border-primary"></span>
+                                        <p class="p2">{{ badge_text }}</p>
+                                    </div>
+                                    <h3 class="3xl:mt-9 3xl:mb-5.5 xl:mt-7 lg:my-5 mb-4 sm:mt-5 mt-4">
+                                       {{ section_title | explode(highlight_text) }}
+                                {{ if first }}
+                                {{ value }}
+                                {{ else }}
+                                <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                                {{ /if }}
+                                {{ /section_title | explode }}</h3>
+                                    <p>
+                                        {{ description }}
+                                    </p>
+                                </div>
+                                <div class="2xl:mt-12.5 1xl:mt-10 xl:mt-9 sm:mt-8 mt-7.5">
+                                    <div class="w-full">
+                                        <!-- Form Data -->
+                                        
+                                            {{ form:contact id="contact-form" class="universal-form" novalidate }}
+                                            <div
+                                                class="grid sm:grid-cols-2 grid-cols-1 xl:gap-6 sm:gap-5.5 gap-4 md:mb-5 mb-4">
+                                                <!-- flex box -->
+                                                {{ fields }}
+                                                {{ if handle == "full_name" or handle == "email_address" or handle == "phone" or handle == "company" }}
+                                                <div class="flex flex-col mb-1.5">
+                                                    <label for="{{ handle }}" class="p2 input-label">{{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                    {{ /if }}</label>
+                                                    <input type="{{ type }}" name="{{ handle }}" placeholder="{{ placeholder ?? 'Enter Your {{ display }}' }}" class="input-field p2 border border-gray-100" />
+                                                    <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                                </div>
+                                                {{ /if }}
+
+                                                {{ if handle == "project_type"  }}
+                                                 <div class="flex flex-col mb-1.5">
+                                                    <label for="project" class="p2 input-label">
+                                                        {{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                        {{ /if }}
+                                                    </label>
+                                                    <div class="input-field p2 border border-gray-100">
+                                                    <select name="{{ handle }}" class="w-full h-full outline-none! text-[#868686] invalid:text-[#868686] valid:text-neutral-700" required>
+                                                        <option value="digital-strategy-planning"> Digital Strategy & Planning</option>
+                                                        <option value="ui-ux-product-design">UI/UX & Product Design</option>
+                                                        <option value="website-revamp">Website Revamp</option>
+                                                        <option value="brand-transformation">Brand Transformation</option>
+                                                        <option value="long-term-partnership">Long-Term Partnership</option>
+                                                        <option value="something-custom"> Something Custom</option>
+                                                    </select>
+                                                     <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                                 </div>
+                                                 </div>
+                                                {{ /if }}
+
+
+                                                {{ if handle == "project_budget"  }}
+                                                 <div class="flex flex-col mb-1.5">
+                                                    <label for="project" class="p2 input-label">
+                                                        {{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                        {{ /if }}
+                                                    </label>
+                                                    <div class="input-field p2 border border-gray-100">
+                                                    <select name="{{ handle }}" class="w-full h-full outline-none! text-[#868686] invalid:text-[#868686] valid:text-neutral-700" required>
+                                                        <option value="digital-strategy"> Under $5,000</option>
+                                                        <option value="ui-ux">$5,000 – $15,000</option>
+                                                        <option value="website-revamp">$15,000 – $30,000</option>
+                                                        <option value="brand-transformation">$30,000+</option>
+                                                    </select>
+                                                     <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                                 </div>
+                                                 </div>
+                                                {{ /if }}
+
+                                                {{ if type == "textarea" }}
+                                                <div class="flex flex-col sm:col-span-2 col-span-1">
+                                                    <label for="first-name" class="p2 input-label">{{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                    {{ /if }}</label>
+                                                   <textarea name="{{ handle }}" placeholder="{{ placeholder ?? 'Tell us how we can help' }}" class="sm:min-h-30 min-h-25 h-full lg:px-6 px-4 xl:py-5 md:py-4 sm:py-3 py-2 lg:rounded-3xl! md:rounded-[18px]! rounded-[12px]! p2 input-field border border-gray-100" data-error-label="Project Description"></textarea>
+                                                    <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger" data-error-for="{{ handle }}">{{ error }}</div>
+                                                </div>
+                                                {{ /if }}
+
+                                                 {{ /fields }}                                              
+                                               
+
+                                            </div>
+                                             {{ fields }}
+                                            {{ if type == "toggle" }}
+                                            <div class="flex flex-col gap-2 md:mb-7.5 mb-4">
+                                                <label class="relative inline-flex items-center gap-2.5 cursor-pointer">
+                                                    <!-- peer input -->
+                                                    <input type="checkbox" name="{{ handle }}"
+                                                        class="peer absolute opacity-0 sm:size-[22px] size-5 cursor-pointer m-0 shrink-0">
+
+                                                    <!-- custom box -->
+                                                    <span
+                                                        class="shrink-0 sm:size-[22px] size-5 flex items-center justify-center border border-[#DADDE9] rounded-[6px] bg-white peer-checked:bg-primary peer-checked:border-primary-dark transition-all">
+                                                        <svg class="hidden w-3.5 h-3.5 text-white" fill="none"
+                                                            stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    </span>
+
+                                                    <!-- text -->
+                                                    <p class="p2">
+                                                        I agree to the Terms & Privacy Policy.
+                                                    </p>
+                                                </label>
+                                                 <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger" data-error-for="{{ handle }}">{{ error }}</div>
+                                            </div>
+                                            {{ /if }}
+                                             {{ /fields }}
+                                            {{ if button_text }}
+                                            <button type="submit"
+                                                class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group">
+                                                {{ button_text }}
+                                                <span
+                                                    class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                        viewBox="0 0 22 22" fill="none"
+                                                        class="1xl:size-5.5 xl:size-5 size-4">
+                                                        <g clip-path="url(#clip0_421_92)">
+                                                            <path
+                                                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                                fill="currentColor" />
+                                                        </g>
+                                                    </svg>
+
+                                                    <!-- loading icon -->
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                        viewBox="0 0 30 30" fill="none" class="hidden">
+                                                        <g clip-path="url(#clip0_296_2520)">
+                                                            <path
+                                                                d="M15 1V6.6M20.88 9.12L24.94 5.06M23.4 15H29M20.88 20.88L24.94 24.94M15 23.4V29M5.06 24.94L9.12 20.88M1 15H6.6M5.06 5.06L9.12 9.12"
+                                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                            {{ /if }}
+
+                                             <div id="form-response" class="mt-2"></div>
+                                         {{ /form:contact }}
+                                        <!-- Toast -->
+                                        <div id="toast"
+                                            class="fixed bottom-6 right-6 flex items-center gap-2 bg-gray-900 text-white text-sm px-5 py-3 rounded-xl shadow-2xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none z-50">
+                                            <svg class="w-4 h-4 text-green-400 shrink-0" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2.5">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg>
+                                            <span id="toastMsg"></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                             {{ setting }}
+                            <div class="flex md:flex-col flex-row gap-6 md:pt-[150px] sm:pt-10 pt-9">
+                                <!-- linkedin -->
+                                {{ socials }}
+                                <a href="{{ url }}" data-aos="fade-left"
+                                    class="dark-light border border-gray-100 3xl:size-15 1xl:size-14 xl:size-13 sm:size-13 size-9.5 p-2 flex items-center justify-center rounded-full">
+                                    <i class="fa-brands fa-{{ platform }} xl:size-6 size-5"></i>
+                                </a>
+                                {{ /socials }}
+                               
+                            </div>
+                             {{ /setting }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- LOCATION -->
+        <section class="relative overflow-hidden" data-aos="fade-up">
+            <div class="3xl:h-[650px] 2xl:h-[600px] xl:h-[570px] sm:h-[500px] h-[320px] w-full z-5 relative z-10">
+                {{ if map_iframe }}
+                <iframe
+                    src="{{ map_iframe }}"
+                    allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-full object-cover"></iframe>
+                {{ /if }}
+            </div>
+            <div class="relative overflow-hidden">
+                {{ location_background_image }}<img loading="lazy" loading="lazy" src="{{ url }}" alt="map"
+                    class="fixed inset-0 w-full h-full object-cover z-0" />{{ /location_background_image }}
+                <div class="bg-black/60 relative">
+                    <div class="container">
+                        <div
+                            class="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 w-full sm:divide-x divide-x-0 xl:divide-y-0 divide-y divide-gray-100 3xl:pt-25 2xl:pt-[90px] 1xl:pt-21 lg:pt-19 sm:pb-0 sm:pt-14 py-12.5 relative">
+                            {{ contact_cards }}
+                            <div
+                                class="bg-white 2xl:py-9 2xl:px-7.5 1xl:py-8 sm:py-6 py-5 1xl:px-6.5 px-4.5 flex items-start justify-start 1xl:gap-5 gap-4 [&:nth-child(3)]:sm:border-b-0">
+                                <div
+                                    class="rounded-full flex items-center justify-center bg-[#FAF0EB] overflow-hidden 3xl:size-18.5 2xl:size-17.5 xl:size-15 size-14 p-2 shrink-0">
+                                    {{ icon }}<img src="{{ url }}"  class="3xl:size-9 1xl:size-8 size-7" >{{ /icon }}
+                                    
+                                </div>
+                                <div>
+                                    <h6 class="xl:mb-2.5 sm:mb-2 mb-1 text-black-100">{{ title }}</h6>
+                                    {{ values }}
+                                    <p class="break-all p2 2xl:mb-1">
+                                        <a href="{{ url }}"
+                                            class="font-normal text-slate-100 hover:text-primary">{{ value }}</a>
+                                    </p>
+                                    {{ /values }}
+                                </div>
+                            </div>
+                            {{ /contact_cards }}
+                           
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>

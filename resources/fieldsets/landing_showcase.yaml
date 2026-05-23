@@ -1,0 +1,50 @@
+title: 'Landing Showcase'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: hero_image
+    field:
+      container: assets
+      type: assets
+      display: 'Hero Image'
+  -
+    handle: rotating_text
+    field:
+      type: text
+      display: 'Rotating Circular Text'
+  -
+    handle: center_logo
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Center Logo'

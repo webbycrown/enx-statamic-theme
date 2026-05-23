@@ -1,0 +1,41 @@
+<section class="relative w-full lg:min-h-[calc(100vh-90px)] lg:h-full 2xl:pt-24 xl:pt-[85px] lg:pt-20 md:pt-18.5 sm:pt-[59px] pt-13.5">
+    <!-- Background image -->
+    <div class="bg-cover bg-center z-0" style="background-image: url('{{ background_image:url }}');">
+
+        <!-- Content area -->
+        <div class="bg-linear-to-r from-[#020c36d1] from-[0%] via-[#020C36]/80 lg:via-[40%] md:via-[50%] via-[70%] to-[#020C36]/0 lg:to-[85%] md:to-[90%] to-[100%] z-10">
+            <div class="container lg:h-[90vh] sm:h-[650px] h-[577px]">
+                <div class="flex items-center min-h-[500px] h-full">
+                    <div class="relative z-20 2xl:w-[50%] 1xl:w-[48%] xl:w-[46%] lg:w-[56%] md:w-[66%] sm:w-[72%] max-w-full h-fit mt-10" data-aos="fade-right">
+                        <h1 class="text-white 2xl:mb-[35px] sm:mb-7.5 mb-5">{{ main_heading | explode(highlight_text) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /main_heading | explode }}
+                        </h1>
+                        <div class="flex items-start gap-[15px] xl:mb-[45px] md:mb-[35px] mb-[25px]">
+                            <span class="dash border-white md:mt-3.5 mt-3 sm:block hidden"></span>
+                            <p class="p2 text-white">
+                                {{ description }}
+                            </p>
+                        </div>
+                        {{ if button_text }}
+                        <a href="{{ button_link }}" aria-label="Open Page" class="btn btn-arrow all-btn rounded-full group flex overflow-hidden w-fit">
+                            {{ button_text }}
+                            <span class="btn btn-primary rounded-full 3xl:w-[52px] 3xl:h-[52px] 1xl:w-12 1xl:h-12 xl:w-11 xl:h-11 w-9 h-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z" fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

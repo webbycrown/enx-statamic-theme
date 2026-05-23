@@ -1,0 +1,44 @@
+title: 'Split Content Block'
+fields:
+  -
+    handle: badge_text
+    field:
+      type: text
+      display: 'Badge Text'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: features
+    field:
+      type: list
+      display: Features
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image

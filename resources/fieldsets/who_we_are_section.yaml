@@ -1,0 +1,48 @@
+title: 'Who We Are Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'WHO WE ARE'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'A Modern Design System Built for Real Business Growth'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      default: Business
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+      default: 'ENX brings together strategy, design, and engineering into a focused ecosystem that empowers companies to move faster and execute smarter.'
+  -
+    handle: features
+    field:
+      type: list
+      display: Features
+      instructions: 'Add bullet points'
+      default:
+        - 'Global-standard quality assurance'
+        - 'Cross-industry design expertise'
+        - 'Flexible delivery and long-term support'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      default: 'Explore Our Work'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      default: /services

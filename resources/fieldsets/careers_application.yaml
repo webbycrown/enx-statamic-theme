@@ -1,0 +1,27 @@
+title: 'Careers Application'
+fields:
+  -
+    handle: badge_text
+    field:
+      type: text
+      display: 'Badge Text'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_label
+    field:
+      type: text
+      display: 'Button Label'

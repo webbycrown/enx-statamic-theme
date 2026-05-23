@@ -1,0 +1,206 @@
+<section id="support-ticket" class="lg:pb-0 pb-12.5">
+    <div class="lg:container lg:px-4 mx-auto">
+        <div
+            class="flex justify-between items-stretch lg:flex-row flex-col 3xl:gap-25 2xl:gap-19 1xl:gap-18 xl:gap-14 lg:gap-10">
+            <div class="3xl:max-w-[54%] 1xl:max-w-[58%] lg:max-w-[60%] w-full my-auto max-lg:container px-4 mx-auto"
+                data-aos="fade-right">
+                <div class="3xl:py-25 2xl:py-20 1xl:py-17 lg:py-13 pt-12.5 sm:pb-10 pb-8">
+                    <div class="min-h-0 overflow-hidden">
+                        <!-- flex items-start 2xl:gap-4 sm:gap-3 gap-2.5 relative 1xl:pl-10.5 sm:pl-9 pl-6 3xl:pt-11 2xl:pt-9 1xl:pt-7.5 sm:pt-6.5 pt-5 -->
+                        <div class="transition-colors duration-200 delay-100">
+                            <div>
+                                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5">
+                                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                                        <span class="dash border border-primary"></span>
+                                        <p class="p2 uppercase">{{ subtitle }}</p>
+                                    </div>
+                                    <h3> {{ title | explode(highlight_text) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /title | explode }}
+                                    </h3>
+
+                                </div>
+                                <p class="sm:mt-5.5 mt-2.5 p2">
+                                    {{ description }}
+                                </p>
+                            </div>
+
+
+                            {{ form:support id="contact-form" class="universal-form" novalidate }}
+                            <div
+                                class="grid grid-cols-1 sm:grid-cols-2 3xl:gap-7 1xl:gap-6 gap-4.5 2xl:mt-9 1xl:mt-7.5 md:mt-6.5 mt-5.5">
+                                {{ fields }}
+                                {{ if handle == "full_name" or handle == "email_address" or handle == "company" }}
+                                <div>
+                                    <label class="input-label">{{ display }} {{ if validate }}
+                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                        {{ /if }}
+                                    </label>
+                                    <input type="{{ type }}" name="{{ handle }}"
+                                        placeholder="{{ placeholder ?? 'Enter Your {{ display }}' }}"
+                                        class="input-field p2 w-full border border-gray-100" />
+                                    <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                        data-error-for="{{ handle }}">{{ error }}</div>
+                                </div>
+                                {{ /if }}
+
+                                {{ if handle == "category" }}
+                                <div class="flex flex-col">
+                                    <label for="project" class="p2 input-label">
+                                        {{ display }} {{ if validate }}
+                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                        {{ /if }}
+                                    </label>
+                                    <div class="input-field p2 border border-gray-100 flex flex-col">
+                                        <select name="{{ handle }}" class="w-full h-full outline-none! text-[#868686] invalid:text-[#868686] valid:text-neutral-700" required>
+                                            <option value="" selected>Choose support category</option>
+                                            <option value="data-integration-specialist">Data Integration Specialist                                            </option>
+                                            <option value="frontend-developer">Frontend Developer</option>
+                                            <option value="digital-strategist">Digital Strategist</option>
+                                            <option value="project-manager"> Project Manager</option>
+                                        </select>
+                                    </div>
+                                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                            data-error-for="{{ handle }}">{{ error }}</div>
+                                </div>
+                                {{ /if }}
+
+
+                                {{ if handle == "priority" }}
+                                <div class="flex flex-col">
+                                    <label for="project" class="p2 input-label">
+                                        {{ display }} {{ if validate }}
+                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                        {{ /if }}
+                                    </label>
+                                    <div class="input-field p2 border border-gray-100 flex flex-col">
+                                    <select name="{{ handle }}" class="w-full h-full outline-none!  text-[#868686] invalid:text-[#868686] valid:text-neutral-700" required>
+                                        <option value="" selected>Choose priority level</option>
+                                        <option value="high">High</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="low">Low</option>
+                                    </select>
+                                </div>
+                                    <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                        data-error-for="{{ handle }}">{{ error }}</div>
+                            </div>
+                            {{ /if }}
+
+
+                            {{ if handle == 'attachments' }}
+                            <div class="">
+                                <label class="input-label">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                    {{ /if }}
+                                </label>
+
+                                <div class="relative">
+                                    <!-- Hidden file input -->
+                                    <input id="fileUpload" type="file" name="{{ handle }}"
+                                        accept=".pdf,.doc,.docx,image/*" class="hidden">
+
+                                    <!-- Custom button -->
+                                    <div
+                                        class="relative input-field flex items-center 3xl:gap-3 1xl:gap-2 gap-1 w-full border border-gray-100 lg:px-2! px-1.5! 2xl:py-[7px] py-[5px]">
+
+                                        <!-- Button -->
+                                        <label for="fileUpload"
+                                            class="shrink-0 h-full inline-flex items-center p2 3xl:px-4.5 2xl:px-4 px-3 cursor-pointer border border-gray-100 text-[#868686] rounded-full bg-[#F4F3FF] hover:bg-[#c8c3fb] border-dashed">
+                                            Choose File
+                                        </label>
+
+                                        <!-- File text -->
+                                        <span id="fileText" class="p2 text-[#868686] truncate transition-colors duration-200">
+                                            Upload files or screenshots
+                                        </span>
+                                    </div>
+
+                                    <p class="2xl:text-[15px] text-[13px] text-[#868686] mt-1 leading-5">
+                                        Accepted file types: pdf, doc, max. filesize: 50mb
+                                    </p>
+                                </div>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                            </div>
+
+                            {{ /if }}
+
+                            {{ if type == 'textarea' }}
+
+                            <div class="sm:col-span-2">
+                                <label class="input-label">{{ display }} {{ if validate }}
+                                    {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                    {{ /if }}
+                                </label>
+                                <textarea placeholder="{{ placeholder ?? 'Enter Your {{ display }}' }}"
+                                    name="{{ handle }}"
+                                    class="w-full border border-gray-100 sm:min-h-[120px] min-h-25 h-full lg:px-[25px] px-[15px] xl:py-[19px] md:py-[15px] py-3 lg:rounded-3xl! md:rounded-[18px]! rounded-[12px]! p2 input-field"></textarea>
+                                <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                    data-error-for="{{ handle }}">{{ error }}</div>
+                            </div>
+
+                            {{ /if }}
+
+                            {{ /fields }}
+
+
+                        </div>
+                        {{ if form_submit_text }}
+                        <button type="submit"
+                            class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group md:mt-7.5 mt-6">
+                            {{ form_submit_text }}
+                            <span
+                                class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+
+                                <!-- loading icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                                    fill="none" class="hidden">
+                                    <g clip-path="url(#clip0_296_2520)">
+                                        <path
+                                            d="M15 1V6.6M20.88 9.12L24.94 5.06M23.4 15H29M20.88 20.88L24.94 24.94M15 23.4V29M5.06 24.94L9.12 20.88M1 15H6.6M5.06 5.06L9.12 9.12"
+                                            stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </button>
+                        {{ /if }}
+                        <div id="form-response" class="mt-2"></div>
+                        {{ /form:support }}
+                        <!-- Toast -->
+                        <div id="toast"
+                            class="fixed bottom-6 right-6 flex items-center gap-2 bg-gray-900 text-white text-sm px-5 py-3 rounded-xl shadow-2xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none z-50">
+                            <svg class="w-4 h-4 text-green-400 shrink-0" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span id="toastMsg"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Organizational heading -->
+        <div class="3xl:max-w-[53%] 1xl:max-w-[46%] lg:max-w-[44%] w-full 3xl:-mr-[180px] 2xl:-mr-[76px] 1xl:-mr-[100px] xl:-mr-[70px] lg:-mr-[40px] lg:h-auto md:h-[500px] sm:h-[450px] h-full"
+            data-aos="fade-left">
+            {{ if banner_image }}
+            <img loading="lazy" src="{{ banner_image }} {{ url }} {{ /banner_image }}" alt="join team"
+                class="w-full h-full object-cover" />
+            {{ /if }}
+        </div>
+    </div>
+    </div>
+</section>

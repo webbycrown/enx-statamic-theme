@@ -1,0 +1,72 @@
+title: 'Certified Technologies'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: background_color
+    field:
+      type: toggle
+      display: 'Background Color'
+  -
+    handle: technology_cards
+    field:
+      type: replicator
+      display: 'Technology Cards'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: number
+                  field:
+                    type: text
+                    display: Number
+                    instructions: 'Example: 1, 2, 3'
+                -
+                  handle: card_title
+                  field:
+                    type: text
+                    display: 'Card Title'
+                -
+                  handle: card_description
+                  field:
+                    type: textarea
+                    display: 'Card Description'
+                -
+                  handle: bullet_points
+                  field:
+                    type: replicator
+                    display: 'Bullet Points'
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: point_text
+                                field:
+                                  type: text
+                                  display: 'Point Text'

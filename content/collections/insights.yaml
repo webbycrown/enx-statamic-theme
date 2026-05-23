@@ -1,0 +1,7 @@
+title: Insights
+template: insight/show
+route: '/insight/{slug}'
+revisions: false
+date_behavior:
+  past: public
+  future: private

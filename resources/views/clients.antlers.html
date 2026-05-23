@@ -1,0 +1,24 @@
+{{ page_builder scope="block" }}
+{{ partial src="page_builder/{type}" }}
+{{ /page_builder }}
+
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+
+    <div class="container">
+        <div class="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 xl:gap-5 gap-4">
+            <!-- logo-1 -->
+            {{ collection:clients }}
+            <div class="bg-purple-100 w-full h-full rounded-[10px] overflow-hidden" data-aos="fade-up">
+                <div class="sm:p-5.5 p-3 w-auto flex items-center justify-center 3xl:h-[215px] 2xl:h-[200px] 1xl:h-[170px] xl:h-[160px] sm:h-[140px] h-[100px]">
+                    <div class="xl:max-w-3/5 md:max-w-[65%] max-w-4/5 w-full h-auto">
+                        {{ image }} <img loading="lazy" class="w-full h-full object-contain" src="{{ url }}"alt="Brands">{{ /image }}
+                    </div>
+                </div>
+            </div>
+            {{ /collection:clients }}
+            
+        </div>
+    </div>
+
+</section>

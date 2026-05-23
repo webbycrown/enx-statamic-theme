@@ -1,0 +1,53 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+          -
+            handle: email_address
+            field:
+              type: text
+              display: 'Email Address'
+              validate:
+                - required
+                - email
+          -
+            handle: company
+            field:
+              type: text
+              display: 'Company / Organization'
+          -
+            handle: category
+            field:
+              type: text
+              display: Category
+              validate:
+                - required
+          -
+            handle: priority
+            field:
+              type: text
+              display: 'Priority Level'
+              validate:
+                - required
+          -
+            handle: attachments
+            field:
+              container: assets
+              type: assets
+              display: Attachments
+          -
+            handle: issue_description
+            field:
+              type: textarea
+              display: 'Issue Description'
+              validate:
+                - required

@@ -1,0 +1,52 @@
+title: 'Testimonials Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: home-page
+          value: 'Home Page'
+        -
+          key: home-two-page
+          value: 'Home Two Page'
+      default: home-page
+      type: select
+      display: 'Show Type'
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'CLIENT SUCCESS'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+      default: 'What Our Clients Say'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      instructions: 'Word to highlight (e.g. Clients)'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      default: 'More Testimonials'
+  -
+    handle: button_link
+    field:
+      type: link
+      display: 'Button Link'
+  -
+    handle: testimonials
+    field:
+      mode: select
+      collections:
+        - testimonials
+      type: entries
+      display: Testimonials

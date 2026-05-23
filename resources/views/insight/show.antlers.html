@@ -1,0 +1,573 @@
+<!-- HERO -->
+<section class="relative w-full 2xl:pt-[90px] xl:pt-[85px] lg:pt-20 md:pt-[75px] sm:pt-15 pt-[55px]">
+    <div class="w-full 2xl:pt-12.5 xl:pt-10.5 md:pt-8.5 sm:pt-6.5 pt-6">
+        <div class="container">
+            <!-- Content area -->
+            <div class="relative z-20 1xl:pb-7.5 sm:pb-6 pb-5">
+                <h1 class="h3 text-black-100">{{ title }}</h1>
+                <div class="flex items-center flex-wrap 2xl:gap-8 1xl:gap-7 lg:gap-6 sm:gap-5 gap-4 2xl:mt-6 md:mt-5 sm:mt-4 mt-2.5">
+                <div class="flex items-start gap-3">
+                    <span class="dash border border-primary mt-3"></span>
+                    <p class="p2">{{ if author_name }} By
+                        <span class="font-normal text-primary">{{ author_name }}</span>{{ /if }} {{ if publish_date }}—
+                        {{ publish_date }} {{ /if }}
+                    </p>
+                </div>
+                  
+                   <div class="flex items-start flex-wrap xl:gap-4 gap-2.5" data-aos="fade-up">
+                        {{ category }}
+                        <a href="/insight/category/{{slug}}"
+                            class="border-2 border-[#FAF0EB] hover:bg-[#FAF0EB] xl:px-5 sm:px-4 px-3 xl:py-[6px] py-1 rounded-[5px] transition-all ease-in-out">
+                            <span class="p2 group-hover:text-primary transition-all ease-in-out">{{ title }}</span>
+                        </a>
+                        {{ /category }}
+                    </div>
+                </div>
+            </div>
+            <div class="3xl:h-[700px] 2xl:h-[650px] 1xl:h-[590px] xl:h-[540px] md:h-[500px] h-full">
+                {{ image }} <img src="{{ url }}" alt="insight" class="w-full h-full object-cover" />{{ /image }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="3xl:pb-25 2xl:pb-[90px] 1xl:pb-20 lg:pb-17 md:pb-12.5 pb-10 scrollable-section">
+    <div class="container">
+        <div class="flex 2xl:gap-20 1xl:gap-15 gap-13 items-start">
+
+            <!-- ════ MAIN ARTICLE CONTENT ════ -->
+            <article class="flex-1 1xl:max-w-[75.5%] lg:max-w-[73.5%] max-w-full w-full">
+                <div class="scroll-main-content blog-details-content">
+                    {{ blog_description = content | bard_items | flatten }}
+                    {{ blog_description }}
+
+                    {{ text }}
+
+                    {{ if type == "image_block" }}
+                    {{ if image }}
+                    <img src="{{ image:url }}" alt="thumbnail" class="w-full h-full object-cover" />
+                    {{ /if }}
+                    {{ /if }}
+
+                    {{ if type == "list_items" }}
+
+                    <div class="3xl:space-y-6 md:space-y-5 space-y-4">
+                        {{ list_items }}
+                        <div>
+                            {{ if heading }}<h5 id="t2-sub-title-1">{{ heading }}</h5>{{ /if }}
+                            {{ if content }}
+                            <p class="p2">{{ content }}</p>
+                            {{ /if }}
+                        </div>
+                        {{ /list_items }}
+                    </div>
+                    {{ /if }}
+
+
+                    {{ if type == "list_block" }}
+
+                    <ul class="filter-marker mt-0 2xl:space-y-2.5 space-y-2">
+                        {{ list_block }}
+                        <li class="flex items-start xl:gap-2.5 gap-2">
+                            <p class="p2">
+                                {{ if heading }} <span class="text-black-100 font-bold">{{ heading }}</span>{{ /if }}
+                                {{ if list_items }}{{ list_items }}{{ /if }}
+                            </p>
+                        </li>
+                        {{ /list_block }}
+                    </ul>
+                    {{ /if }}
+
+
+                    {{ if type == "faqs" }}
+
+                    <div class="faq-outer-box max-w-full!">
+                        <!-- FAQ Item -->
+                        {{ insight_faq }}
+                        {{ if question }}
+                        <div class="faq-inner-box">
+                            <button class="faq-toggle-button p" onclick="toggleFaq(this)">
+                                <h6 class="faq-title">{{ question }}</h6>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="faq-toggle-svg">
+                                    <g clip-path="url(#clip0_7273_5307)">
+                                        <rect x="16" y="7" width="2" height="16" transform="rotate(90 16 7)"
+                                            fill="black" />
+                                        <rect x="7" width="2" height="16" fill="black" />
+                                    </g>
+                                </svg>
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                <div class="mt-4.5">
+                                    <span class="p2">
+                                        {{ answer }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /if }}
+                        {{ /insight_faq }}
+                    </div>
+                    {{ /if }}
+                    {{ /blog_description }}
+
+                </div>
+                {{ form:submissions in="insight_comment" insight_id:contains="{ id }" sort="date:desc" as="comments" }}
+                {{ if comments }}
+                <div class="3xl:mt-15 2xl:mt-14 1xl:mt-11.5 mt-9.5">
+                    <div
+                        class="flex items-stretch justify-between w-full 2xl:pb-6 lg:pb-5 pb-4 border-b border-gray-100">
+                        <p
+                            class="3xl:text-[40px] 2xl:text-[37px] 1xl:text-[34px] lg:text-[30px] md:text-[28px] text-[25px] 2xl:leading-12.5 md:leading-10 leading-8 text-black-100 m-0! font-light sm:block hidden">
+                            {{ if no_results }}
+
+                            {{ else }}
+                            Comments ({{ if total_results < 10 }}0{{ total_results }}{{ else }}{{ total_results }}{{ /if
+                                }}) {{ /if }} </p>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- ── Comments List ── -->
+                    <div id="commentsList"
+                        class="2xl:space-y-10 1xl:space-y-8 md:space-y-7 space-y-6 2xl:mt-10 xl:mt-8 mt-7.5 border-b border-gray-100 3xl:pb-12.5 2xl:pb-10.5 1xl:pb-9 pb-8">
+
+                        <!-- ══════ Comment 1: Jonathan Klein ══════ -->
+                        {{ comments }}
+                        {{ if parent_id == 'null' }}
+                        <div class="content-scrolling">
+                            <div class="comment-item relative" data-likes="25" data-date="2025-11-18" data-replies="2">
+                                <div>
+                                    <div
+                                        class="absolute top-0 bottom-0 2xl:left-5.5 lg:left-5 left-4.5 px-5 w-px h-full border-l border-gray-300 sm:block hidden">
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-start gap-2.5 relative">
+                                    <div class="flex items-center 2xl:gap-4 sm:gap-3 gap-2.5 relative">
+                                        {{ if !image }}
+                                        <img src="{{ theme:asset }}assets/image/jonathan-klein.webp"
+                                            alt="Jonathan Klein"
+                                            class="2xl:size-11.5 1xl:size-10.5 sm:size-9.5 size-8 rounded-full object-cover shrink-0 m-0" />
+                                        {{ else }}
+                                        <img src="{{ image:url }}" alt="Jonathan Klein"
+                                            class="2xl:size-11.5 1xl:size-10.5 sm:size-9.5 size-8 rounded-full object-cover shrink-0 m-0" />
+                                        {{ /if }}
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <h6 class="text-black-100">{{ first_name }} {{ last_name }}</h6>
+                                            <p class="text-4xl">·</p>
+                                            <p class="p2 font-normal">{{ date format='d M Y' }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0 2xl:pl-15.5 1xl:pl-13.5 sm:pl-12.5 pl-0">
+                                        <p class="p2">
+                                            {{ comment }}
+                                        </p>
+
+                                        <div class="flex items-center sm:gap-6 gap-5 3xl:mt-5 mt-4">
+
+                                            <a href="javascript:;" data-insight_id="{{ insight_id }}"
+                                                data-parent_id="{{ id }}"
+                                                class="reply-btn flex items-center gap-1.5 text-slate-100 transition-colors cursor-pointer hover:text-primary">
+                                                <span class="ricon inline-block">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                        viewBox="0 0 18 18" fill="none" class="h-auto 2xl:w-4.5 w-4">
+                                                        <path
+                                                            d="M7.20703 1.22341C7.61133 1.40271 7.875 1.80701 7.875 2.24998V4.49998H11.8125C15.2297 4.49998 18 7.27029 18 10.6875C18 14.6707 15.1348 16.4496 14.4773 16.8082C14.3895 16.8574 14.291 16.875 14.1926 16.875C13.8094 16.875 13.5 16.5621 13.5 16.1824C13.5 15.9187 13.6512 15.6761 13.8445 15.4969C14.175 15.1875 14.625 14.5687 14.625 13.5035C14.625 11.6402 13.1133 10.1285 11.25 10.1285H7.875V12.3785C7.875 12.8215 7.61484 13.2258 7.20703 13.4051C6.79922 13.5844 6.32812 13.5105 5.99766 13.2152L0.372656 8.15271C0.137109 7.93474 0 7.6324 0 7.31248C0 6.99255 0.137109 6.69021 0.372656 6.47576L5.99766 1.41326C6.32812 1.11443 6.80273 1.0406 7.20703 1.22341Z"
+                                                            fill="currentColor" />
+                                                    </svg>
+                                                </span>Reply
+                                                {{ form:submissions in="insight_comment" parent_id:contains="{ id }"
+                                                insight_id:contains="{ insight_id }" sort="date:desc"
+                                                as="comments" }}
+                                                {{ if no_results }}
+
+                                                {{ else }}
+                                                ( {{ total_results }} )
+                                                {{ /if }}
+                                                {{ /form:submissions }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Nested Replies: Tailwind tree connector -->
+                            <!-- Reply 1: Oliver — has bottom tail (not last) -->
+                            {{ form:submissions in="insight_comment" parent_id:contains="{ id }"
+                            insight_id:contains="{ insight_id }" }}
+                            {{ if parent_id != 'null' }}
+                            <div class="comment-item 2xl:ml-5.5 lg:ml-5 sm:ml-4.5 relative" data-likes="05"
+                                data-date="2025-11-21">
+                                <div class="w-12.5 h-full">
+                                    <div
+                                        class="absolute left-0 top-0 sm:w-12.5 w-5 3xl:h-17.5 2xl:h-15 1xl:h-13.5 sm:h-12.5 h-10.5 border-l border-b border-gray-300 1xl:rounded-bl-3xl rounded-bl-2xl">
+                                    </div>
+                                    {{ if !last }}
+                                    <div class="absolute left-0 top-0 w-6 border-l border-gray-300 h-full">
+                                    </div>
+                                    {{ /if }}
+                                </div>
+                                <div
+                                    class="flex flex-col items-start gap-2.5 relative 1xl:pl-10.5 sm:pl-9 pl-6 3xl:pt-11 2xl:pt-9 1xl:pt-7.5 sm:pt-6.5 pt-5">
+                                    <div class="flex items-center 2xl:gap-4 sm:gap-3 gap-2.5">
+                                        {{ if !image }}
+                                        <img src="{{ theme:asset }}assets/image/oliver-bennett.webp"
+                                            alt="Oliver Bennett"
+                                            class="2xl:size-11.5 1xl:size-10.5 sm:size-9.5 size-8 rounded-full object-cover shrink-0 m-0" />
+                                        {{ else }}
+                                        <img src="{{ image:url }}" alt="Oliver Bennett"
+                                            class="2xl:size-11.5 1xl:size-10.5 sm:size-9.5 size-8 rounded-full object-cover shrink-0 m-0" />
+                                        {{ /if }}
+                                        <div class="flex flex-wrap items-center sm:gap-2 gap-1">
+                                            <h6 class="text-black-100">{{ first_name }} {{ last_name }}</h6>
+                                            <p class="text-4xl">·</p>
+                                            <p class="p2 font-normal">{{ date format='d M Y' }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 min-w-0 2xl:pl-15.5 1xl:pl-13.5 sm:pl-12.5 pl-0">
+                                        <p class="p2">
+                                            {{ comment }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{ /if }}
+                            {{ /form:submissions }}
+                        </div>
+                        {{ /if }}
+                        {{ /comments }}
+
+                    </div>
+                    <!-- end commentsList -->
+
+                    <!-- ==== start reply form -->
+                    <!-- GLOBAL REPLY FORM -->
+                    <div class="reply-form overflow-hidden -translate-y-1.5 mt-0! transition-all duration-400 ease-in-out 2xl:ml-5.5 lg:ml-5 sm:ml-4.5"
+                        style="max-height: 0px;">
+                        <div class="w-12.5 h-full">
+                            <div
+                                class="absolute left-0 sm:top-0 top-3 2xl:w-11 1xl:w-10 sm:w-8 w-5 2xl:h-19 xl:h-14.5 md:h-12.5 sm:h-11.5 h-8 border-l border-b border-gray-300 1xl:rounded-bl-3xl rounded-bl-2xl">
+                            </div>
+                        </div>
+
+                        <div
+                            class="min-h-0 overflow-hidden 2xl:pl-12.5 1xl:pl-11 sm:pl-9 pl-5 2xl:pt-12.5 xl:pt-8.5 sm:pt-6.5 pt-6">
+                            <!-- flex items-start 2xl:gap-4 sm:gap-3 gap-2.5 relative 1xl:pl-10.5 sm:pl-9 pl-6 3xl:pt-11 2xl:pt-9 1xl:pt-7.5 sm:pt-6.5 pt-5 -->
+                            {{ form:insight_comment id="repplyForm" ajax="true" novalidate class="universal-form
+                            reply-body transition-colors duration-200 delay-100 2xl:pl-12.5 1xl:pl-11 sm:pl-9
+                            2xl:pt-2.5"}}
+
+                            <input type="hidden" id="insight_id" name="insight_id" class="d-none" value="{{ id }}" />
+                            <input type="hidden" id="parent_id" name="parent_id" class="d-none" value="null" />
+                            {{ setting }}
+                            <h3
+                                class="3xl:text-[40px] 2xl:text-[37px] 1xl:text-[34px] xl:text-[30px] md:text-[28px] text-[25px] 2xl:leading-12.5 md:leading-10 leading-8 2xl:mb-4! 1xl:mb-3! mb-2!">
+                                {{ if reply_title }} {{ reply_title }} {{ else }} Leave a Reply {{ /if }}</h3>
+                            <p class="p2">
+                                {{ if reply_description }} {{ reply_description }} {{ else }} Share your thoughts or continue the discussion — your feedback matters! {{ /if }}
+                            </p>
+                            {{ /setting }}
+                            <div
+                                class="grid grid-cols-1 sm:grid-cols-2 2xl:gap-7 lg:gap-5.5 sm:gap-4.5 gap-4 2xl:mt-9 1xl:mt-7.5 md:mt-6.5 sm:mt-5.5 mt-4.5">
+                                {{ fields }}
+
+                                {{ if type == "textarea" }}
+
+                                <div class="sm:col-span-2">
+                                    <label class="input-label">Your {{ display }} {{ if
+                                        validate }} {{ if validate contains="required" }}<span
+                                            class="text-[#ED3636]">*</span>{{ /if }} {{ /if }}
+                                    </label>
+                                    <textarea name="{{ handle }}" id="{{ handle }}"
+                                        placeholder="Type your comment here..."
+                                        class="w-full border border-gray-100 sm:min-h-[120px] min-h-25 h-full lg:px-[25px] px-[15px] xl:py-[19px] md:py-[15px] py-3 lg:rounded-3xl! md:rounded-[18px]! rounded-[12px]! p2 input-field"></textarea>
+
+                                    <div class="text-red-500 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                        data-error-for="{{ handle }}">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            viewBox="0 0 17 17" fill="none">
+                                            <path
+                                                d="M9.35 9.35H7.65V4.25H9.35M9.35 12.75H7.65V11.05H9.35M8.5 0C7.38376 0 6.27846 0.219859 5.24719 0.647024C4.21592 1.07419 3.27889 1.70029 2.48959 2.48959C0.895533 4.08365 0 6.24566 0 8.5C0 10.7543 0.895533 12.9163 2.48959 14.5104C3.27889 15.2997 4.21592 15.9258 5.24719 16.353C6.27846 16.7801 7.38376 17 8.5 17C10.7543 17 12.9163 16.1045 14.5104 14.5104C16.1045 12.9163 17 10.7543 17 8.5C17 7.38376 16.7801 6.27846 16.353 5.24719C15.9258 4.21592 15.2997 3.27889 14.5104 2.48959C13.7211 1.70029 12.7841 1.07419 11.7528 0.647024C10.7215 0.219859 9.61624 0 8.5 0Z"
+                                                fill="#D21C1C" />
+                                        </svg> -->
+                                        <span class="field-error error-text p2" data-error-for="{{ handle }}"></span>
+                                    </div>
+                                </div>
+
+                                {{ elseif type == "assets" }}
+
+                                <div class="sm:col-span-2">
+                                    <label class="input-label">Upload
+                                        {{ display }} {{ if
+                                        validate }} {{ if validate contains="required" }}<span
+                                            class="text-[#ED3636]">*</span>{{ /if }} {{ /if }}
+                                    </label>
+                                    <div class="relative">
+                                        <input type="file" name="image" accept="image/*"
+                                            class="input-field lg:px-2! px-1.5! 2xl:py-[7px] py-[5px] p2 w-full border border-gray-100 cursor-pointer file:mr-2 file:py-[3px] file:h-full file:px-4.5 file:rounded-full file:border-2 file:border-dashed file:border-gray-100 file:p2 file:bg-[#F4F3FF] hover:file:bg-[#c8c3fb] file:transition-all file:ease-in-out file:cursor-pointer" />
+                                    </div>
+
+                                    <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                        data-error-for="{{ handle }}">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            viewBox="0 0 17 17" fill="none"
+                                            class="lg:w-[17px] lg:h-[17px] w-[15px] h-[15px]">
+                                            <path
+                                                d="M9.35 9.35H7.65V4.25H9.35M9.35 12.75H7.65V11.05H9.35M8.5 0C7.38376 0 6.27846 0.219859 5.24719 0.647024C4.21592 1.07419 3.27889 1.70029 2.48959 2.48959C0.895533 4.08365 0 6.24566 0 8.5C0 10.7543 0.895533 12.9163 2.48959 14.5104C3.27889 15.2997 4.21592 15.9258 5.24719 16.353C6.27846 16.7801 7.38376 17 8.5 17C10.7543 17 12.9163 16.1045 14.5104 14.5104C16.1045 12.9163 17 10.7543 17 8.5C17 7.38376 16.7801 6.27846 16.353 5.24719C15.9258 4.21592 15.2997 3.27889 14.5104 2.48959C13.7211 1.70029 12.7841 1.07419 11.7528 0.647024C10.7215 0.219859 9.61624 0 8.5 0Z"
+                                                fill="#D21C1C" />
+                                        </svg> -->
+                                        <span class="field-error error-text p2" data-error-for="{{ handle }}"></span>
+                                    </div>
+                                </div>
+
+                                {{ elseif handle != "insight_id" and handle != "parent_id" }}
+                                <div>
+                                    <label class="input-label"> {{ display }} {{ if
+                                        validate }} {{ if validate contains="required" }}<span
+                                            class="text-[#ED3636]">*</span>{{ /if }} {{ /if }}
+                                    </label>
+                                    <input type="{{ type }}" name="{{ handle }}" id="{{ handle }}"
+                                        placeholder="Your first name"
+                                        class="input-field p2 w-full border border-gray-100" />
+
+                                    <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                        data-error-for="{{ handle }}">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                                            viewBox="0 0 17 17" fill="none"
+                                            class="lg:w-[17px] lg:h-[17px] w-[15px] h-[15px]">
+                                            <path
+                                                d="M9.35 9.35H7.65V4.25H9.35M9.35 12.75H7.65V11.05H9.35M8.5 0C7.38376 0 6.27846 0.219859 5.24719 0.647024C4.21592 1.07419 3.27889 1.70029 2.48959 2.48959C0.895533 4.08365 0 6.24566 0 8.5C0 10.7543 0.895533 12.9163 2.48959 14.5104C3.27889 15.2997 4.21592 15.9258 5.24719 16.353C6.27846 16.7801 7.38376 17 8.5 17C10.7543 17 12.9163 16.1045 14.5104 14.5104C16.1045 12.9163 17 10.7543 17 8.5C17 7.38376 16.7801 6.27846 16.353 5.24719C15.9258 4.21592 15.2997 3.27889 14.5104 2.48959C13.7211 1.70029 12.7841 1.07419 11.7528 0.647024C10.7215 0.219859 9.61624 0 8.5 0Z"
+                                                fill="#D21C1C" />
+                                        </svg> -->
+                                        <span class="field-error error-text p2" data-error-for="{{ handle }}"></span>
+                                    </div>
+                                </div>
+
+                                {{ /if }}
+
+                                {{ /fields }}
+                                <button type="submit" class="btn btn-primary all-btn rounded-full group w-fit">
+                                    Leave Reply
+                                    <span
+                                        class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                            <g clip-path="url(#clip0_421_92)">
+                                                <path
+                                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </button>
+                                {{ /form:insight_comment }}
+                            </div>
+                        </div>
+                        <!-- ==== end reply form -->
+
+                    </div>
+                
+                    <!-- Toast -->
+                    <div id="toast"
+                        class="fixed bottom-6 right-6 flex items-center gap-2 bg-gray-900 text-white text-sm px-5 py-3 rounded-xl shadow-2xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none z-50">
+                        <svg class="w-4 h-4 text-green-500 shrink-0" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span id="toastMsg"></span>
+                    </div>
+
+                </div>
+                {{ /if }}
+                {{ /form:submissions }}
+
+                <div class="3xl:mt-15 2xl:mt-14 1xl:mt-11.5 mt-9.5">
+                    <div id="replyForm" class="min-h-0 overflow-hidden">
+                        <!-- flex items-start 2xl:gap-4 sm:gap-3 gap-2.5 relative 1xl:pl-10.5 sm:pl-9 pl-6 3xl:pt-11 2xl:pt-9 1xl:pt-7.5 sm:pt-6.5 pt-5 -->
+
+                        {{ form:insight_comment id="commentForm" ajax="true" novalidate class="universal-form
+                        transition-colors duration-200 delay-100"}}
+
+                        <input type="hidden" id="insight_id" name="insight_id" class="d-none" value="{{ id }}" />
+                        <input type="hidden" id="parent_id" name="parent_id" class="d-none" value="null" />
+                        {{ setting }}
+                        <h3
+                            class="3xl:text-[40px] 2xl:text-[37px] 1xl:text-[34px] xl:text-[30px] md:text-[28px] text-[25px] 2xl:leading-12.5 md:leading-10 leading-8 2xl:mb-4! 1xl:mb-3! mb-2!">
+                           {{ if comment_title }} {{ comment_title }} {{ else }} Leave a Reply {{ /if }}</h3>
+                        <p class="p2">
+                            {{ if comment_description }} {{ comment_description }} {{ else }} Share your thoughts or continue the discussion — your feedback matters! {{ /if }}
+                        </p>
+                        {{ /setting }}
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-2 2xl:gap-7 lg:gap-5.5 sm:gap-4.5 gap-4 2xl:mt-9 1xl:mt-7.5 md:mt-6.5 sm:mt-5.5 mt-4.5">
+                            {{ fields }}
+
+                            {{ if type == "textarea" }}
+
+                            <div class="sm:col-span-2">
+                                <label class="input-label">Your Comment {{ display }} {{ if
+                                    validate }} {{ if validate contains="required" }}<span
+                                        class="text-[#ED3636]">*</span>{{ /if }} {{ /if }}
+                                </label>
+                                <textarea name="{{ handle }}" id="{{ handle }}" placeholder="Type your comment here..."
+                                    class="w-full border border-gray-100 sm:min-h-[120px] min-h-25 h-full lg:px-[25px] px-[15px] xl:py-[19px] md:py-[15px] py-3 lg:rounded-3xl! md:rounded-[18px]! rounded-[12px]! p2 input-field"></textarea>
+
+                                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                    data-error-for="{{ handle }}">
+                                   
+                                    <span class="field-error error-text p2" data-error-for="{{ handle }}"></span>
+                                </div>
+                            </div>
+
+                            {{ elseif type == "assets" }}
+
+                            <div class="sm:col-span-2">
+                                <label class="input-label">Upload Image
+                                    {{ display }} {{ if
+                                    validate }} {{ if validate contains="required" }}<span
+                                        class="text-[#ED3636]">*</span>{{ /if }} {{ /if }}
+                                </label>
+                                <div class="relative">
+                                    <input type="file" name="image" accept="image/*"
+                                        class="input-field lg:px-2! px-1.5! 2xl:py-[7px] py-[5px] p2 w-full border border-gray-100 cursor-pointer file:mr-2 file:py-[3px] file:h-full file:px-4.5 file:rounded-full file:border-2 file:border-dashed file:border-gray-100 file:p2 file:bg-[#F4F3FF] hover:file:bg-[#c8c3fb] file:transition-all file:ease-in-out file:cursor-pointer" />
+                                </div>
+
+                                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                    data-error-for="{{ handle }}">
+                                   
+                                    <span class="field-error error-text p2" data-error-for="{{ handle }}"></span>
+                                </div>
+                            </div>
+
+                            {{ elseif handle != "insight_id" and handle != "parent_id" }}
+                            <div>
+                                <label class="input-label">{{ display }} {{ if validate }} {{ if validate
+                                    contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }} {{ /if }}
+                                </label>
+                                <input type="{{ type }}" name="{{ handle }}" id="{{ handle }}"
+                                    placeholder="{{ placeholder }}"
+                                    class="input-field p2 w-full border border-gray-100" />
+
+                                <div class="text-red-500 mt-2 opacity-0 transition-all ease-in-out error-message hidden items-center gap-2"
+                                    data-error-for="{{ handle }}">
+                                    
+                                    <span class="field-error error-text p2" data-error-for="{{ handle }}"></span>
+                                </div>
+                            </div>
+
+                            {{ /if }}
+
+                            {{ /fields }}
+
+                            <div class="flex items-center lg:gap-7.5 gap-6.5 2xl:mt-7.5 1xl:mt-6 mt-5">
+                                <button type="submit" class="btn btn-primary all-btn rounded-full group">
+                                    Leave Reply
+                                    <span
+                                        class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                            <g clip-path="url(#clip0_421_92)">
+                                                <path
+                                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                            {{ /form:insight_comment }}
+
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- ════ STICKY TOC SIDEBAR ════ -->
+            <aside
+                class="hidden lg:block shrink-0 sticky 2xl:top-31 1xl:top-27 xl:top-25 top-23 1xl:max-w-[24.5%] max-w-[26.5%] w-full self-start 3xl:mt-11.5 2xl:mt-10 1xl:mt-8 md:mt-7 mt-6">
+                <div class="max-h-[calc(100vh-134px)] overflow-y-auto flex flex-col items-start ">
+
+                    <!-- Label -->
+                    <div class="mb-5.5">
+                        <h6 class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none" class="2xl:size-5 size-4.5">
+                                <path d="M5.5 3H19M5.5 10H19M5.5 17H19M1 3H2.125M1 10H2.125M1 17H2.125" stroke="#08030E"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            On this page
+                        </h6>
+                    </div>
+
+                    <!-- TOC -->
+                    <ul id="toc-nav" class="border-l-2 border-gray-100 list-target">
+                        {{ bold_title = content | raw | bard_items }}
+                        {{ bold_title }}
+                        {{ if text }}
+                        {{ if marks | where:type:bold | count }}
+                        <li class="toc-item {{ if first }}toc-active{{ /if }}">
+                            <a href="#{{ text | slugify }}" class="p2">{{ text }}</a>
+                        </li>
+                        {{ /if }}
+                        {{ /if }}
+
+                        {{ /bold_title }}
+                    </ul>
+
+                    <!-- Social Icons -->
+                    {{ social_share }}
+                    <div class="flex items-center xl:gap-5 gap-4 2xl:mt-6 xl:mt-5 mt-3">
+                        {{ socials }}
+                        <div>
+                            <a target="_blank" href="{{ url }} {{config:app.url}}insight/{{ slug }}"
+                                class="dark-light border border-gray-100 2xl:size-12.5 1xl:size-12 xl:size-11 size-9.5 flex items-center justify-center rounded-full">
+                                <i class="fa-brands fa-{{ platform }} 1xl:size-5.5 xl:size-5 size-4.5"></i>
+                            </a>
+                        </div>
+                        {{ /socials }}
+
+                    </div>
+                    {{ /social_share }}
+                </div>
+
+            </aside>
+
+            <!-- /page-wrapper -->
+        </div>
+    </div>
+</section>
+
+{{ if section_title }}
+<!-- BUSINESS PLAN -->
+<section class="relative">
+    <div class="2xl:h-[550px] xl:h-[440px] lg:h-[415px] md:h-[350px] sm:h-[300px] h-[270px]">
+        <div class="absolute inset-0 bg-[url('../image/about-us-bg.svg')] bg-cover bg-center z-0"></div>
+        <div class="container">
+            <div class="business-plan-outer-box ">
+                <div class="business-plan-inner-box">
+                    <h4>{{ section_title }}</h4>
+                    {{ if button_text }}
+                    <a href="{{ button_url }}"
+                        class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group">
+                        {{ button_text }}
+                        <span
+                            class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}

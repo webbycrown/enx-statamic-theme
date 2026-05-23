@@ -1,0 +1,100 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              placeholder: 'Enter your full name'
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              placeholder: 'Your email address'
+              type: text
+              display: 'Email Address'
+              validate:
+                - required
+                - email
+          -
+            handle: phone
+            field:
+              placeholder: 'Type your phone number'
+              type: text
+              display: 'Phone (Optional)'
+          -
+            handle: position
+            field:
+              type: text
+              display: 'Select Position'
+              validate:
+                - required
+          -
+            handle: portfolio
+            field:
+              placeholder: 'Add your portfolio URL'
+              type: text
+              display: Portfolio
+              validate:
+                - required
+          -
+            handle: experience
+            field:
+              options:
+                -
+                  key: 0-1
+                  value: '0-1 Years'
+                -
+                  key: 1-2
+                  value: '1-2 Years'
+                -
+                  key: 2-3
+                  value: '2-3 Years'
+                -
+                  key: 3+
+                  value: '3+ Years'
+              type: select
+              display: Experience
+          -
+            handle: notice_period
+            field:
+              type: text
+              display: 'Notice Period'
+              validate:
+                - required
+          -
+            handle: expected_salary
+            field:
+              placeholder: 'Enter your expected salary (yearly)'
+              type: text
+              display: 'Expected Salary'
+              validate:
+                - required
+          -
+            handle: upload_resume
+            field:
+              container: assets
+              type: assets
+              display: 'Upload Resume'
+              instructions: 'Accepted file types: pdf, doc, Max. file size: 50 MB.'
+          -
+            handle: message
+            field:
+              placeholder: 'Tell us why you want to join ENX'
+              type: textarea
+              display: 'Why Do You Want to Join ENX?'
+              validate:
+                - required
+          -
+            handle: terms
+            field:
+              type: toggle
+              display: Terms
+              instructions: 'I confirm that all information provided is accurate and agree to ENX’s Terms & Privacy Policy.'
+              validate:
+                - required

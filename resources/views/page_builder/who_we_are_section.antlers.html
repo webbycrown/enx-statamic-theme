@@ -1,0 +1,48 @@
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 relative">
+    <div class="container">
+        <div class="flex items-start md:flex-row flex-col justify-between w-full md:gap-7 gap-5">
+            <div class="md:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase">{{ subtitle }}</p>
+                    </div>
+                    <h3>
+                        {{ title | explode(highlight_word) }}
+                        {{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /title | explode }}
+
+
+                    </h3>
+                </div>
+            </div>
+            <div class="flex flex-col items-start justify-between 2xl:w-[45%] xl:w-[45%] lg:w-[56%] md:w-[68%] w-full 2xl:space-y-9 xl:space-y-7 lg:space-y-5 space-y-[18px]" data-aos="fade-left">
+                <p class="p2 3xl:mb-[25px] xl:mb-7 lg:mb-5 mb-3 text-[#383838]">
+                    {{ description }}
+                </p>
+                <ul class="filter-marker mt-0 xl:mb-[35px] lg:mb-6 mb-[18px]">
+                    {{ features }}
+                    <li class="2xl:text-lg text-md 2xl:leading-[28px] leading-[26px] last:mb-0 mb-2">{{ value }}</li>
+                    {{ /features }}
+
+                </ul>
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page" class="btn btn-primary all-btn rounded-full group w-fit">
+                    {{ button_text }}
+                    <span class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z" fill="currentColor"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</section>

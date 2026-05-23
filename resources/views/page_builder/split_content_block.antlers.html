@@ -1,0 +1,55 @@
+<section class="relative overflow-hidden">
+    <div class="lg:container lg:px-4 mx-auto">
+        <div class="flex justify-between items-stretch lg:flex-row flex-col 3xl:gap-25 2xl:gap-21 1xl:gap-18 xl:gap-14 md:gap-10 gap-7">
+            <div class="lg:max-w-[46.5%] w-full my-auto 1xl:py-16 lg:py-12 max-lg:container mx-auto max-lg:px-4" data-aos="fade-right">
+                <div class="w-full my-auto">
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2.5 mb-2.5">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ badge_text }}</p>
+                        </div>
+                        <h3 class="xl:my-6 lg:my-5 mb-4 sm:mt-5 mt-2.5 1xl:pr-10">
+                            {{ section_title | explode(highlight_text) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                            {{ /if }}
+                        {{ /section_title | explode }} </h3>
+                        <p class="p2 3xl:mb-7.5 2xl:mb-6.5 xl:mb-5.5 mb-4.5">
+                            {{ description }}
+                        </p>
+
+                        <ul class="filter-marker mt-0 space-y-2 xl:mb-9 sm:mb-7 mb-6">
+                            {{ features }}
+                            <li class="flex items-start 1xl:gap-2.5 gap-2 p2">
+                                {{ value }}
+                            </li>
+                            {{ /features }}
+                        </ul>
+
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" aria-label="Open Page" class="btn btn-primary all-btn rounded-full group w-fit">
+                            {{ button_text }}
+                            <span class="btn btn-arrow rounded-full 3xl:w-11 3xl:h-11 1xl:w-10 1xl:h-10 xl:w-9 xl:h-9 w-8 h-8">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="1xl:w-5 1xl:h-5 xl:w-[19px] xl:h-[19px] lg:w-4 lg:h-4 w-3.5 h-3.5 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Organizational heading -->
+            {{ if image }}
+            <div class="lg:max-w-[56.5%] w-full h-auto 3xl:-mr-[180px] 2xl:-mr-[76px] 1xl:-mr-[100px] xl:-mr-[70px] lg:-mr-[40px] block relative before:block before:content-[''] lg:before:pt-[82%] sm:before:pt-[61%] before:pt-[90%]" data-aos="fade-left">
+                {{ image }}<img loading="lazy" src="{{ url }}" alt="join team" class="w-full h-full object-cover absolute top-0 left-0" />{{ /image }}
+            </div>
+            {{ /if }}
+        </div>
+    </div>
+</section>

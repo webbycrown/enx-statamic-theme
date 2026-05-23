@@ -1,0 +1,59 @@
+  <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5">
+                <!-- container -->
+                <div class="container">
+                    <!-- sub_title -->
+                    <div
+                        class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                        <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ badge_text }}</p>
+                            </div>
+                            <h3 class="js-highlight"
+                            data-words="{{ highlight_text }}">
+                            {{ section_title }}
+                        </h3>
+                        </div>
+                        <p class="p2 2xl:max-w-[37%] xl:max-w-2/5 lg:max-w-[45%] md:w-1/2 w-full" data-aos="fade-left">
+                            {{ description }}
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 grid-cols-1 2xl:gap-8.5 1xl:gap-7.5 xl:gap-6.5 gap-5">
+                        {{ job_position }}
+                        <a href="{{ apply_link }}" class="border-l-2 border-primary 3xl:p-10 2xl:p-9 1xl:p-8 xl:p-7.5 xl:py-5 sm:px-7.5 p-5.5 bg-white group job_btn" data-job-id="{{ id }}" data-aos="fade-up">
+                            <h5 class="3xl:mb-4.5 1xl:mb-4 mb-3.5">{{ title }}</h5>
+                            <p class="p2">
+                                {{ description }}
+                            </p>
+                            <div class="flex items-center justify-between w-full 1xl:mt-6 mt-5">
+                                <div class="flex items-center 2xl:gap-5 xl:gap-4 sm:gap-3 gap-2.5 flex-wrap">
+                                    {{ tags }}
+                                    <div
+                                        class="border-2 border-[#FAF0EB] 2xl:px-5 xl:px-[18px] sm:px-4 px-3 2xl:py-1.5 py-1 rounded-[5px]">
+                                        <span
+                                            class="3xl:text-lg 2xl:text-[17px] sm:text-base text-sm text-neutral-700 font-normal">
+                                            {{ value }}</span>
+                                    </div>
+                                    {{ /tags }}
+                                </div>
+                                <button aria-label="Open Page"
+                                    class="btn btn-primary p-1 group rounded-full xl:size-11 sm:size-10 size-9">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                        <g clip-path="url(#clip0_421_92)">
+                                            <path
+                                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                fill="currentColor" />
+                                        </g>
+                                    </svg>
+                                </button>
+                            </div>
+                        </a>
+                        {{ /job_position }}
+
+                    </div>
+                </div>
+            </div>
+        </section>

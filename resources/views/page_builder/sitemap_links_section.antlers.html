@@ -1,0 +1,60 @@
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+
+        <div class="flex md:flex-nowrap flex-wrap items-start 1xl:gap-20 xl:gap-16 lg:gap-11 md:gap-9 gap-7.5">
+
+            {{ columns }}
+
+                <div class="w-full
+                      {{ if first }}
+        				2xl:max-w-[300px] 1xl:max-w-[275px] xl:max-w-[255px] lg:max-w-[200px] md:max-w-[160px] sm:max-w-[46%]
+    					{{ elseif layout == 'list' }}
+                        2xl:max-w-[300px] 1xl:max-w-[275px] xl:max-w-[255px] lg:max-w-[226px] md:max-w-[210px] sm:max-w-[46%]
+                    {{ /if }}
+                ">
+                    
+                    <div class="w-full h-full">
+
+                        <!-- Column Title -->
+                        <h5 class="text-primary border-b border-gray-100 2xl:pb-6 2xl:mb-7.5 lg:pb-5 lg:mb-6.5 pb-4 mb-5">
+                            {{ title }}
+                        </h5>
+
+                        <!-- LIST Layout -->
+                        {{ if layout == "list" }}
+                            <ul class="2xl:space-y-4.5 space-y-3">
+                                {{ links }}
+                                    <li class="p2">
+                                        <a href="{{ url }}" class="text-slate-100">
+                                            {{ text }}
+                                        </a>
+                                    </li>
+                                {{ /links }}
+                            </ul>
+                        {{ /if }}
+
+                        <!-- GRID Layout (Resources type) -->
+                        {{ if layout == "grid" }}
+                            <ul class="grid sm:grid-flow-col lg:grid-rows-8 md:grid-rows-10 sm:grid-rows-8 
+                                2xl:gap-4.5 xl:gap-x-4.5 lg:gap-x-4 justify-between sm:gap-x-3.5 gap-y-3">
+
+                                {{ links }}
+                                    <li class="p2">
+                                        <a href="{{ url }}" class="text-slate-100">
+                                            {{ text }}
+                                        </a>
+                                    </li>
+                                {{ /links }}
+
+                            </ul>
+                        {{ /if }}
+
+                    </div>
+                </div>
+
+            {{ /columns }}
+
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,72 @@
+ <section class="relative w-full 2xl:pt-[146px] xl:pt-[116px] md:pt-27 pt-20">
+            <div class="container" data-aos="fade-right">
+                <div class="flex items-center justify-between w-full lg:mb-12.5 mb-10">
+                    <div class="md:w-5/6 w-full flex flex-col">
+                        <div class="flex items-center md:gap-[18px] gap-1.5 xl:mb-[30px] lg:mb-6 mb-5">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ subtitle }}</p>
+                        </div>
+                        <h1 class="text-black-100 2xl:mb-[25px] sm:mb-4 mb-3">{{ heading | explode(highlight_text) }}
+                                {{ if first }}
+                                {{ value }}
+                                {{ else }}
+                                <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                                {{ /if }}
+                                {{ /heading | explode }}</h1>
+                        <p class="p2 text-black-100 md:max-w-[930px] w-full">
+                           {{ description }}
+                        </p>
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group flex overflow-hidden w-fit lg:mt-[30px] md:mt-5 mt-3">
+                            {{ button_text }}
+                            <span
+                                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-up">
+               {{ hero_image }} <img loading="lazy" src="{{ url }}" alt="hero banner"
+                    class="w-full 1xl:h-full lg:h-[550px] md:h-[500px] sm:h-[400px] h-[300px] object-cover" />{{ /hero_image }}
+                <!-- rotating text -->
+                <div
+                    class="absolute 2xl:right-[180px] 1xl:right-[115px] sm:right-[85px] right-4 2xl:top-[-100px] lg:top-[-92px] md:top-[-67px] sm:top-[-55px] top-[-45px]">
+                    <div
+                        class="relative 3xl:size-[204px] 2xl:size-[190px] 1xl:size-[185px] xl:size-[170px] sm:size-[150px] size-[90px] flex items-center justify-center">
+                        <!-- Rotating Circular Text -->
+                        <svg class="absolute inset-0 animate-spin-slow bg-primary rounded-full lg:p-2 p-1"
+                            viewBox="0 0 200 200">
+                            <defs>
+                                <path id="circlePath" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" />
+                            </defs>
+
+                            <text class="uppercase text-[25px] tracking-wider text-white font-black" fill="white">
+                                <textPath href="#circlePath">
+                                    {{ rotating_text }}
+                                </textPath>
+                            </text>
+                        </svg>
+                        <!-- Center Logo (FIXED) -->
+                        {{ center_logo }}
+                        <div class="relative z-10">
+                            <img src="{{ url }}" alt="logo"
+                                class="3xl:w-[128px] 2xl:w-[120px] 1xl:w-[110px] xl:w-[100px] sm:w-[90px] w-[56px]" />
+                        </div>
+                        {{ /center_logo }}
+
+                    </div>
+                </div>
+            </div>
+        </section>

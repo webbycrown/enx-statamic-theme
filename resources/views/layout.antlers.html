@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+{{ partial:header-link }}
+
+<body>
+    <div class="{{ if segment_2 == 'automation-as-the-backbone-of-business-efficiency'
+or segment_2 == 'building-future-ready-systems-for-modern-enterprises'
+or segment_2 =='cloud-migration-strategies-that-ensure-smooth-scaling'
+or segment_2 =='cybersecurity-best-practices-for-protecting-digital-assets'
+or segment_2 =='how-data-intelligence-shapes-smarter-business-decisions'
+or segment_2 =='optimizing-product-development-with-agile-innovation'
+or segment_2 =='powering-digital-growth-with-data-driven-strategies'
+or segment_2 =='redefining-user-journeys-with-modern-experience-design'
+or segment_2 =='strengthening-cybersecurity-for-a-hyper-connected-world'
+or segment_2 =='transforming-digital-experiences-with-smart-innovation' }}
+overflow-visible {{else}}overflow-hidden{{/if}} relative">
+
+        <!-- Header -->
+        <!-- Dropdown Overlay -->
+        <div id="dropdownOverlay" class="fixed inset-0 bg-black/50 hidden z-40">
+        </div>
+        {{ partial:header}}
+        {{ template_content }}
+{{ partial:cookie-popup }}
+        {{ setting }}
+        {{ if footer_type == 'footer_one' }}
+        {{ partial:footer }}
+        {{ elseif footer_type == 'footer_two' }}
+        {{ partial:footer-two }}
+        {{ else }}
+        {{ partial:footer }}
+        {{ /if }}
+        {{ /setting }}
+
+    </div>
+    {{ partial:footer-link }}
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+title: Insight
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: author_name
+            field:
+              type: text
+              display: 'Author Name'
+          -
+            handle: publish_date
+            field:
+              type: text
+              display: 'Publish Date'
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: buttons
+            field:
+              type: group
+              display: Buttons
+              fields:
+                -
+                  handle: button_label
+                  field:
+                    default: 'Read More'
+                    type: text
+                    display: 'Button Label'
+                -
+                  handle: button_url
+                  field:
+                    default: /insight/
+                    type: text
+                    display: 'Button URL'
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - h1
+                - h4
+                - h5
+                - h6
+                - underline
+                - code
+                - codeblock
+                - horizontalrule
+                - alignleft
+                - aligncenter
+                - alignright
+                - alignjustify
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              sets:
+                content_sections:
+                  display: 'Content Sections'
+                  sets:
+                    list_items:
+                      display: 'List Items'
+                      fields:
+                        -
+                          handle: list_items
+                          field:
+                            type: replicator
+                            display: 'List Items'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: heading
+                                        field:
+                                          type: text
+                                          display: Heading
+                                      -
+                                        handle: content
+                                        field:
+                                          type: textarea
+                                          display: content
+                    image_block:
+                      display: 'Image Block'
+                      fields:
+                        -
+                          handle: image
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: Image
+                    list_block:
+                      display: 'List Block'
+                      fields:
+                        -
+                          handle: list_block
+                          field:
+                            type: replicator
+                            display: 'List Block'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: heading
+                                        field:
+                                          type: text
+                                          display: Heading
+                                      -
+                                        handle: list_items
+                                        field:
+                                          type: textarea
+                                          display: 'List Items'
+                    faqs:
+                      display: FAQs
+                      fields:
+                        -
+                          handle: insight_faq
+                          field:
+                            type: replicator
+                            display: 'Insight FAQ'
+                            sets:
+                              new_set_group:
+                                display: 'New Set Group'
+                                sets:
+                                  new_set:
+                                    display: 'New Set'
+                                    fields:
+                                      -
+                                        handle: question
+                                        field:
+                                          type: text
+                                          display: Question
+                                      -
+                                        handle: answer
+                                        field:
+                                          type: textarea
+                                          display: Answer
+      -
+        display: 'BUSINESS PLAN'
+        fields:
+          -
+            import: business_plan_section
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: category
+            field:
+              mode: select
+              taxonomies:
+                - insight_categories
+              type: terms
+              display: Category
+              validate:
+                - required

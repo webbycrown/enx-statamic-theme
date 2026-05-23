@@ -1,0 +1,297 @@
+{{ if show_type == 'home-page' }}
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 overflow-hidden">
+            <div class="container">
+                <!-- sub_title -->
+                <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                    <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                        <div class="flex items-center md:gap-4.5 gap-1.5">
+                            <span class="dash border border-primary"></span>
+                            <p class="uppercase">{{ subtitle }}</p>
+                        </div>
+                        <h3> {{ section_title | explode(highlight_word) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /section_title | explode }}
+                        </h3>
+                    </div>
+                    {{ if button_text }}
+                    <a href="{{ button_link }}" aria-label="Open Page"
+                        class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                        {{ button_text }}
+                        <span
+                            class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                </div>
+                <!-- grid column -->
+                <div
+                    class="flex flex-col why-us relative before:content-[''] before:absolute before:top-0 before:left-[-100vw] before:w-[200vw] before:h-px before:bg-gray-100 after:content-[''] after:absolute after:bottom-0 after:left-[-100vw] after:w-[200vw] after:h-px after:bg-gray-100">
+                    <div class="flex lg:flex-row flex-col lg:divide-x lg:divide-y-0 divide-y divide-gray-100 w-full">
+                        <!-- swiper slide -->
+                       <div class="lg:w-[48%]! w-webkit-fill pl-0! 2xl:p-10 1xl:p-10 md:p-8 sm:p-6 py-3 pr-0 overflow-hidden">
+                        <div
+                            class="swiper why-us-img">
+                            <div class="swiper-wrapper">
+                                {{ testimonials }}
+                                <div
+                                    class="swiper-slide">
+                                    <div class="lg:flex w-full 3xl:h-[600px] 2xl:h-[580px] xl:h-[500px] sm:h-[450px] h-full overflow-hidden">
+                                        {{ large_image }}<img loading="lazy" src="{{ url }}" alt="slide-1"
+                                            class="w-full lg:h-auto h-full object-cover" />{{ /large_image }}
+                                    </div>
+                                </div>
+                                {{ /testimonials }}
+                            </div>
+
+                        </div>
+                      </div>
+                        <div class="lg:w-[52%]! w-full flex flex-col items-start">
+                            <div thumbsSlider="" class="swiper why-us-content relative w-full h-full!">
+                                <div class="swiper-wrapper relative h-full">
+                                    {{ testimonials }}
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="3xl:pl-[60px] 2xl:pl-14 1xl:pl-12 xl:pl-10 lg:pl-6 h-full flex flex-col lg:gap-3 gap-4.5 justify-between">
+                                            <h5 class="3xl:mb-9 lg:mb-[23px] sm:mb-4 text-[#383838] tracking-normal">
+                                                “{{ quote }}”
+                                            </h5>
+                                            <div>
+                                                <img src="{{ theme:asset }}assets/image/quote-right.svg" alt="quote-right"
+                                                    class="object-cover 1xl:w-auto xl:size-13.5 size-12" />
+                                            </div>
+
+                                            <div>
+                                                <h5 class="sm:mb-2 mb-1">{{ title }}</h5>
+                                                <div class="flex items-center gap-2.5 xl:mb-[22px] mb-3">
+                                                    <span class="w-[25px] dash border border-primary"></span>
+                                                    <p class="text-[#868686] lg:text-lg lg:leading-[20px] text-sm">
+                                                        {{ designation }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{ /testimonials }}
+                                </div>
+                            </div>
+                            <div
+                                class="relative before:content-[''] before:absolute before:top-0 lg:before:left-0 before:-left-30 lg:before:w-screen before:w-[200vw] before:h-px before:bg-gray-100 flex items-center justify-between w-full h-auto 3xl:pl-[60px] lg:pr-2 3xl:py-[22px] 2xl:pl-10 xl:py-5 lg:pl-8 lg:px-4 md:py-5 py-3 ">
+                                <div class="relative flex items-center h-full w-full">
+                                    <div
+                                        class="relative! text-gray-100 swiper-pagination flex items-center 2xl:text-[40px] 1xl:text-[35px] md:text-3xl text-[25px] h4 sm:gap-[11px] gap-2 h-full w-fit bottom-0 top-0! m-0!">
+                                    </div>
+                                </div>
+                                <div class="arrow flex items-center justify-end lg:gap-[18px] gap-2.5">
+                                    <div class="swiper-button-prev relative! m-0 left-0! top-0! mt-0!">
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_7135_4462)">
+                                                <path
+                                                    d="M21.0602 10.5L3.70608 10.5L11.1436 3.0625L10.2086 2L1.00024 11.2083L10.2086 20.4167L11.1436 19.3542L3.70608 11.9167L21.0602 11.9167L21.0602 10.5Z"
+                                                    fill="#08030E" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_7135_4462">
+                                                    <rect width="22" height="22" fill="white"
+                                                        transform="matrix(4.37114e-08 1 1 -4.37114e-08 0 9.61651e-07)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                    </div>
+                                    <div class="swiper-button-next relative! m-0 right-0! top-0! mt-0!">
+                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_5062_2614)">
+                                                <path
+                                                    d="M0.93976 10.5L18.2939 10.5L10.8564 3.0625L11.7914 2L20.9998 11.2083L11.7914 20.4167L10.8564 19.3542L18.2939 11.9167L0.93976 11.9167L0.93976 10.5Z"
+                                                    fill="#08030E" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_5062_2614">
+                                                    <rect width="22" height="22" fill="white"
+                                                        transform="translate(22) rotate(90)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- responsive btn -->
+                {{ if button_text }}
+                <a href="{{ button_link }}" aria-label="Open Page"
+                    class="btn btn-primary p-1 1xl:ps-[27px] ps-5 1xl:gap-3 gap-2 rounded-full group flex md:hidden mt-[30px] w-fit">
+                    {{ button_text }}
+                    <span class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>{{ /if }}
+            </div>
+        </section>
+{{ elseif show_type == 'home-two-page' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5 relative h-fit">
+                <div class="absolute inset-0 bg-[url('../image/testimonial-banner.webp')] bg-cover bg-center z-0">
+                </div>
+                <!-- container -->
+                <div class="container h-full relative z-1 testimonials-2">
+                    <!-- sub_title -->
+                    <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5 ">
+                        <div class="flex flex-col lg:gap-[35px] md:gap-6 gap-5" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ subtitle }}</p>
+                            </div>
+                            <h3>{{ section_title | explode(highlight_word) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /section_title | explode }}
+                        </h3>
+                        </div>
+                        <!-- arrows/buttons -->
+                        <div class="sm:flex items-center justify-center w-auto hidden" data-aos="fade-left">
+                            <div class="arrow flex items-center justify-end lg:gap-[18px] gap-2.5">
+                                <div class="swiper-button-prev relative! m-0 left-0! top-0! mt-0!">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_7135_4462)">
+                                            <path
+                                                d="M21.0602 10.5L3.70608 10.5L11.1436 3.0625L10.2086 2L1.00024 11.2083L10.2086 20.4167L11.1436 19.3542L3.70608 11.9167L21.0602 11.9167L21.0602 10.5Z"
+                                                fill="#08030E" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next relative! m-0 right-0! top-0! mt-0!">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_5062_2614)">
+                                            <path
+                                                d="M0.93976 10.5L18.2939 10.5L10.8564 3.0625L11.7914 2L20.9998 11.2083L11.7914 20.4167L10.8564 19.3542L18.2939 11.9167L0.93976 11.9167L0.93976 10.5Z"
+                                                fill="#08030E" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Swiper -->
+                    <div class="swiper testimonials" data-aos="fade-up">
+                        <div class="swiper-wrapper">
+
+                            <!-- 1st testimonials -->
+                             {{ testimonials }}
+                            <div class="swiper-slide h-auto!">
+                                <div
+                                    class="bg-white 2xl:p-[30px] xl:p-6 sm:p-5 p-4 rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1)] flex flex-col items-center h-full">
+                                    <h6 class="2xl:mb-12.5 xl:mb-9 sm:mb-7.5 mb-5 h-full text-[#383838]">
+                                        “{{ quote }}”</h6>
+                                    <div class="relative flex sm:items-center items-start justify-between sm:gap-[11px] w-full">
+                                        <div class="flex items-start lg:gap-4.5 gap-2.5">
+                                            {{ image }}<img loading="lazy" src="{{ url }}" alt="Camilo"
+                                                class="2xl:w-17.5 1xl:w-15 xl:w-14 w-13 h-full object-cover" />
+                                                {{ /image }}
+                                            <div class="text-left">
+                                                <h6 class="xl:mb-[5px] mb-1">
+                                                    {{ title }}</h6>
+                                                <div class="flex items-start gap-2">
+                                                    <span
+                                                        class="dash border border-primary lg:w-[25px]! w-[12px]! lg:mt-2 sm:mt-2.5 mt-[9px]"></span>
+                                                    <p class="text-[#868686] lg:text-base leading-[20px] text-sm">
+                                                        {{ designation }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sm:mt-0 -mt-5 absolute bottom-5 right-5">
+                                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                                class="2xl:w-12.5 1xl:w-11 xl:w-10 md:w-8 w-7.5 h-auto"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M28.125 27.7144V5.71436H50V28.0286C50 43.1144 35.9375 45.0001 35.9375 45.0001L34.0625 40.6001C34.0625 40.6001 40.3125 39.6572 41.5625 34.6286C42.8125 30.8572 40.3125 27.7144 40.3125 27.7144H28.125ZM0 27.7144V5.71436H21.875V28.0286C21.875 43.1144 7.8125 45.0001 7.8125 45.0001L5.9375 40.6001C5.9375 40.6001 12.1875 39.6572 13.4375 34.6286C14.6875 30.8572 12.1875 27.7144 12.1875 27.7144H0Z"
+                                                    fill="#FF8343" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                             {{ /testimonials }}
+                           
+                        </div>
+                    </div>
+
+                    <!-- mobile  -->
+                    <div class="flex items-center flex-wrap sm:justify-center justify-between gap-2 lg:mt-12.5 md:mt-[35px] mt-[25px]"
+                        data-aos="fade-up">
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group sm:flex w-fit">
+                            {{ button_text }}
+                            <span
+                                class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                        <!-- arrows/buttons -->
+                        <div class="flex items-center justify-center sm:w-auto w-[95px] sm:hidden" data-aos="fade-up">
+                            <div class="arrow flex items-center justify-end lg:gap-[18px] gap-2.5 w-auto!">
+                                <div class="swiper-button-prev bg-white relative! mt-0! left-0! bottom-0!">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_7244_5395)">
+                                            <path
+                                                d="M21.0602 10.5L3.70608 10.5L11.1436 3.0625L10.2086 2L1.00024 11.2083L10.2086 20.4167L11.1436 19.3542L3.70608 11.9167L21.0602 11.9167L21.0602 10.5Z"
+                                                fill="#08030E" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                <div class="swiper-button-next bg-white relative! mt-0! right-0! bottom-0!">
+                                    <svg width="21" height="19" viewBox="0 0 21 19" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.2571e-05 8.5L17.3542 8.5L9.91673 1.0625L10.8517 -4.02509e-07L20.0601 9.20833L10.8517 18.4167L9.91673 17.3542L17.3542 9.91666L6.2509e-05 9.91666L6.2571e-05 8.5Z"
+                                            fill="#08030E" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{{ /if }}

@@ -1,0 +1,313 @@
+{{ if background_image }}
+
+<section class="{{ if segment_1 == 'why-enx' 
+    or segment_2 == 'healthcare-life-sciences' 
+    or segment_2 == 'retail-e-commerce' 
+    or segment_2 == 'construction-infrastructure'
+    or segment_1 == 'contact-us'}} 
+    pb-0
+    {{else}} 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 2xl:pt-24 xl:pt-[85px] lg:pt-20 md:pt-18.5 sm:pt-[59px] pt-13.5
+    {{ /if }}       
+    {{ if segment_1 == 'case-studies' 
+    or segment_1 == 'case-studies-two' 
+    or segment_1 == 'services' 
+    or segment_1 == 'teams' 
+    or segment_1 == 'teams-two' 
+    or segment_1 == 'insights' 
+    or segment_1 == 'insights-two' 
+    or segment_1 == 'faq' 
+    or segment_1 == 'testimonials' 
+    or segment_1 == 'privacy-policy' 
+    or segment_1 == 'terms-conditions' 
+    or segment_1 == 'cookie-policy' 
+    or segment_1 == 'licensing' 
+    or segment_1 == 'data-protection' 
+    or segment_1 == 'offices' 
+    or segment_1 == 'clients' 
+    or segment_1 == 'sitemap' }} 
+    h-full
+    {{else}} lg:min-h-[calc(100vh-90px)] md:h-full 2xl:pt-24 xl:pt-[85px] lg:pt-20 md:pt-18.5 sm:pt-[59px] pt-13.5
+    {{ /if }}           
+    relative w-full h-full z-10">
+    <!-- Background image -->
+    <div class=" bg-cover bg-center z-0" style="background-image: url('{{ background_image:url }}')">
+        <!-- Content area -->
+        <div class="{{ if segment_1 == 'case-studies' 
+                    or segment_1 == 'case-studies-two' 
+                    or segment_1 == 'services' 
+                    or segment_1 == 'teams' 
+                    or segment_1 == 'teams-two' 
+                    or segment_1 == 'insights' 
+                    or segment_1 == 'insights-two' 
+                    or segment_1 == 'faq' 
+                    or segment_1 == 'testimonials' 
+                    or segment_1 == 'privacy-policy' 
+                    or segment_1 == 'terms-conditions' 
+                    or segment_1 == 'cookie-policy' 
+                    or segment_1 == 'licensing' 
+                    or segment_1 == 'data-protection' 
+                    or segment_1 == 'offices' 
+                    or segment_1 == 'clients' 
+                    or segment_1 == 'sitemap' }} 
+                    bg-[linear-gradient(113.82deg,#F7F8FD_40%,rgba(245,245,245,0.48)_67.16%)] z-10 3xl:h-[400px] lg:h-[350px] sm:h-[320px] h-[360px]
+                    {{else}} bg-linear-to-r from-[#020c36cf] via-[#020c36cf]/90 to-[#020C36]/0 z-10
+                    {{ /if }}">
+            <div class="{{ if segment_1 == 'case-studies' 
+                        or segment_1 == 'case-studies-two' 
+                        or segment_1 == 'services' 
+                        or segment_1 == 'teams' 
+                        or segment_1 == 'teams-two' 
+                        or segment_1 == 'insights' 
+                        or segment_1 == 'insights-two' 
+                        or segment_1 == 'faq' 
+                        or segment_1 == 'testimonials' 
+                        or segment_1 == 'privacy-policy' 
+                        or segment_1 == 'terms-conditions' 
+                        or segment_1 == 'cookie-policy' 
+                        or segment_1 == 'licensing' 
+                        or segment_1 == 'data-protection' 
+                        or segment_1 == 'offices' 
+                        or segment_1 == 'clients' 
+                        or segment_1 == 'sitemap' }} 
+                        h-full 3xl:!pt-12.5 sm:!pt-10 !pt-5
+                        {{else}} 2xl:h-[calc(100vh-96px)] xl:h-[calc(100vh-85px)] lg:h-[calc(100vh-80px)] md:h-[600px] h-[523px]
+                        {{ /if }}container 2xl:pt-[90px] xl:pt-[85px] lg:pt-20 sm:pt-[60px] pt-[55px]">
+                <div class="flex h-full">
+                    <div class="relative flex items-center min-h-auto z-20
+                               {{ if segment_1 == 'about-us' }} 2xl:max-w-[47%] 1xl:max-w-[50%] xl:max-w-[57%] md:max-w-[68%] sm:max-w-4/5 {{else}} 
+                               2xl:max-w-[55%] xl:max-w-[65%] md:max-w-[75%] max-w-full{{/if}} w-full h-full">
+                        <!-- BREADCRUMB -->
+                        <div class="absolute top-0 left-0 flex items-center gap-2.5">
+                            {{ breadcrumb }}
+                            {{ if url }}
+                            <a href="{{ url }}" class="{{ if segment_1 == 'case-studies' 
+                               or segment_1 == 'case-studies-two' 
+                               or segment_1 == 'services' 
+                               or segment_1 == 'teams' 
+                               or segment_1 == 'teams-two' 
+                               or segment_1 == 'insights' 
+                               or segment_1 == 'insights-two' 
+                               or segment_1 == 'faq' 
+                               or segment_1 == 'testimonials' 
+                               or segment_1 == 'privacy-policy' 
+                               or segment_1 == 'terms-conditions' 
+                               or segment_1 == 'cookie-policy' 
+                               or segment_1 == 'licensing' 
+                               or segment_1 == 'data-protection' 
+                               or segment_1 == 'offices' 
+                               or segment_1 == 'clients' 
+                               or segment_1 == 'sitemap' }} 
+                               text-black
+                               {{else}} text-white
+                               {{ /if }}p2  opacity-60">{{ title }}</a>
+                            {{ else }}
+                            <span class="{{ if segment_1 == 'case-studies' 
+                                        or segment_1 == 'case-studies-two' 
+                                        or segment_1 == 'services' 
+                                        or segment_1 == 'teams' 
+                                        or segment_1 == 'teams-two' 
+                                        or segment_1 == 'insights' 
+                                        or segment_1 == 'insights-two' 
+                                        or segment_1 == 'faq' 
+                                        or segment_1 == 'testimonials' 
+                                        or segment_1 == 'privacy-policy' 
+                                        or segment_1 == 'terms-conditions' 
+                                        or segment_1 == 'cookie-policy' 
+                                        or segment_1 == 'licensing' 
+                                        or segment_1 == 'data-protection' 
+                                        or segment_1 == 'offices' 
+                                        or segment_1 == 'clients' 
+                                        or segment_1 == 'sitemap' }} 
+                                        text-black
+                                        {{else}} text-white
+                                        {{ /if }}p2 text-black-100">{{ title }}</span>
+                                     {{ /if }}
+                                     {{ if !last }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                fill="none" class="{{ if segment_1 == 'case-studies' 
+                                or segment_1 == 'case-studies-two' 
+                                or segment_1 == 'services' 
+                                or segment_1 == 'teams' 
+                                or segment_1 == 'teams-two' 
+                                or segment_1 == 'insights' 
+                                or segment_1 == 'insights-two' 
+                                or segment_1 == 'faq' 
+                                or segment_1 == 'testimonials' 
+                                or segment_1 == 'privacy-policy' 
+                                or segment_1 == 'terms-conditions' 
+                                or segment_1 == 'cookie-policy' 
+                                or segment_1 == 'licensing' 
+                                or segment_1 == 'data-protection' 
+                                or segment_1 == 'offices' 
+                                or segment_1 == 'clients' 
+                                or segment_1 == 'sitemap' }} 
+                                text-black
+                                {{else}} text-white
+                                {{ /if }}sm:w-4 sm:h-4 w-3 h-3">
+                                <g opacity="0.6">
+                                    <path d="M5 14L12 8L5 2" stroke="currentColor" stroke-linecap="square" />
+                                </g>
+                            </svg>
+                            {{ /if }}
+                            {{ /breadcrumb }}
+                        </div>
+
+                        <!-- heading content -->
+                        <div class="flex justify-center flex-col h-full" data-aos="fade-right">
+                            {{ if highlight_word }}
+                            <h1 class="text-white 2xl:mb-[30px] mb-5">{{ heading | explode(highlight_word) }}
+                                {{ if first }}
+                                {{ value }}
+                                {{ else }}
+                                <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                {{ /if }}
+                                {{ /heading | explode }}
+                            </h1>
+                            {{else}}
+                            <h1 class="{{ if segment_1 == 'case-studies' 
+                                or segment_1 == 'case-studies-two' 
+                                or segment_1 == 'services' 
+                                or segment_1 == 'teams' 
+                                or segment_1 == 'teams-two' 
+                                or segment_1 == 'insights' 
+                                or segment_1 == 'insights-two' 
+                                or segment_1 == 'faq' 
+                                or segment_1 == 'testimonials' 
+                                or segment_1 == 'privacy-policy' 
+                                or segment_1 == 'terms-conditions' 
+                                or segment_1 == 'cookie-policy' 
+                                or segment_1 == 'licensing' 
+                                or segment_1 == 'data-protection' 
+                                or segment_1 == 'offices' 
+                                or segment_1 == 'clients' 
+                                or segment_1 == 'sitemap' }} 
+                                text-black
+                                {{else}} text-white
+                                {{ /if }}2xl:mb-[30px] mb-5">{{ heading }}</h1>
+                            {{ /if }}
+                            <div class="flex items-start lg:gap-[15px] gap-2">
+                                <span
+                                    class="dash border-primary sm:mt-[13px] mt-3 lg:w-[35px]! md:w-[25px]! w-[15px]! block"></span>
+                                <p class="{{ if segment_1 == 'case-studies' 
+                                   or segment_1 == 'case-studies-two' 
+                                   or segment_1 == 'services' 
+                                   or segment_1 == 'teams' 
+                                   or segment_1 == 'teams-two' 
+                                   or segment_1 == 'insights' 
+                                   or segment_1 == 'insights-two' 
+                                   or segment_1 == 'faq' 
+                                   or segment_1 == 'testimonials' 
+                                   or segment_1 == 'privacy-policy' 
+                                   or segment_1 == 'terms-conditions' 
+                                   or segment_1 == 'cookie-policy' 
+                                   or segment_1 == 'licensing' 
+                                   or segment_1 == 'data-protection' 
+                                   or segment_1 == 'offices' 
+                                   or segment_1 == 'clients' 
+                                   or segment_1 == 'sitemap' }} 
+                                   text-black
+                                   {{else}} text-white
+                                   {{ /if }}p2">
+                                    {{ description }}
+                                </p>
+                            </div>
+                            {{ if cta_text }}
+                            <div class="xl:mt-[45px] mt-[35px] lg:ml-[47px] md:ml-10 sm:ml-7">
+                                <a href="{{ cta_link }}" aria-label="Open Page" class="{{ if segment_1 == 'case-studies' 
+                                    or segment_1 == 'case-studies-two' 
+                                    or segment_1 == 'services' 
+                                    or segment_1 == 'teams' 
+                                    or segment_1 == 'teams-two' 
+                                    or segment_1 == 'insights' 
+                                    or segment_1 == 'insights-two' 
+                                    or segment_1 == 'faq' 
+                                    or segment_1 == 'testimonials' 
+                                    or segment_1 == 'privacy-policy' 
+                                    or segment_1 == 'terms-conditions' 
+                                    or segment_1 == 'cookie-policy' 
+                                    or segment_1 == 'licensing' 
+                                    or segment_1 == 'data-protection' 
+                                    or segment_1 == 'offices' 
+                                    or segment_1 == 'clients' 
+                                    or segment_1 == 'sitemap' }} 
+                                    hidden
+                                    {{else}} flex
+                                    {{ /if }}btn btn-arrow all-btn rounded-full group overflow-hidden w-fit">
+                                    {{ cta_text }}
+                                    <span
+                                        class="btn btn-primary rounded-full 3xl:w-[52px] 3xl:h-[52px] 1xl:w-12 1xl:h-12 xl:w-11 xl:h-11 w-9 h-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                            <g clip-path="url(#clip0_421_92)">
+                                                <path
+                                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ else }}
+<section class="relative 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div
+        class="relative w-full h-full 2xl:mt-[96px] xl:mt-[85px] lg:mt-20 md:mt-[75px] mt-[59px] 3xl:h-[400px] lg:h-[350px] sm:h-[320px] h-[360px] overflow-hidden">
+        <!-- Gradient overlay -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(113.82deg,#F7F8FD_40%,rgba(245,245,245,0.48)_67.16%)] z-10 3xl:h-[496px] md:h-[450px] h-[380px] z-0">
+        </div>
+        <!-- Background image -->
+        <div
+            class="absolute inset-0 bg-[url('{{ theme:asset }}assets/image/vector.png')] bg-auto bg-bottom bg-no-repeat z-0">
+        </div>
+        <!-- Content area -->
+        <div class="container h-full">
+            <div class="flex md:py-12.5 sm:py-6 py-5 h-full">
+                <div class="relative flex items-cente z-20 w-full h-full">
+                    <div class="absolute top-0 left-0">
+                        <!-- BREADCRUMB -->
+                        <div class="flex items-center gap-2.5 2xl:mb-9 1xl:mb-7.5 mb-6">
+                            <div class="flex items-center lg:gap-3 gap-2" data-aos="fade-right">
+                                {{ breadcrumb }}
+                                {{ if url }}
+                                <a href="{{ url }}" class="p2 opacity-60">{{ title }}</a>
+                                {{ else }}
+                                <span class="p2 text-black-100">{{ title }}</span>
+                                {{ /if }}
+                                {{ if !last }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g opacity="0.6">
+                                        <path d="M5 14L12 8L5 2" stroke="#000000" stroke-linecap="square" />
+                                    </g>
+                                </svg>
+                                {{ /if }}
+                                {{ /breadcrumb }}
+                            </div>
+                        </div>
+                        <div class="flex justify-center flex-col h-full">
+                            <h1 class="2xl:mb-[30px] mb-5" data-aos="fade-right">{{ heading }}</h1>
+                            <div data-aos="fade-right" class="flex items-start lg:gap-3 gap-2">
+                                <span
+                                    class="dash border-primary xl:mt-[13px] mt-[11px] lg:w-9! md:w-6! w-5! block"></span>
+                                <p class="p2 2xl:max-w-[70.5%] lg:max-w-3/5 md:max-w-[84%] w-full text-black-100">
+                                    {{ description }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ /if }}

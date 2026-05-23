@@ -1,0 +1,259 @@
+{{  if show_type == 'service-page' }}
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 wc-service-section">
+            <div class="container">
+             {{ if collections == "services" }}
+             {{ collection:services as="services" paginate="{pagination}" limit="{limit}" }}
+             {{ /if }}
+
+                <div class="our-services-wrapper relative sm:border-l border-t border-gray-100 before:content-[''] before:absolute before:top-0 before:left-[-100vw] before:w-[200vw] grid md:grid-cols-2 grid-cols-1 grid-main-div service_search">
+                    {{ services }}
+
+                    <div class="flex flex-col items-start 2xl:py-12.5 2xl:px-[45px] 1xl:py-11 1xl:px-10 xl:py-10 xl:px-[38px] lg:p-8.5 sm:p-6 py-6 border-b sm:border-r border-gray-100 grid-item-append" data-aos="fade-up">
+                        <!-- Type logo -->
+                       {{ icon }} <img src="{{ url }}" class="1xl:mb-[35px] lg:mb-8 mb-6 1xl:w-[60px] 1xl:h-[60px] xl:w-[55px] xl:h-[55px] lg:w-12.5 lg:h-12.5 md:w-11 md:h-11 w-10 h-10">{{ /icon }}
+                        <!-- Type Title -->
+                        <a class="hover:text-primary 3xl:mb-5 xl:mb-4 mb-3 h4 font-light"
+                            href="/service/{{ slug }}">{{ title }}
+                        </a>
+                        <p class="p2">
+                           {{ short_description }}
+                        </p>
+                        {{ if button_text }}
+                        <div class="lg:mt-[30px] mt-5">
+                            <a class="read-more btn text-primary hover:text-black font-normal" href="{{ button_url }}{{ slug }}">{{ button_text }}
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" class="ml-[10px] 1xl:w-4 w-3.5" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7077_4647)">
+                                        <path d="M0.376871 13.7997L12.6481 1.52849L2.12991 1.52849L2.03975 0.116041L15.0623 0.116043L15.0623 13.1386L13.6499 13.0484L13.6499 2.53022L1.37861 14.8015L0.376871 13.7997Z" fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        {{ /if }}
+                    </div>
+                    {{ /services }}
+                 
+                </div>
+
+              {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit ajax-load-more-grid cursor-pointer">
+            Load More
+            <span class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}" class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+                    
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "services" }}
+        {{ /collection:services }}
+        {{ /if }}
+            </div>
+        </section>
+
+{{ elseif show_type == 'home-page' }}
+
+          <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="container">
+                <!-- sub_title -->
+                <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                    <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-[70%] w-full" data-aos="fade-right">
+                        <div class="flex items-center md:gap-[18px] gap-1.5">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ heading }}</p>
+                        </div>
+                        <h3>{{ section_title | explode(highlight_word) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /section_title | explode }}</h3>
+                    </div>
+                    <!-- services btn -->
+                    {{ if button_text }}
+                    <a hre	f="{{ button_url }}" aria-label="Open Page" data-aos="fade-left"
+                        class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                        {{ button_text }}
+                        <span
+                            class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                </div>
+                <div
+                    class="our-services-wrapper relative before:content-[''] before:absolute before:top-0 before:left-[-100vw] before:w-[200vw] before:border-b before:border-gray-100 grid md:grid-cols-2 grid-cols-1 sm:border-l border-gray-100
+                           after:content-[''] after:absolute after:bottom-0 after:left-[-100vw] after:w-[200vw] after:border-b after:border-gray-100">
+                    <!-- box content -->
+                    {{ services limit="{limit}" }}
+                    <div class="flex flex-col items-start 2xl:py-12.5 2xl:px-[45px] lg:p-10 sm:p-8 py-8 border-b sm:border-r border-gray-100"
+                        data-aos="fade-up">
+                        <!-- Type logo -->
+                       {{ icon }} <img src="{{ url }}"  class="1xl:mb-[35px] sm:mb-8 mb-[26px] 1xl:w-[60px] 1xl:h-[60px] md:w-[55px] md:h-[55px] sm:w-12.5 sm:h-12.5 w-10 h-10">{{ /icon }}
+                       
+                        <!-- Type Title -->
+                        <a href="/service/{{ slug }}" class="h4 font-light 3xl:mb-5 1xl:mb-4 mb-3">{{ title }}
+                        </a>
+                        <p class="p2">
+                            {{ short_description }}
+                        </p>
+                        {{ if button_text }}
+                        <div class="lg:mt-[30px] mt-5">
+                            <a class="read-more btn text-primary hover:text-black font-normal"
+                                href="{{ button_url }}{{ slug }}">{{ button_text }}
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                    class="ml-[10px] 1xl:w-4 w-3.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_7077_4647)">
+                                        <path
+                                            d="M0.376871 13.7997L12.6481 1.52849L2.12991 1.52849L2.03975 0.116041L15.0623 0.116043L15.0623 13.1386L13.6499 13.0484L13.6499 2.53022L1.37861 14.8015L0.376871 13.7997Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                        {{ /if }}
+                    </div>
+                    {{ /services }}
+                </div>
+                <!-- responsive btn -->
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page"
+                    class="btn btn-primary p-1 1xl:ps-[27px] ps-5 1xl:gap-3 gap-2 rounded-full group flex md:hidden mt-[30px] w-fit">
+                    {{ button_text }}
+                    <span class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+        </section>
+
+{{ elseif show_type == 'home-two-page' }}
+
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5">
+                <!-- container -->
+                <div class="container">
+                    <!-- sub_title -->
+                    <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                        <div class="flex flex-col  lg:gap-[35px] md:gap-6 gap-5" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ heading }}</p>
+                            </div>
+                            <h3>{{ section_title | explode(highlight_word) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /section_title | explode }}</h3>
+                        </div>
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit"
+                            data-aos="fade-left">
+                           {{ button_text }}
+                            <span
+                                class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 bg-white sm:p-0 px-5">
+                        <!-- Card 1 -->
+                        {{ services limit="{limit}" }}
+                        <div class="bg-white lg:px-[25px] sm:py-[30px] py-6 sm:px-5 sm:border-r border-b border-gray-100"
+                            data-aos="fade-up">
+                            <div class="flex items-start xl:gap-[18px] sm:gap-3 gap-2.5 flex-col md:flex-row">
+                                <!-- services_svg -->
+                                <div
+                                    class="bg-[#FAF0EB] 3xl:p-[22px] p-[19px] flex items-center justify-center rounded-full">
+
+                                    {{ icon }}
+                                    <img src="{{ url }}"  class="3xl:w-[30px] 3xl:h-[30px] 1xl:w-7 1xl:h-7 xl:w-6 xl:h-6 w-7 h-7 flex-shrink-0">
+                                    {{ /icon }}
+                                    
+                                </div>
+                                <!-- services_Content -->
+                                <div class="pt-[5px]">
+                                    <h5 class="1xl:mb-[15px] sm:mb-[14px] mb-2">
+                                        <a href="/service/{{ slug }}" class="font-light">
+                                           {{ title }}</a>
+                                    </h5>
+                                    <p class="p2 sm:line-clamp-3 line-clamp-4">
+                                        {{ short_description }}
+                                    </p>
+                                    <!-- button -->
+                                    {{ if button_text }}
+                                    <div class="lg:mt-[25px] mt-5">
+                                        <a class="read-more btn w-fit text-primary hover:text-black font-normal tracking-wide 2xl:text-lg text-md 2xl:leading-[34px] leading-[26px]"
+                                            href="{{ button_url }}{{ slug }}">{{ button_text }}<svg width="15" height="15"
+                                                viewBox="0 0 15 15" fill="none"
+                                                class="lg:ml-2.5 ml-2 1xl:size-[15px] size-[12px]"
+                                                mlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_7077_4647)">
+                                                    <path
+                                                        d="M0.376871 13.7997L12.6481 1.52849L2.12991 1.52849L2.03975 0.116041L15.0623 0.116043L15.0623 13.1386L13.6499 13.0484L13.6499 2.53022L1.37861 14.8015L0.376871 13.7997Z"
+                                                        fill="currentColor"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    {{ /if }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ /services }}
+
+                    </div>
+                    <!-- responsive btn -->
+                    {{ if button_text }}
+                    <a href="{{ button_url }}" aria-label="Open Page"
+                        class="btn btn-primary w-fit p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group flex sm:hidden mt-[32px] mx-auto">
+                         {{ button_text }}
+                        <span class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                </div>
+            </div>
+        </section>
+
+
+        {{ /if }}

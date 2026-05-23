@@ -1,0 +1,59 @@
+title: 'How We Work Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+      instructions: 'e.g. How We Work'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      validate: required
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      instructions: 'Word to highlight in title'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: background_color
+    field:
+      type: toggle
+      display: 'Background Color'
+  -
+    handle: steps
+    field:
+      type: replicator
+      display: Steps
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            step:
+              display: Step
+              fields:
+                -
+                  handle: number
+                  field:
+                    type: text
+                    display: 'Step Number'
+                    instructions: 'e.g. 01, 02'
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Step Title'
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: 'Step Description'

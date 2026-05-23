@@ -1,0 +1,85 @@
+title: 'Service Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: service-page
+          value: 'Service Page'
+        -
+          key: home-page
+          value: 'Home Page'
+        -
+          key: home-two-page
+          value: 'Home Two Page'
+      default: service-page
+      type: select
+      display: 'Show Type'
+  -
+    handle: collections
+    field:
+      mode: select
+      type: collections
+      display: Collections
+      max_items: 1
+      if:
+        show_type: 'equals service-page'
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination
+      if:
+        show_type: 'equals service-page'
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+      unless:
+        show_type: 'equals service-page'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+      unless:
+        show_type: 'equals service-page'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      unless:
+        show_type: 'equals service-page'
+  -
+    handle: services
+    field:
+      mode: select
+      collections:
+        - services
+      type: entries
+      display: Services
+      unless:
+        show_type: 'equals service-page'
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      unless:
+        show_type: 'equals service-page'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      unless:
+        show_type: 'equals service-page'

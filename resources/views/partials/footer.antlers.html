@@ -1,0 +1,107 @@
+ {{ footer }}
+  <footer class="bg-black z-10 relative">
+            <div class="container">
+                <div class="divide-y divide-white/15">
+                    <div class="flex items-center flex-wrap sm:gap-6 gap-3 justify-between w-full 3xl:pb-[60px] 2xl:pb-12.5 xl:pb-10 lg:pb-7 sm:pb-6 pb-5 3xl:pt-[90px] 2xl:pt-20 1xl:pt-[70px] xl:pt-[60px] lg:pt-12.5 md:pt-10 pt-[30px]">
+                        <h3 class="text-white">{{ cta_title }}</h3>
+                        {{ if cta_button_text }}
+                        <a href="{{ cta_button_link }}" class="btn btn-primary all-btn rounded-full group">
+                            {{ cta_button_text }}
+                            <span
+                                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+
+                    <div class="3xl:py-[35px] 2xl:py-7 py-5">
+                        <div class="footer-list">
+                            {{ footer_columns }}
+                            <div class="list">
+                                <h5 class="p2 list-title">{{ title }} </h5>
+                                <span class="dash block border border-primary"></span>
+                                {{ links }}
+                                <a href="{{ url }}" class="p2 list-link">{{ label }}
+                                </a>
+                                {{ /links }}
+                            </div>
+                            {{ /footer_columns }}
+                           
+                            <div class="list">
+                                <h5 class="p2 list-title">{{ contact_info:label }}</h5>
+                                <span class="dash block border border-primary"></span>
+                                {{ contact_info:contact }}
+                                <a href="{{ link }}" {{ if link | contains('http') }} target="_blank" rel="noopener noreferrer" {{ /if }} class="p2 list-link font-medium">
+                                   {{ label }} {{ value }}
+                                </a>
+                                {{ /contact_info:contact }}
+                                {{ setting }}
+
+                                <div class="flex items-center lg:gap-5 gap-4 lg:mt-[25px] mt-3">
+                                    {{ socials }}
+                                    <div>
+                                        <a target="_blank" href="{{ url }}"
+                                            class="dark-btn border 2xl:size-13 lg:size-12 size-11 flex items-center justify-center rounded-full">
+                                            <i class="fa-brands fa-{{ platform }} 1xl:size-5.5 xl:size-5 size-4"></i>
+                                        </a>
+                                    </div>
+                                    {{ /socials }}
+                                </div>
+                                {{ /setting }}
+                            </div>
+                        </div>
+                        <div class="newsletter-box">
+                            <h4 class="text-white md:w-1/2 w-full text-start">
+                               {{ newsletter_title }}</h4>
+                                <form data-endpoint novalidate data-endpoint
+                                class="flex flex-row md:gap-3 gap-2 2xl:w-[42%] lg:w-[48%] md:w-3/5 w-full max-w-full relative newsletter subscribed-form">
+                            <div class="flex flex-col items-start w-full">
+                                <div class="newsletter-input-box w-full">
+                                    <input type="email" name="email" id="email" placeholder="Enter your Email"
+                                        class="newsletter-input p2">
+                                        
+                                    <button aria-label="Open Page" type="submit" 
+                                        class="btn btn-primary all-btn rounded-full group newsletter-btn">
+                                        Subscribe
+                                        <span
+                                            class="btn btn-arrow rounded-full 3xl:w-11 3xl:h-11 1xl:w-10 1xl:h-10 xl:w-9 xl:h-9 w-8 h-8">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                viewBox="0 0 22 22" fill="none"
+                                                class="1xl:w-5 1xl:h-5 xl:w-[19px] xl:h-[19px] lg:w-4 lg:h-4 w-3.5 h-3.5 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                                <g clip-path="url(#clip0_421_92)">
+                                                    <path
+                                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                        fill="currentColor" />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                  
+                                </div>
+                              <div data-error-for="email" class="error-msg text-red-600 text-sm mt-1 field-error text-danger"></div>
+                                <div class="newsletter-message text-white mt-1 hidden"></div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+
+                    <div class="copyright">
+                        {{ setting }}
+                        <a href="/">
+                            {{ white_logo }}<img loading="lazy" src="{{ url }}" alt="main logo" class="2xl:w-[106px] xl:w-[100px] lg:w-[90px] sm:w-20 w-18 h-full object-cover" />{{ /white_logo }}
+                        </a>
+                        {{ /setting }}
+                        <p class="p2 text-white">{{ copyright_text }}</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+{{ /footer }}

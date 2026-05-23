@@ -1,0 +1,171 @@
+<section
+            class="bg-purple-100 3xl:pt-25 2xl:pt-[90px] 1xl:pt-20 xl:pt-16 lg:pt-14 md:pt-12 lg:pb-0 pb-12 sm:pt-10 pt-8">
+            <div class="container">
+                <div class="flex lg:flex-row flex-col justify-between gap-6">
+                    <div
+                        class="flex flex-col items-start justify-between h-auto 1xl:w-[516px] lg:w-[43.4%] w-full lg:gap-24 md:gap-10 gap-4">
+                        <!-- sub_title -->
+                        <div class="flex items-center justify-between w-full">
+                            <div class="flex flex-col">
+                                <div class="flex items-center md:gap-[18px] gap-1.5 2xl:mb-[35px] lg:mb-7 sm:mb-5 mb-4">
+                                    <span class="dash border border-primary"></span>
+                                    <p class="uppercase">{{ subtitle }}</p>
+                                </div>
+                                <h3 class="2xl:mb-[22px] xl:mb-4 mb-3.5">{{ heading | explode(highlight_text) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /heading | explode }}</span>
+                                </h3>
+                                <p class="p2">{{ description }}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lg:block hidden">
+                            <img loading="lazy" src="{{ theme:asset }}assets/image/letstalk.svg" alt="let's-talk" class="object-cover">
+                        </div>
+                    </div>
+                    <div class="lg:w-[56.6%] w-full lg:mb-9">
+                        <!-- Form Data -->
+                        {{ form:contact id="contact-form" class="universal-form" novalidate }}
+                            <div
+                                class="grid sm:grid-cols-2 grid-cols-1 2xl:gap-y-[30px] xl:gap-x-[25px] lg:gap-y-6 sm:gap-y-[22px] sm:gap-x-7 gap-[22px] md:mb-5 mb-4">
+                                <!-- flex box -->
+                                 {{ fields }}
+                                                {{ if handle == "full_name" or handle == "email_address" or handle == "phone" or handle == "company" }}
+                                <div class="flex flex-col">
+                                    <label for="{{ handle }}" class="p2 input-label">{{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                    {{ /if }}</label>
+                                    <input type="{{ type }}" name="{{ handle }}" placeholder="{{ placeholder ?? 'Enter Your {{ display }}' }}"
+                                        class="input-field p2 border border-gray-100"
+                                        />
+                                         <div class="error-msg text-red-500 text-sm mt-0.5 block field-error text-danger"
+                                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                </div>
+                                    {{ /if }}
+                                    {{ if handle == "project_type"  }}
+                                                 <div class="flex flex-col">
+                                                    <label for="project" class="p2 input-label">
+                                                        {{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                        {{ /if }}
+                                                    </label>
+                                                   <div class="input-field p2 border border-gray-100">
+                                                    <select name="{{ handle }}" class="w-full h-full outline-none! valid:text-neutral-700" >
+                                                        <option value="digital-strategy-planning"> Digital Strategy & Planning</option>
+                                                        <option value="ui-ux-product-design">UI/UX & Product Design</option>
+                                                        <option value="website-revamp">Website Revamp</option>
+                                                        <option value="brand-transformation">Brand Transformation</option>
+                                                        <option value="long-term-partnership">Long-Term Partnership</option>
+                                                        <option value="something-custom"> Something Custom</option>
+                                                    </select>
+                                                   </div>
+                                                     <div class="error-msg text-red-500 text-sm mt-0.5 block field-error text-danger"
+                                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                                 </div>
+                                                {{ /if }}
+
+                                                {{ if handle == "project_budget"  }}
+                                                 <div class="flex flex-col ">
+                                                    <label for="project" class="p2 input-label">
+                                                        {{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                        {{ /if }}
+                                                    </label>
+                                                   <div class="input-field p2 border border-gray-100">
+                                                    <select name="{{ handle }}" class="w-full h-full outline-none! valid:text-neutral-700" required>
+                                                        <option value="digital-strategy"> Under $5,000</option>
+                                                        <option value="ui-ux">$5,000 – $15,000</option>
+                                                        <option value="website-revamp">$15,000 – $30,000</option>
+                                                        <option value="brand-transformation">$30,000+</option>
+                                                    </select>
+                                                   </div>
+                                                     <div class="error-msg text-red-500 text-sm mt-0.5 block field-error text-danger"
+                                                    data-error-for="{{ handle }}">{{ error }}</div>
+                                                 </div>
+                                                {{ /if }}
+
+                                                {{ if type == "textarea" }}
+                                                <div class="flex flex-col sm:col-span-2 col-span-1">
+                                                    <label for="first-name" class="p2 input-label">{{ display }} {{ if validate }}
+                                                        {{ if validate contains="required" }}<span class="text-[#ED3636]">*</span>{{ /if }}
+                                                    {{ /if }}</label>
+                                                    <textarea name="{{ handle }}" placeholder="{{ placeholder ?? 'Tell us how we can help' }}" class="sm:min-h-30 min-h-25 h-full lg:px-6 px-4 xl:py-5 md:py-4 sm:py-3 py-2 lg:rounded-3xl! md:rounded-[18px]! rounded-[12px]! p2 input-field border border-gray-100" data-error-label="Project Description"></textarea>
+                                                    <div class="error-msg text-red-500 text-sm mt-0.5 block field-error text-danger" data-error-for="{{ handle }}">{{ error }}</div>
+                                                </div>
+                                                {{ /if }}
+
+                                 {{ /fields }}
+                            </div>
+                             {{ fields }}
+                             {{ if type == "toggle" }}
+                            <div class="flex flex-col gap-2 md:mb-7.5 mb-4">
+                                <label class="relative inline-flex items-start gap-2.5 cursor-pointer">
+                                    <!-- peer input -->
+                                    <input type="checkbox" name="{{ handle }}"
+                                        class="peer absolute opacity-0 sm:size-5.5 size-3 cursor-pointer m-0 shrink-0">
+
+                                    <!-- custom box -->
+                                    <span
+                                        class="mt-0.5 shrink-0 w-[22px] h-[22px] flex items-center justify-center border border-[#DADDE9] rounded-[6px] bg-white peer-checked:bg-primary peer-checked:border-primary-dark transition-all">
+                                        <svg class="hidden w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                            stroke-width="3" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </span>
+
+                                    <!-- text -->
+                                    <p class="p2">
+                                        {{ checkbox_text }}
+                                    </p>
+                                </label>
+                                 <div class="error-msg text-red-500 text-sm mt-0.5 block field-error text-danger" data-error-for="{{ handle }}">{{ error }}</div>
+                            </div>
+                            {{ /if }}
+                            {{ /fields }}
+                            {{ if button_text }}
+                            <button type="submit"
+                                class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group">
+                                {{ button_text }}
+                                <span class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                        <g clip-path="url(#clip0_421_92)">
+                                            <path
+                                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                fill="currentColor" />
+                                        </g>
+                                    </svg>
+
+                                    <!-- loading icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                                        fill="none" class="hidden">
+                                        <g clip-path="url(#clip0_296_2520)">
+                                            <path
+                                                d="M15 1V6.6M20.88 9.12L24.94 5.06M23.4 15H29M20.88 20.88L24.94 24.94M15 23.4V29M5.06 24.94L9.12 20.88M1 15H6.6M5.06 5.06L9.12 9.12"
+                                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </button>
+                            {{ /if }}
+                            <div id="form-response" class="mt-2"></div>
+                       {{ /form:contact }}
+                        <!-- Toast -->
+                        <div id="toast"
+                            class="fixed bottom-6 right-6 flex items-center gap-2 bg-gray-900 text-white text-sm px-5 py-3 rounded-xl shadow-2xl opacity-0 translate-y-4 transition-all duration-300 pointer-events-none z-50">
+                            <svg class="w-4 h-4 text-green-400 shrink-0" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span id="toastMsg"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+</section>

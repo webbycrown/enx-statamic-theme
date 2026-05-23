@@ -1,0 +1,174 @@
+tabs:
+  main:
+    display: 'Footer Settings'
+    sections:
+      -
+        display: 'Footer One Content'
+        fields:
+          -
+            handle: cta_title
+            field:
+              type: text
+              display: 'CTA Title'
+          -
+            handle: cta_button_text
+            field:
+              type: text
+              display: 'CTA Button Text'
+          -
+            handle: cta_button_link
+            field:
+              type: link
+              display: 'CTA Button Link'
+          -
+            handle: footer_columns
+            field:
+              type: replicator
+              display: 'Footer Columns'
+              sets:
+                column:
+                  display: Column
+                  fields:
+                    -
+                      handle: title
+                      field:
+                        type: text
+                        display: Title
+                    -
+                      handle: links
+                      field:
+                        type: grid
+                        display: Links
+                        fields:
+                          -
+                            handle: label
+                            field:
+                              type: text
+                              display: Label
+                          -
+                            handle: url
+                            field:
+                              type: link
+                              display: URL
+          -
+            handle: contact_info
+            field:
+              type: group
+              display: 'Contact Info'
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Connect Us'
+                    type: text
+                    display: Label
+                -
+                  handle: contact
+                  field:
+                    type: grid
+                    display: Contact
+                    fields:
+                      -
+                        handle: label
+                        field:
+                          type: text
+                          display: Label
+                      -
+                        handle: link
+                        field:
+                          type: text
+                          display: Link
+                          instructions: 'mailto:support@enxstudio.com, tel:+12025550147, https://maps.app.goo.gl/D5hGpZESA22Eqw1H9'
+                      -
+                        handle: value
+                        field:
+                          type: text
+                          display: Value
+      -
+        display: 'Footer Two Content'
+        fields:
+          -
+            handle: marquee_items
+            field:
+              type: list
+              display: 'Marquee Text Items'
+          -
+            handle: menu_links
+            field:
+              type: grid
+              display: 'Menu Links'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: URL
+          -
+            handle: contact_info_two
+            field:
+              type: group
+              display: 'Contact Info'
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Connect Us'
+                    type: text
+                    display: Label
+                -
+                  handle: contact
+                  field:
+                    type: grid
+                    display: Contact
+                    fields:
+                      -
+                        handle: label
+                        field:
+                          type: text
+                          display: Label
+                      -
+                        handle: link
+                        field:
+                          type: text
+                          display: Link
+                          instructions: 'mailto:support@enxstudio.com, tel:+12025550147, https://maps.app.goo.gl/D5hGpZESA22Eqw1H9'
+                      -
+                        handle: value
+                        field:
+                          type: text
+                          display: Value
+          -
+            handle: newsletter_title
+            field:
+              type: text
+              display: 'Newsletter Title'
+          -
+            handle: legal_links
+            field:
+              type: grid
+              display: 'Legal Links'
+              instructions: 'Add Privacy Policy, Terms, etc.'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: 'Link Label'
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: 'Link URL'
+      -
+        display: Copyright
+        fields:
+          -
+            handle: copyright_text
+            field:
+              type: text
+              display: 'Copyright Text'

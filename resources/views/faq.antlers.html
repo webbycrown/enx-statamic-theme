@@ -1,0 +1,61 @@
+{{ page_builder scope="block" }}
+{{ if type != 'business_plan_section' }}
+{{ partial src="page_builder/{type}" }}
+{{ /if }}
+{{ /page_builder }}
+
+
+
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="container">
+                <div class="3xl:space-y-[100px] 1xl:space-y-20 lg:space-y-14 space-y-12.5">
+                    <!-- Services & Solutions -->
+                     {{ taxonomy:faq_category }}
+                    <div class="flex items-start justify-between w-full lg:flex-row flex-col">
+                        <h3 class="faq-type 3xl:text-[40px] 2xl:text-[37px] 1xl:text-[34px] lg:text-[30px] md:text-[28px] text-[25px] 2xl:leading-12.5 md:leading-10 leading-8"
+                            data-aos="fade-right"> {{ title }}</h3>
+                        <div class="faq-outer-box">
+                            <!-- FAQ Item -->
+                            
+                             {{ collection:faqs as="faqs" category:contains="{slug}"  }}
+                             {{ faqs }}
+                             
+                            <div class="faq-inner-box" data-aos="fade-left">
+                                <button class="faq-toggle-button p" onclick="toggleFaq(this)">
+                                    <h6 class="faq-title">{{ title }}  {{ category }}</h6>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="faq-toggle-svg">
+                                        <g clip-path="url(#clip0_7273_5307)">
+                                            <rect x="16" y="7" width="2" height="16" transform="rotate(90 16 7)"
+                                                fill="black" />
+                                            <rect x="7" width="2" height="16" fill="black" />
+                                        </g>
+                                    </svg>
+
+                                </button>
+                                <div
+                                    class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                    <div class="mt-4.5">
+                                        <span class="p2">
+                                            {{ answer }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            	{{ /faqs }}
+                              {{ /collection:faqs }}
+                            	
+                            
+                        </div>
+                    </div>
+                    {{ /taxonomy:faq_category }}
+                   
+                </div>
+            </div>
+        </section>
+
+        {{ page_builder scope="block" }}
+        {{ if type == 'business_plan_section' }}
+        {{ partial src="page_builder/{type}" }}
+        {{ /if }}
+        {{ /page_builder }}

@@ -1,0 +1,91 @@
+<section class="relative overflow-hidden 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+
+        <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="uppercase">{{ badge_text }}</p>
+                </div>
+                <h3>{{ section_title | explode(highlight_text) }}
+                    {{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /section_title | explode }}
+                </h3>
+            </div>
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit" data-aos="fade-left">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+
+        <div class="overflow-hidden sm:mb-0 mb-7.5">
+            <!-- 1st step -->
+            {{ steps }}
+            <div class="relative flex md:flex-row flex-col md:items-center items-start justify-between w-full 3xl:gap-15 2xl:gap-13 1xl:gap-11 xl:gap-10 md:gap-7 gap-4 {{ if index != 0 }} 2xl:pt-10 1xl:pt-9 md:pt-8 pt-7.5 {{ /if }}"
+                data-aos="fade-up">
+                <div class="my-auto">
+                    <div
+                        class="3xl:size-25 1xl:size-22.5 xl:size-[87px] lg:size-20.5 sm:size-[70px] size-12.5 rounded-full flex items-center justify-center bg-primary p-3">
+                        <h3
+                            class="font-light text-white z-1 3xl:text-[50px] 1xl:text-[44px] xl:text-[40px] lg:text-4xl sm:text-[32px] text-[22px]">
+                            {{ step_number }}</h3>
+                        <div
+                            class="absolute w-[2px] bg-primary z-0 md:block hidden top-0 {{ if first }}h-1/2 top-1/2{{ elseif last }}h-1/2{{ else }}h-full{{ /if }}">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex md:flex-row flex-col items-stretch justify-between 3xl:gap-15 1xl:gap-13 xl:gap-11 gap-7 my-auto">
+                    <div class="3xl:w-[61%] 2xl:w-[63%] md:w-[65%] w-full my-auto lg:py-5">
+                        <h4 class="2xl:mb-4 mb-3 text-[#06020C]">{{ step_title }}</h4>
+                        <p class="p2">{{ description }}</p>
+                    </div>
+                    <div class="1xl:w-1/4 md:w-[28%] w-full">
+                        <div
+                            class="block relative before:block before:content-[''] sm:before:pt-[63%] before:pt-[70%] h-full">
+                            {{ image }}<img loading="lazy" src="{{ url }}" alt="step 1"
+                                class="w-full h-full object-cover absolute top-0 left-0" />
+                            {{ /image }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /steps }}
+        </div>
+
+        {{ if button_text }}
+        <a href="{{ button_url }}" aria-label="Open Page"
+            class="btn btn-primary all-btn rounded-full group sm:hidden flex w-fit">
+            {{ button_text }}
+            <span
+                class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    class="1xl:size-5.5 xl:size-5 size-4">
+                    <g clip-path="url(#clip0_421_92)">
+                        <path
+                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                            fill="currentColor" />
+                    </g>
+                </svg>
+            </span>
+        </a>
+        {{ /if }}
+    </div>
+</section>

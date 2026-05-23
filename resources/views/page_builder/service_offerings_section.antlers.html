@@ -1,0 +1,237 @@
+{{ if layout_type == 'side' }}
+{{ section_id = id }}
+<section id="{{ section_id }}" class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="bg-black 2xl:py-[100px] xl:py-[90px] lg:py-20 md:py-17 sm:py-14 py-12.5">
+        <div class="container">
+            <!-- sub_title -->
+            <div class="flex md:items-center justify-between md:flex-row flex-col w-full gap-[15px]">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase text-white">{{ subtitle }}</p>
+                    </div>
+                    <h2 class="{{ section_bg == 'black' ? 'text-white' : '' }}"> {{ title | explode(highlight_text) }}{{
+                        if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /title | explode }} </span>
+                    </h2>
+                </div>
+
+                <p class="p2 2xl:max-w-[515px] xl:max-w-[432px] lg:max-w-94 md:max-w-90 w-full text-white"
+                    data-aos="fade-left">
+                    {{ description }}
+                </p>
+            </div>
+
+            <div class="flex justify-between lg:flex-row flex-col 3xl:gap-15 xl:gap-13 md:gap-8 gap-6 xl:mt-12.5 mt-9">
+                <div class="xl:w-[24.5%] lg:w-[27%] w-full shrink-0">
+                    <!-- 🔽 Dropdown (below lg only) -->
+                    <div class="lg:hidden flex flex-col">
+                        <div class="flex flex-col">
+                            <div class="relative form-dropdown" data-name="project_type">
+                                <button type="button"
+                                    class="form-dropdown-button w-full 3xl:h-[52px] 2xl:h-12.5 h-[44px] px-[15px] xl:px-[25px] pr-[45px] rounded-full border border-[#E5E7EB] bg-white outline-none text-left">
+                                    <p class="form-dropdown-selected font-normal p2 text-[#868686]">{{ tabs | first }}{{
+                                        tab_label }}{{ /tabs }}</p>
+                                </button>
+
+                                <!-- Dropdown Arrow -->
+                                <span
+                                    class="form-dropdown-arrow pointer-events-none absolute right-[20px] top-1/2 -translate-y-1/2 text-[#868686] transition-all ease-in-out">
+                                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5.31578 8.02636C5.14136 8.20078 4.85862 8.20078 4.6842 8.02636L0.13081 3.47295C-0.0436032 3.29854 -0.0436032 3.0158 0.13081 2.84138L0.341351 2.63081C0.515763 2.4564 0.798544 2.4564 0.972962 2.63081L4.99999 6.65787L9.02705 2.63081C9.20146 2.4564 9.4842 2.4564 9.65862 2.63081L9.86919 2.84138C10.0436 3.0158 10.0436 3.29854 9.86919 3.47295L5.31578 8.02636Z"
+                                            fill="#08030E" />
+                                    </svg>
+                                </span>
+
+
+
+                                <div class="form-dropdown-menu">
+                                    {{ tabs }}
+                                    <button
+                                        class="form-dropdown-option {{ if first }}tab--active{{ /if }} p2 w-full text-left"
+                                        data-value="digital-strategy" data-group="{{ section_id }}"
+                                        data-image="{{ image:url }}" data-tab="{{ tab_key }}">
+                                        {{ tab_label }}
+                                    </button>
+                                    {{ /tabs }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tabButtons" class="hidden lg:grid grid-cols-1 2xl:gap-5 1xl:gap-4 xl:gap-3.5 gap-2.5">
+                        {{ tabs }}
+                        <button class="tab tab-btn {{ if first }}tab--active{{ /if }}" data-group="{{ section_id }}"
+                            data-tab="{{ tab_key }}" data-aos="fade-right" data-aos-duration="800"
+                            data-image="{{ image:url }}">
+                            <p class="p2">{{ tab_label }}</p>
+                        </button>
+                        {{ /tabs }}
+
+
+                    </div>
+                </div>
+
+                <div class="w-full flex sm:flex-row flex-col 3xl:gap-12.5 1xl:gap-10.5 md:gap-8.5 gap-6 border border-slate-100 md:rounded-[20px] rounded-[9px] overflow-hidden"
+                    data-aos="fade-left">
+
+                    <!-- Image -->
+                    <div
+                        class="relative before:block before:content-[''] lg:before:pt-[44%] sm:before:pt-[94%] before:pt-[80%] overflow-hidden 1xl:w-[45%] sm:w-[42%] w-full h-full shrink-0">
+                        {{ tabs }}
+                        {{ if first }}
+                        {{ image }}
+                        <img id="tabImg-{{ section_id }}" src="{{ url }}" alt="Tab Image"
+                            class="w-full h-full object-cover absolute top-0 left-0 bottom-0 right-0" />
+                        {{ /image }}
+                        {{ /if }}
+                        {{ /tabs }}
+                    </div>
+
+
+
+                    <div class="3xl:pr-12.5 1xl:pr-9 sm:pr-6 lg:py-5 sm:py-5 px-5 sm:pl-0 pb-5 my-auto">
+                        <!-- Text Sections -->
+                        <div class="w-full">
+                            {{ tabs }}
+                            <div class="tab-content {{ if !first }}hidden{{ /if }}" data-group="{{ section_id }}"
+                                data-tab="{{ tab_key }}">
+                                <h4 class="data-tab-title text-white xl:mb-5 sm:mb-4 mb-3">
+                                    {{ content_title }}</h4>
+
+                                {{ content }}
+                                <p class="text-white font-light p2">
+                                    {{ text }}
+                                </p>
+                                {{ /content }}
+
+                            </div>
+                            {{ /tabs }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ else }}
+{{ section_id = id }}
+<section id="{{ section_id }}" class="relative overflow-hidden 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="bg-black 3xl:py-25 2xl:py-[90px] lg:py-20 md:py-17 sm:py-14 py-12.5">
+        <div class="container">
+            <!-- sub_title -->
+            <div
+                class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase text-white">{{ subtitle }}</p>
+                    </div>
+                    <h3 class="{{ section_bg == 'black' ? 'text-white' : '' }}">
+                        {{ title | explode(highlight_text) }}{{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /title | explode }}
+                    </h3>
+                </div>
+                <p class="p2 2xl:max-w-[515px] xl:max-w-[432px] lg:max-w-94 md:max-w-90 w-full text-white"
+                    data-aos="fade-left">
+                    {{ description }}
+                </p>
+            </div>
+
+            <!-- 🔽 Dropdown (below lg only) -->
+            <div class="lg:hidden flex flex-col mb-9">
+                <div class="flex flex-col">
+                    <div class="relative form-dropdown" data-name="project_type">
+                        <button type="button"
+                            class="form-dropdown-button w-full 3xl:h-[52px] 2xl:h-12.5 h-[44px] px-[15px] xl:px-[25px] pr-[45px] rounded-full border border-[#E5E7EB] bg-white outline-none text-left">
+                            <p class="form-dropdown-selected font-normal p2 text-[#868686]">
+                                {{ tabs | first }}{{ tab_label }}{{ /tabs }}
+                            </p>
+                        </button>
+
+                        <!-- Dropdown Arrow -->
+                        <span
+                            class="form-dropdown-arrow pointer-events-none absolute right-[20px] top-1/2 -translate-y-1/2 text-[#868686] transition-all ease-in-out">
+                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5.31578 8.02636C5.14136 8.20078 4.85862 8.20078 4.6842 8.02636L0.13081 3.47295C-0.0436032 3.29854 -0.0436032 3.0158 0.13081 2.84138L0.341351 2.63081C0.515763 2.4564 0.798544 2.4564 0.972962 2.63081L4.99999 6.65787L9.02705 2.63081C9.20146 2.4564 9.4842 2.4564 9.65862 2.63081L9.86919 2.84138C10.0436 3.0158 10.0436 3.29854 9.86919 3.47295L5.31578 8.02636Z"
+                                    fill="#08030E" />
+                            </svg>
+                        </span>
+
+                        <div class="form-dropdown-menu">
+                            {{ tabs }}
+                            <button
+                                class="form-dropdown-option {{ if first }}tab--active{{ /if }} p2 w-full text-left"
+                                data-group="{{ section_id }}" data-tab="{{ tab_key }}" data-image="{{ image:url }}">
+                                <p>{{ tab_label }}</p>
+                            </button>
+                            {{ /tabs }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div id="tabButtons"
+                class="lg:grid hidden lg:grid-cols-4 md:grid-cols-3 min-[520px]:grid-cols-2 grid-cols-1 max-w-[1456px] w-full mx-auto xl:gap-6 gap-4 1xl:mb-15 xl:mb-13 lg:mb-11 mb-9">
+                {{ tabs }}
+                <button class="tab tab-btn {{ if first }}tab--active{{ /if }}" data-group="{{ section_id }}"
+                    data-tab="{{ tab_key }}" data-image="{{ image:url }}" data-aos="fade-up">
+                    <p>{{ tab_label }}</p>
+                </button>
+                {{ /tabs }}
+
+            </div>
+
+            <!-- Tab Content -->
+            <div class="{{if segment_2 == 'construction-infrastructure'}} md:flex-row flex-col-reverse {{else}} lg:flex-row flex-col-reverse {{/if}} flex justify-between items-stretch w-full sm:gap-8 gap-5">
+                <!-- Text Sections -->
+                <div class="lg:w-[46.5%] w-full my-auto lg:py-3">
+                    {{ tabs }}
+                    <div class="tab-content {{ if !first }} hidden {{ /if }}" data-group="{{ section_id }}"
+                        data-tab="{{ tab_key }}">
+                        <h4 class="data-tab-title text-white" data-aos="fade-right">
+                            {{ content_title }}
+                        </h4>
+                        {{ content }}
+                        <p class="{{if segment_2 == 'construction-infrastructure'}} 2xl:mb-5 lg:mb-4 mb-2 {{else}} 2xl:mb-5 sm:mb-4 mb-3 {{/if}} p2 text-white">
+                            {{ text }}
+                        </p>
+                        {{ /content }}
+                    </div>
+                    {{ /tabs }}
+                </div>
+
+                <!-- Image -->
+                <div class="lg:w-[47.5%] w-full">
+                    <div data-aos="fade-left"
+                        class="relative before:block before:content-[''] sm:before:pt-[65%] before:pt-[80%] w-full h-full">
+                        {{ tabs }}
+                        {{ if first }}
+                        {{ image }}
+                        <img id="tabImg-{{ section_id }}" src="{{ url }}" alt="Tab Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover" />
+                        {{ /image }}
+                        {{ /if }}
+                        {{ /tabs }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}

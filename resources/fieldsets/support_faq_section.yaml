@@ -1,0 +1,62 @@
+title: 'Support FAQ Section'
+fields:
+  -
+    handle: badge_text
+    field:
+      type: text
+      display: 'Badge Text'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      instructions: 'Main heading text'
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+      instructions: 'Word to highlight (e.g. Aerospace)'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: faqs
+    field:
+      type: replicator
+      display: Faqs
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: question
+                  field:
+                    type: text
+                    display: Question
+                -
+                  handle: answer
+                  field:
+                    type: textarea
+                    display: Answer

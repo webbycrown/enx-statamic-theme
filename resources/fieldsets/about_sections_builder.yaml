@@ -1,0 +1,58 @@
+title: 'About Sections Builder'
+fields:
+  -
+    handle: left_image
+    field:
+      type: assets
+      display: 'Left Image'
+      container: assets
+      max_files: 1
+  -
+    handle: left_image_alt
+    field:
+      type: text
+      display: 'Left Image Alt Text'
+      default: 'Team Discussion'
+  -
+    handle: right_image
+    field:
+      type: assets
+      display: 'Right Image'
+      container: assets
+      max_files: 1
+  -
+    handle: right_image_alt
+    field:
+      type: text
+      display: 'Right Image Alt Text'
+      default: 'Team Working'
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'Our Direction'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'Driven by Purpose. Aligned With Your Goals.'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      default: Aligned
+  -
+    handle: description_one
+    field:
+      type: textarea
+      display: 'Description One'
+      default: 'We exist to help businesses unlock clarity through structured design.'
+  -
+    handle: description_two
+    field:
+      type: textarea
+      display: 'Description Two'
+      default: 'Our vision is to build the most reliable, scalable, and future-ready design frameworks for modern enterprises.'

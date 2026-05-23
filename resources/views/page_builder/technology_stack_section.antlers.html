@@ -1,0 +1,85 @@
+{{ if !background_color }}
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+
+    <!-- container -->
+    <div class="container">
+        <!-- sub_title -->
+        <div
+            class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ subtitle }}</p>
+                </div>
+                <h3>{{ title | explode(highlight_text) }}{{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /title | explode }}
+                </h3>
+            </div>
+            <p class="p2 2xl:max-w-[37%] xl:max-w-2/5 lg:max-w-[45%] md:w-1/2 w-full" data-aos="fade-left">
+                {{ description }}
+            </p>
+        </div>
+
+        <!-- grid column -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-7 1xl:gap-6.5 xl:gap-5 lg:gap-4 gap-5">
+            <!-- Card 1 -->
+            {{ technology_cards }}
+            <div class="bg-white 2xl:p-7.5 xl:p-6 sm:p-5 p-4 rounded-lg border border-gray-100" data-aos="fade-up">
+                <h6 class="capitalize sm:mb-4 mb-3">{{ card_title }}</h6>
+                <p class="p2">
+                    {{ card_description }}
+                </p>
+            </div>
+            {{ /technology_cards }}
+        </div>
+
+    </div>
+
+</section>
+{{ else }}
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 overflow-hidden">
+    <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 sm:py-12 py-9">
+        <!-- container -->
+        <div class="container">
+            <!-- sub_title -->
+            <div
+                class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase">{{ subtitle }}</p>
+                    </div>
+                    <h3>{{ title | explode(highlight_text) }}{{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /title | explode }}
+                    </h3>
+                </div>
+                <p class="p2 lg:max-w-[534px] md:max-w-100 w-full" data-aos="fade-left">
+                    {{ description }}
+                </p>
+            </div>
+
+            <!-- grid column -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-7 1xl:gap-5.5 xl:gap-5 lg:gap-4 gap-5">
+                <!-- Card 1 -->
+                {{ technology_cards }}
+                <div class="bg-white 2xl:p-7.5 xl:p-6 sm:p-5 p-4 rounded-lg border border-gray-100" data-aos="fade-up">
+                    <h6 class="capitalize sm:mb-4 mb-3">{{ card_title }}</h6>
+                    <p class="p2">
+                        {{ card_description }}
+                    </p>
+                </div>
+                {{ /technology_cards }}
+            </div>
+
+        </div>
+    </div>
+</section>
+{{ /if }}

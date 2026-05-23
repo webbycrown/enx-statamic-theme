@@ -1,0 +1,82 @@
+title: 'Organizational Setup Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'Organizational Setup'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'Industry-Specific Structure'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      instructions: 'Word to highlight (e.g. Structure)'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: features
+    field:
+      type: replicator
+      display: 'Feature List'
+      instructions: 'Add bullet points'
+      sets:
+        main:
+          display: Main
+          sets:
+            feature:
+              display: Feature
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_link
+    field:
+      type: link
+      display: 'Button Link'
+  -
+    handle: image
+    field:
+      type: assets
+      display: Image
+      max_files: 1
+      container: assets
+  -
+    handle: left_side_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Left Side Image'
+  -
+    handle: background_color
+    field:
+      type: toggle
+      display: 'Background Color'
+  -
+    handle: background_text
+    field:
+      type: text
+      display: 'Background Text'

@@ -1,0 +1,85 @@
+title: 'Impact Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: Impact
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'Our Growth in Numbers'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      default: Numbers
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: stats
+    field:
+      type: replicator
+      display: 'Statistics Items'
+      sets:
+        stat:
+          display: 'Stat Item'
+          fields:
+            -
+              handle: number
+              field:
+                type: integer
+                display: Number
+                default: 250
+            -
+              handle: suffix
+              field:
+                type: text
+                display: 'Suffix (+, %, etc.)'
+                default: +
+            -
+              handle: label
+              field:
+                type: text
+                display: Label
+                default: 'Year of Experience'
+            -
+              handle: duration
+              field:
+                type: integer
+                display: 'Animation Duration (ms)'
+                default: 2000
+  -
+    handle: mobile_button_text
+    field:
+      type: text
+      display: 'Mobile Button Text'
+  -
+    handle: mobile_button_url
+    field:
+      type: text
+      display: 'Mobile Button URL'
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image

@@ -1,0 +1,227 @@
+{{ if left_side_image and background_text }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 relative overflow-hidden">
+    {{ if background_color }}
+    <div class="bg-purple-100 lg:py-0 pb-12 md:pt-[111px] sm:pt-25 pt-19.5 relative">
+        <div class="container">
+            {{ /if }}
+            <div
+                class="about-enx absolute 2xl:-left-48 1xl:-left-43 lg:-left-36 left-1/2 right-auto lg:top-1/2 top-5 lg:-rotate-90 lg:-translate-y-1/2 lg:translate-x-0 -translate-x-1/2 ">
+                <h2
+                    class="2xl:text-[100px] 1xl:text-[80px] lg:text-[70px] md:text-[53px] text-[40px] 2xl:leading-[100px] sm:leading-[65px] leading-[41px] text-gray-100 font-normal tracking-[2px] whitespace-nowrap">
+                    {{ background_text }}
+                </h2>
+            </div>
+            <div
+                class="flex justify-between items-stretch lg:flex-row flex-col 2xl:gap-[70px] xl:gap-14.5 md:gap-10 gap-8">
+                {{ if left_side_image }}
+                <div data-aos="fade-right"
+                    class="3xl:max-w-[780px] 2xl:max-w-[720px] 1xl:max-w-[650px] xl:max-w-[600px] lg:max-w-[462px] w-full lg:h-auto md:h-[500px] sm:h-[420px] shrink-0">
+                    {{ left_side_image }}<img loading="lazy" src="{{ url }}" alt="join team"
+                        class="w-full h-full object-cover">{{ /left_side_image }}
+                </div>
+                {{ /if }}
+                <div class="w-full my-auto lg:py-14">
+                    <div class="flex flex-col" data-aos="fade-up">
+                        <div class="flex items-center gap-2.5">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ subtitle }}</p>
+                        </div>
+                        <h3 class="3xl:mt-[35px] 3xl:mb-[25px] xl:my-7 lg:my-5 mb-[15px] mt-5">
+                            {{ title | explode(highlight_word) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /title | explode }}
+                        </h3>
+                        <p class="p2 3xl:mb-[25px] xl:mb-6 lg:mb-5 mb-[18px]">
+                            {{ description }}
+                        </p>
+                        <ul class="filter-marker mt-0 space-y-2 xl:mb-[35px] lg:mb-6 mb-[25px]">
+                            {{ features }}
+                            <li class="flex items-start 1xl:gap-2.5 gap-2">
+                                <p class="p2"> {{ text }}</p>
+                            </li>
+                            {{ /features }}
+
+                        </ul>
+                        <!-- responsive btn -->
+                        {{ if button_text }}
+                        <a href="{{ button_link }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group w-fit">
+                            {{ button_text }}
+                            <span
+                                class=" btn btn-arrow rounded-full all-btn-arrow group">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ if background_color }}
+    </div>
+   
+    {{ /if }}
+</section>
+
+{{ elseif left_side_image and !background_text }}
+
+<section
+    class="{{if segment_2 == 'transportation-logistics'}}pb-0 {{elseif segment_2 == 'aerospace-defense'}}3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-0 {{else}} 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5{{/if}} relative overflow-hidden">
+    {{ if background_color }}
+    <div class="bg-purple-100 lg:py-0 pb-12 md:pt-[111px] sm:pt-25 pt-19.5 relative">
+        {{ /if }}
+        <div class="lg:container lg:px-4 mx-auto">
+            <div
+                class="flex justify-between items-stretch lg:flex-row flex-col-reverse 3xl:gap-25 2xl:gap-22 1xl:gap-18 xl:gap-14 lg:gap-7">
+                <!-- Organizational heading -->
+                <div class="lg:max-w-[55%] w-full 3xl:-ml-[180px] 2xl:-ml-[76px] 1xl:-ml-[100px] xl:-ml-[65px] lg:-ml-[40px] lg:h-auto md:h-[500px] sm:h-[450px] h-full"
+                    data-aos="fade-right">
+                    <img loading="lazy" src="{{ left_side_image:url }}" alt="join team"
+                        class="w-full h-full object-cover" />
+                </div>
+
+                <div class="{{if segment_2 == 'transportation-logistics'}}lg:pt-5 pt-0 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 {{elseif segment_2 == 'aerospace-defense'}}1xl:pt-16 xl:pt-12 lg:pt-7 pt-12.5 sm:pb-12.5 pb-9 {{else}} 1xl:pt-16 xl:pt-12 lg:pt-7 pt-12.5 lg:pb-17 pb-12.5 {{/if}} lg:max-w-1/2 w-full my-auto lg:px-0 px-4 max-lg:container mx-auto"
+                    data-aos="fade-left">
+                    <div class="w-full my-auto">
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-2.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ subtitle }}</p>
+                            </div>
+                            <h3 class="3xl:mt-[35px] 3xl:mb-[25px] xl:my-7 lg:my-5 mb-[15px] mt-5 1xl:pr-10">
+                                {{ title | explode(highlight_word) }}{{ if first }}
+                                {{ value }}
+                                {{ else }}
+                                <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                {{ /if }}
+                                {{ /title | explode }}
+                            </h3>
+                            <p class="p2 3xl:mb-[25px] xl:mb-7 lg:mb-5 mb-[18px]">
+                                {{ description }}
+                            </p>
+                            <ul class="filter-marker mt-0 space-y-2 sm:mb-9 mb-6">
+                                {{ features }}
+                                <li class="flex items-start 1xl:gap-2.5 gap-2">
+                                    <p class="p2">{{ text }}
+                                    </p>
+                                </li>
+                                {{ /features }}
+                            </ul>
+                            {{ if button_text }}
+                            <a href="{{ button_link }}" aria-label="Open Page"
+                                class="btn btn-primary all-btn rounded-full group w-fit">
+                                {{ button_text }}
+                                <span
+                                    class="btn btn-arrow rounded-full 3xl:w-11 3xl:h-11 1xl:w-10 1xl:h-10 xl:w-9 xl:h-9 w-8 h-8">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none"
+                                        class="1xl:w-5 1xl:h-5 xl:w-[19px] xl:h-[19px] lg:w-4 lg:h-4 w-3.5 h-3.5 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <g clip-path="url(#clip0_421_92)">
+                                            <path
+                                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                fill="currentColor" />
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {{ if background_color }}
+    </div>
+    {{ /if }}
+</section>
+{{ elseif !left_side_image or not background_text }}
+<section class="relative overflow-hidden">
+    {{ if background_color }}
+    <div class="bg-purple-100">
+        {{ /if }}
+        <div class="{{if segment_1 == 'why-enx'}}px-0 {{else}} lg:px-4 px-0{{/if}} container">
+            <div class="flex justify-between lg:flex-row flex-col-reverse lg:gap-10">
+                <!-- Organizational heading -->
+                <div class="{{if segment_2 == 'transportation-logistics' or segment_2 == 'construction-infrastructure'}}lg:max-w-1/2 max-lg:container mx-auto max-lg:px-4
+                 {{else}}3xl:max-w-[670px] 1xl:max-w-[605px] xl:max-w-[511px] lg:max-w-[477px] lg:px-0 px-4 {{/if}} w-full my-auto"
+                    data-aos="fade-right">
+                    <div class="w-full my-auto">
+                        <div
+                            class="{{if segment_1 == 'why-enx' or segment_2 == 'aerospace-defense' or segment_2 == 'healthcare-life-sciences' or segment_2 == 'transportation-logistics' or segment_2 == 'construction-infrastructure'}}2xl:py-8 xl:py-14 lg:pb-17 pb-12.5 pt-9 {{else}} 2xl:py-8 xl:py-14 lg:py-17 pb-12.5 pt-9 {{/if}} flex flex-col">
+                            <div class="flex items-center gap-2.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ subtitle }}</p>
+                            </div>
+                            <h3 class="3xl:mt-[35px] 3xl:mb-[25px] xl:my-7 lg:my-5 mb-[15px] mt-5">
+                                {{ title | explode(highlight_word) }}
+                                {{ if first }}
+                                {{ value }}
+                                {{ else }}
+                                <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                {{ /if }}
+                                {{ /title | explode }}
+                            </h3>
+                            <p class="p2 3xl:mb-[25px] xl:mb-7 lg:mb-5 mb-[18px]">
+                                {{ description }}
+                            </p>
+                            <ul class="filter-marker mt-0 xl:mb-[35px] lg:mb-6">
+                                {{ features }}
+                                <li class="2xl:text-lg text-md 2xl:leading-[28px] leading-[26px] last:mb-0 mb-2">
+                                    {{ if label }}
+                                    <p class="p2"><span class="text-black-100 font-bold"> {{ label }} </span> {{ text }}
+                                    </p>
+                                    {{ else }}
+                                    {{ text }}
+                                    {{ /if }}
+                                </li>
+                                {{ /features }}
+
+                            </ul>
+                            <!-- responsive btn -->
+                            {{ if button_text }}
+                            <a href="{{ button_link }}" aria-label="Open Page"
+                                class="btn btn-primary all-btn rounded-full group w-fit max-lg:mt-6">
+                                {{ button_text }}
+                                <span
+                                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                        fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                        <g clip-path="url(#clip0_421_92)">
+                                            <path
+                                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                fill="currentColor"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left"
+                    class="{{if segment_2 == 'transportation-logistics'}}lg:max-w-[55%] w-full 3xl:-mr-[180px] 2xl:-mr-[76px] 1xl:-mr-[100px] xl:-mr-[70px] lg:-mr-[40px] lg:h-auto md:h-[500px] sm:h-[450px] h-full {{else}}
+                3xl:max-w-[960px] 2xl:max-w-[730px] 1xl:max-w-[700px] lg:max-w-[625px] w-full 3xl:-mr-[180px] 2xl:-mr-[76px] 1xl:-mr-[108px] xl:-mr-[60px] lg:-mr-[105px]{{/if}}">
+                    {{ image }}<img loading="lazy" src="{{ image }}" alt="join team"
+                        class="w-full h-full object-cover" />
+                    {{ /image }}
+                </div>
+            </div>
+        </div>
+        {{ if background_color }}
+    </div>
+    {{ /if }}
+</section>
+{{ /if }}

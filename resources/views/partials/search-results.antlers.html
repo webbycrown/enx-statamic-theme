@@ -1,0 +1,95 @@
+<!-- Popular searches -->
+{{ if insights or services }}
+{{ if insights }}
+<section class="site-search__suggestions-section w-full z-9999 relative 1xl:pb-7 pb-6">
+    <p class="text-black font-primary 2xl:mb-5 mb-4 uppercase">Insights</p>
+    <div class="w-full h-full">
+        <div class="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 grid-cols-1 2xl:gap-10 1xl:gap-8 sm:gap-6 gap-6 relative w-full h-full">
+            <!-- 1st Blog -->
+            {{ insights limit="5" }}
+            <a href="/insight/{{ slug }}"
+                class="flex sm:flex-row flex-col sm:items-stretch items-start 2xl:gap-7 1xl:gap-5 gap-4 w-full h-full group">
+                <div
+                    class="rounded-sm block overflow-hidden relative shrink-0 2xl:max-w-[150px] 1xl:max-w-[140px] lg:max-w-[130px] sm:max-w-[120px] max-w-[230px] w-full h-auto">
+                    {{ image }}<img src="{{ url }}" alt="insight" class="w-full h-full object-cover" />{{ /image }}
+                </div>
+
+                <div>
+                    <div class="flex flex-col items-start justify-center h-full gap-[6px]">
+                        <p class="group-hover:text-primary text-black uppercase">
+                            {{ title }}
+                        </p>
+                        <p class="text-thunder-100 line-clamp-2 2xl:w-[86%] 1xl:w-[90%] w-full p2">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                </div>
+            </a>
+            {{ /insights }}
+
+        </div>
+        {{ if insights| count > 5 }}
+        <a href="/insights?s=" data-type="insights" data-query="{{ query }}"
+            class="btn btn-primary all-btn rounded-full group flex w-fit ml-auto mr-0 mt-5 toggle-view-btn">
+            View All
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M-2.02496e-05 12.4396L11.1557 1.28395L1.59365 1.28395L1.51169 -9.34181e-05L13.3504 -9.30945e-05L13.3504 11.8386L12.0663 11.7566L12.0663 2.19462L0.910647 13.3503L-2.02496e-05 12.4396Z"
+                        fill="currentColor"></path>
+                </svg>
+            </span>
+        </a>
+        <!-- <a href="/insights?s=" class="btn btn-primary flex justify-end mt-5" data-type="insights" data-query="{{ query }}">View All</a> -->
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}
+
+<!-- Popular searches -->
+{{ if services }}
+<section class="site-search__suggestions-section w-full z-9999 relative 1xl:pb-7 pb-">
+    <p class="text-black font-primary 2xl:mb-5 mb-4 uppercase">
+        Services
+    </p>
+    <div class="w-full h-full">
+        <div
+            class="w-full h-full grid 1xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lt:gap-8 sm:gap-5 gap-4">
+            <!-- 1st class -->
+            {{ services limit="5" }}
+            <div class="bg-whitesmoke-100 flex flex-col">
+                <div>
+                    {{ icon }}<img src="{{ url }}" alt="class"
+                        class="2xl:size-[60px] 1xl:size-[55px] lg:size-12.5 size-10" />{{ /icon }}
+                </div>
+                <div class="2xl:pt-4 pt-[14px] flex items-start flex-col">
+                    <a href="/service/{{ slug }}" class="p group-hover:text-primary text-black uppercase">{{
+                        title }}
+                    </a>
+                </div>
+            </div>
+            {{ /services }}
+
+        </div>
+        {{ if services| count > 5 }}
+     
+      <a href="/services?s=" data-type="services" data-query="{{ query }}"
+            class="btn btn-primary all-btn rounded-full group flex w-fit ml-auto mr-0 mt-5 toggle-view-btn">
+            View All
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M-2.02496e-05 12.4396L11.1557 1.28395L1.59365 1.28395L1.51169 -9.34181e-05L13.3504 -9.30945e-05L13.3504 11.8386L12.0663 11.7566L12.0663 2.19462L0.910647 13.3503L-2.02496e-05 12.4396Z"
+                        fill="currentColor"></path>
+                </svg>
+            </span>
+        </a>
+        {{ /if }}
+    </div>
+</section>
+{{ /if }}
+{{ else }}
+<p>No Data Found.</p>
+{{ /if }}

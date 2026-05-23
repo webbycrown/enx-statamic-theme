@@ -1,0 +1,7 @@
+title: 'Case Studies'
+template: case_study/show
+route: '/case-study/{slug}'
+revisions: false
+date_behavior:
+  past: public
+  future: private

@@ -1,0 +1,45 @@
+title: 'Our Clients Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_link
+    field:
+      type: text
+      display: 'Button Link'
+  -
+    handle: mobile_button_text
+    field:
+      type: text
+      display: 'Mobile Button Text'
+  -
+    handle: mobile_button_link
+    field:
+      type: text
+      display: 'Mobile Button Link'
+  -
+    handle: clients
+    field:
+      mode: select
+      collections:
+        - clients
+      type: entries
+      display: Clients

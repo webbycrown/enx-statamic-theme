@@ -1,0 +1,53 @@
+title: Setting
+data:
+  favicon: image/favicon.svg
+  logo: image/Logo.svg
+  white_logo: image/logo-white.svg
+  footer_type: footer_two
+  socials:
+    -
+      id: mn76ciln
+      title: LinkedIn
+      platform: linkedin-in
+      url: 'https://www.linkedin.com/feed/'
+    -
+      id: mn76d7kk
+      title: Twitter
+      platform: x-twitter
+      url: 'https://x.com/'
+    -
+      id: mn76dtl7
+      title: Dribbble
+      platform: dribbble
+      url: 'https://dribbble.com/'
+    -
+      id: mn76h2g4
+      title: Instagram
+      platform: instagram
+      url: 'https://www.instagram.com/'
+  header_button:
+    label: 'Get started'
+    url: /contact-us
+  section_label: 'Browse all Posts'
+  filter_label: 'Browse By'
+  breadcrumb:
+    -
+      id: mniglwna
+      title: Home
+      url: /
+      type: item
+      enabled: true
+    -
+      id: mnigm8xz
+      title: 'Case Studies Category'
+      type: item
+      enabled: true
+  heading: 'Case Studies Category'
+  description: 'Explore how ENX transforms ideas into high-performing digital solutions. Each case study highlights real challenges, smart thinking, and measurable outcomes that deliver lasting business impact.'
+  background_image: image/Vector.png
+  cta_text: 'Get Support Now'
+  cta_link: '#support-ticket'
+  comment_title: 'Leave a Comment'
+  comment_description: 'Share your thoughts or questions your feedback helps us create better content for the ENX community.'
+  reply_title: 'Leave a Reply'
+  reply_description: 'Share your thoughts or continue the discussion your feedback matters!'

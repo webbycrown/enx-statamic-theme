@@ -1,0 +1,19 @@
+title: 'Video Hero Section'
+fields:
+  -
+    handle: background_video
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Background Video'
+  -
+    handle: page_title
+    field:
+      type: text
+      display: 'Page Title'
+  -
+    handle: breadcrumb
+    field:
+      type: text
+      display: Breadcrumb

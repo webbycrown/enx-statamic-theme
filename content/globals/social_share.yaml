@@ -1,0 +1,23 @@
+title: 'Social Share'
+data:
+  socials:
+    -
+      id: mnfvlf53
+      title: LinkeIn
+      platform: linkedin-in
+      url: 'https://www.linkedin.com/sharing/share-offsite/?url='
+    -
+      id: mnfvm9nj
+      title: Twitter
+      platform: x-twitter
+      url: 'https://twitter.com/intent/tweet?url='
+    -
+      id: mnfvmmrj
+      title: Dribbble
+      platform: dribbble
+      url: 'https://dribbble.com/'
+    -
+      id: mnfvporj
+      title: Instagram
+      platform: instagram
+      url: 'https://www.instagram.com/'

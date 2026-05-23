@@ -1,0 +1,44 @@
+title: 'Support Ticket Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: SUBMIT A REQUEST
+
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: Create a Support Ticket
+
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: Highlight Text
+      default: Support
+
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+
+
+  # FORM SETTINGS
+  -
+    handle: form_submit_text
+    field:
+      type: text
+      display: Submit Button Text
+      default: Submit Ticket
+  -
+    handle: banner_image
+    field:
+      type: assets
+      display: Right Image
+      container: assets
+      max_files: 1

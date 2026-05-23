@@ -1,0 +1,72 @@
+title: 'Recognition Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: RECOGNITION
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      default: 'Awards & Certifications That Strengthen Our Credibility'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      default: Certifications
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+      default: 'ENX aligns with global quality standards, earning recognition for design excellence, innovation, and professional reliability.'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      default: 'Contact Us'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      default: /contact-us
+  -
+    handle: logos
+    field:
+      type: replicator
+      display: 'Recognition Logos'
+      sets:
+        logo:
+          display: Logo
+          fields:
+            -
+              handle: image
+              field:
+                type: assets
+                display: 'Logo Image'
+                container: assets
+                max_files: 1
+            -
+              handle: alt_text
+              field:
+                type: text
+                display: 'Alt Text'
+                default: 'Recognition Logo'
+  -
+    handle: mobile_button_text
+    field:
+      type: text
+      display: 'Mobile Button Text'
+      default: 'Contact Us'
+  -
+    handle: mobile_button_url
+    field:
+      type: text
+      display: 'Mobile Button URL'
+      default: /contact-us

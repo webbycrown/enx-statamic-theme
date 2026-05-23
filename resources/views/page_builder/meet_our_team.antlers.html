@@ -1,0 +1,80 @@
+
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 h-fit overflow-hidden">
+            <!-- container -->
+            <div class="container">
+                <!-- sub_title -->
+                <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                    <div class="flex flex-col lg:gap-8 1xl:gap-7 gap-5" data-aos="fade-right">
+                        <div class="flex items-center gap-[18px]">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ subtitle }}</p>
+                        </div>
+                        
+                        <h3>{{ heading | explode(highlight_text) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /heading | explode }}
+                        </h3>
+                    </div>
+                    <!-- sub_button -->
+                    {{ if button_text }}
+                    <a href="{{ button_link }}" aria-label="Open Page" class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit" data-aos="fade-left">
+                       {{ button_text }}
+                        <span class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z" fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                </div>
+                <!-- Team Grid -->
+                <div  class="grid grid-cols-1 min-[440px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:gap-[34px] 1xl:gap-6 gap-4 items-center">
+                    <!-- Cards -->
+                    {{ team_members limit="{limit}" }}
+                   <div class="{{ if is_homepage }}group relative{{ else }} group grid-item-append{{ /if }}" data-aos="fade-up">
+                        <a href="/team/{{ slug }}"
+                            class="{{ if is_homepage }}min-[450px]:max-w-[365px] min-[450px]:max-h-[450px] w-full h-full block{{ else }}
+                                   block relative before:block before:content-[''] lg:before:pt-[110%] md:before:pt-[128%] before:pt-[115%] w-full h-full overflow-hidden before:overflow-hidden 2xl:mb-5 xl:mb-4 sm:mb-3 mb-2{{ /if }}">
+                            {{ profile_image }}<img loading="lazy" src="{{ url }}" alt="Camilo"
+                                class="{{ if is_homepage }}{{ else }}absolute top-0 left-0{{ /if }}w-full h-full object-cover" />{{ /profile_image }}
+                        </a>
+                       <div class="{{ if is_homepage }}w-full absolute flex flex-col items-start justify-end h-full bottom-0 1xl:px-[30px] 1xl:py-[25px] px-5.5 p-4 z-1 bg-linear-to-b from-transparent via-black/40 to-black/75{{ else }}
+                                    flex items-start justify-between w-full{{ /if }}">
+                            <div>
+                                <h6  class="{{ if is_homepage }}xl:mb-[5px] mb-0 text-white group-hover:text-primary transition-all ease-in-out{{ else }} 
+                                            1xl:mb-2 xl:mb-1.5 mb-1 group-hover:text-primary transition-all ease-in-out font-light text-black-100{{ /if }}">
+                                    {{ title }}</h6>
+                                <p class="{{ if is_homepage }}p2 text-white {{ else }} p2 text-[#868686] font-normal{{ /if }}">{{ designation }}</p>
+                        </div>
+                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" class="{{ if is_homepage }}hidden{{ else }}block 1xl:size-7 size-[24px]{{ /if }}" fill="none">
+                                <g clip-path="url(#clip0_316_377)">
+                                    <path d="M4.29965 22.6539L19.9176 7.03591L6.53079 7.03591L6.41605 5.23825L22.9902 5.23825L22.9902 21.8124L21.1925 21.6977L21.1925 8.31084L5.57459 23.9288L4.29965 22.6539Z" fill="#FF8343"></path>
+                                </g>
+                            </svg>
+                         </div>
+
+                    </div>
+                    {{ /team_members }}
+                </div>
+                <!-- responsive btn -->
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page" class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group flex sm:hidden mt-[30px] w-fit">
+                    {{ button_text }}
+                    <span class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z" fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+        </section>
+

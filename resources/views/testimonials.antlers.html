@@ -1,0 +1,46 @@
+{{ page_builder scope="block" }}
+{{ if type != 'get_started_section' }}
+{{ partial src="page_builder/{type}" }}
+{{ /if }}
+{{ /page_builder }}
+
+
+  <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="container">
+                <div class="grid md:grid-cols-2 grid-cols-1 2xl:gap-8.5 1xl:gap-7 lg:gap-6 gap-5">
+                    <!-- 1st testimonials -->
+                    {{ collection:testimonials }}
+                    <div class="relative bg-purple-100 2xl:p-[30px] xl:p-6 sm:p-5 p-4 rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1)] flex flex-col items-center h-full" data-aos="fade-up">
+                        <h6 class="2xl:mb-12.5 xl:mb-9 sm:mb-7.5 mb-5 h-full text-[#383838]">
+                            “{{ quote }}”
+                        </h6>
+                        <div class="flex sm:items-center items-start justify-start sm:gap-[11px] sm:w-[90%] w-[83%] ml-0 mr-auto">
+                            <div class="flex items-start lg:gap-4.5 gap-2.5">
+                                {{ image }}<img loading="lazy" src="{{ url }}" alt="Camilo" class="2xl:w-17.5 1xl:w-15 xl:w-14 lg:w-13 w-11.5 h-full object-cover" />{{ /image }}
+                                <div class="text-left">
+                                    <h6 class="xl:mb-[5px] lg:mb-1">{{ title }}</h6>
+                                    <div class="flex items-start gap-2">
+                                        <span class="dash border border-primary lg:w-[25px]! w-[12px]! lg:mt-2 sm:mt-2.5 mt-[9px]"></span>
+                                        <p class="text-[#868686] lg:text-base leading-[20px] text-sm">
+                                            {{ designation }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sm:mt-0 -mt-5 absolute 2xl:bottom-12 bottom-10 right-5">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" class="2xl:w-12.5 1xl:w-11 xl:w-10 md:w-8 w-7.5 h-auto" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M28.125 27.7144V5.71436H50V28.0286C50 43.1144 35.9375 45.0001 35.9375 45.0001L34.0625 40.6001C34.0625 40.6001 40.3125 39.6572 41.5625 34.6286C42.8125 30.8572 40.3125 27.7144 40.3125 27.7144H28.125ZM0 27.7144V5.71436H21.875V28.0286C21.875 43.1144 7.8125 45.0001 7.8125 45.0001L5.9375 40.6001C5.9375 40.6001 12.1875 39.6572 13.4375 34.6286C14.6875 30.8572 12.1875 27.7144 12.1875 27.7144H0Z" fill="#FF8343" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                     {{ /collection:testimonials }}
+                    
+                </div>
+            </div>
+        </section>
+
+{{ page_builder scope="block" }}
+{{ if type == 'get_started_section' }}
+{{ partial src="page_builder/{type}" }}
+{{ /if }}
+{{ /page_builder }}

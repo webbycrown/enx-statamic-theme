@@ -1,0 +1,59 @@
+title: 'Sitemap Header'
+fields:
+  -
+    handle: breadcrumb
+    field:
+      type: replicator
+      display: Breadcrumb
+      instructions: 'Add breadcrumb items'
+      sets:
+        item:
+          display: Item
+          fields:
+            -
+              handle: title
+              field:
+                type: text
+                display: Title
+                validate: required
+            -
+              handle: url
+              field:
+                type: text
+                display: URL
+                instructions: 'Leave empty for current page'
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+      validate: required
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: background_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Background Image'
+  -
+    handle: cta_text
+    field:
+      type: text
+      display: 'Button Text'
+      default: 'Get Support Now'
+  -
+    handle: cta_link
+    field:
+      type: text
+      display: 'Button Link'
+      default: '#support-ticket'

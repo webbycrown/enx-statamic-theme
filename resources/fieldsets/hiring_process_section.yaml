@@ -1,0 +1,63 @@
+title: 'Hiring Process Section'
+fields:
+  -
+    handle: badge_text
+    field:
+      type: text
+      display: 'Badge Text'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+  -
+    handle: steps
+    field:
+      collapse: true
+      type: replicator
+      display: Steps
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: step_number
+                  field:
+                    type: text
+                    display: 'Step Number'
+                    instructions: '01,02,03...'
+                -
+                  handle: step_title
+                  field:
+                    type: text
+                    display: 'Step Title'
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Image

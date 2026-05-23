@@ -1,0 +1,161 @@
+tree:
+  -
+    id: f015ea58-5a04-4a55-8a7d-73d588f73a20
+    title: Home
+    url: 'javascript:;'
+    children:
+      -
+        id: 5793c7d9-24ba-4286-8b76-5b94094ab9c5
+        title: 'Home One'
+        url: /
+      -
+        id: 625f5804-eedf-4124-a0ec-9860360d242c
+        title: 'Home Two'
+        url: /home-two
+  -
+    id: 13ac3662-6334-46cb-ba0f-768e6c6db599
+    title: 'Why ENX?'
+    url: 'javascript:;'
+    data:
+      image: image/enx.webp
+    children:
+      -
+        id: 4510e6b0-5764-480d-9330-ec8dc0a7acfc
+        title: 'About ENX'
+        url: /about-us
+      -
+        id: d95acea0-b293-421a-9f67-476268e85a69
+        title: 'Why ENX?'
+        url: /why-enx
+  -
+    id: f86335f0-f0ed-45d1-8be0-ebe750acb50e
+    title: Services
+    url: /services
+    data:
+      image: image/solution.webp
+      services:
+        - d8b3d80c-5172-4e19-8d69-463ad058dedd
+        - 1ed678e6-9b25-44f0-a0a6-28c89901e52d
+        - 74de7e11-7017-48c5-9e5a-9a03062dc5c6
+        - 661e6843-1aef-4e32-b87a-53092602fca6
+        - 2e519335-16f8-412c-9317-b5268230d5d6
+        - 284999ea-e6fd-4a1e-be81-fd703e4bfeae
+        - 40b7205e-7739-4dfc-a7c9-d1d41ec3af1b
+        - 367fef6d-f530-406e-a98e-6e5edbf8b44e
+      collection_show: true
+  -
+    id: 75ac326c-ef82-41ce-96ac-e7ece19e1331
+    title: Resources
+    url: 'javascript:;'
+    data:
+      image: image/resources.webp
+    children:
+      -
+        id: c6d61a47-c6d9-4444-8be4-d5ff5a029d5c
+        title: 'Case Studies One'
+        url: /case-studies
+      -
+        id: 3a0e3ae1-1b8a-4201-8b05-08fc3774eb0b
+        title: 'Case Studies Two'
+        url: /case-studies-two
+      -
+        id: 6faa6261-563c-4ed7-88b7-03235b72f866
+        title: 'Single Case Studies'
+        url: /case-study/automating-complex-workflows-with-ai-driven-decision-systems
+      -
+        id: 14b5c0ec-1171-471c-8f92-ce60842070cb
+        title: 'Our Services'
+        url: /services
+        data:
+          collection_show: false
+      -
+        id: e0bfc2bc-1e7e-48fc-83a8-ca98f126d5ba
+        title: 'Our Team One'
+        url: /teams
+      -
+        id: 656682b0-ce14-48ba-a633-5eac1e5e447d
+        title: 'Our Team Two'
+        url: /teams-two
+      -
+        id: 0ecf4cc6-ea70-433b-82bb-346f3e210e26
+        title: 'Single Team'
+        url: /team/arhan-mentala
+      -
+        id: c1925470-11af-42eb-9e61-896fcec5a496
+        title: 'Our Offices'
+        url: /offices
+      -
+        id: 3205f27e-56af-4db1-8cd9-5a314105f97e
+        title: 'Contact Us'
+        url: /contact-us
+      -
+        id: 097a269d-f8ad-4f55-bc3b-8082099a6c3d
+        title: Testimonial
+        url: /testimonials
+      -
+        id: 16a6b9d0-4ef5-4e0f-97c7-5527a7e36066
+        title: FAQ’s
+        url: /faq
+      -
+        id: 43ee3a7e-dcf2-4b1b-900c-7f47dc821488
+        title: '404'
+        url: /404
+      -
+        id: 31ba64a9-acc9-48d7-b463-39b20e2c97c1
+        title: Careers
+        url: /career
+      -
+        id: 17ee30e0-3a82-4b24-9c88-ad85629ec317
+        title: Support
+        url: /support
+      -
+        id: 39510a67-dc77-49ad-b334-29767ebad413
+        title: 'Our Clients'
+        url: /clients
+      -
+        id: eacf618f-63df-4e71-bafc-d9e535896d0e
+        title: 'Privacy Policy'
+        url: /privacy-policy
+      -
+        id: bca29f97-a895-4c3f-92c0-82ee3ae92c7a
+        title: 'Terms & Conditions'
+        url: /terms-conditions
+      -
+        id: d0b94e18-2e18-463a-ae95-5cff037084cf
+        title: 'Cookie Policy'
+        url: /cookie-policy
+      -
+        id: e174d53a-0b60-4d47-851c-1b89ddc2df4d
+        title: Licensing
+        url: /licensing
+      -
+        id: cba156eb-632b-462b-99ad-5ce36849eea4
+        title: 'Data Protection'
+        url: /data-protection
+      -
+        id: 2b00a676-1c6e-446f-8575-e1d89a73d31c
+        title: 'Site Map'
+        url: /sitemap
+  -
+    id: 67cf0245-fd4e-45c6-8cb3-931399e70de4
+    title: Insights
+    url: 'javascript:;'
+    data:
+      image: image/Insights.webp
+    children:
+      -
+        id: 0829750a-fb5c-4840-95f6-f21124cceaef
+        title: 'Latest Insights One'
+        url: /insights
+      -
+        id: 4d4129e4-8f82-44a0-af8e-f5d69fa76cfd
+        title: 'Latest Insights Two'
+        url: /insights-two
+      -
+        id: 166f790c-2afa-4b99-aeb6-f964be06332e
+        title: 'Single Insights'
+        url: /insight/automation-as-the-backbone-of-business-efficiency
+  -
+    id: 8abae6b0-3327-4ea1-87b2-7073b0e64ab3
+    title: 'Contact us'
+    url: /contact-us

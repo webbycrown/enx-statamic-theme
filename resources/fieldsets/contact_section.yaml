@@ -1,0 +1,85 @@
+title: 'Contact Section'
+fields:
+  -
+    handle: badge_text
+    field:
+      type: text
+      display: 'Badge Text'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Form Button Text'
+  -
+    handle: map_iframe
+    field:
+      type: textarea
+      display: 'Google Map Embed Code'
+  -
+    handle: location_background_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Location Background Image'
+  -
+    handle: contact_cards
+    field:
+      collapse: true
+      type: replicator
+      display: 'Contact Cards'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    container: assets
+                    type: assets
+                    display: Icon
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: values
+                  field:
+                    type: replicator
+                    display: Values
+                    sets:
+                      new_set_group:
+                        display: 'New Set Group'
+                        sets:
+                          new_set:
+                            display: 'New Set'
+                            fields:
+                              -
+                                handle: value
+                                field:
+                                  type: text
+                                  display: Label
+                              -
+                                handle: url
+                                field:
+                                  type: text
+                                  display: Url

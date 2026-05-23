@@ -1,0 +1,51 @@
+title: 'Sitemap Links Section'
+fields:
+  -
+    handle: columns
+    field:
+      type: replicator
+      display: 'Sitemap Columns'
+      instructions: 'Add multiple sitemap columns like Main Pages, Services, Resources'
+      collapse: true
+      sets:
+        main:
+          display: Main
+          sets:
+            column:
+              display: Column
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: 'Column Title'
+                    validate: required
+                -
+                  handle: layout
+                  field:
+                    type: select
+                    display: 'Layout Type'
+                    instructions: 'Choose normal list or grid (for resources)'
+                    options:
+                      list: List
+                      grid: Grid
+                    default: list
+                -
+                  handle: links
+                  field:
+                    type: grid
+                    display: Links
+                    instructions: 'Add links for this column'
+                    fields:
+                      -
+                        handle: text
+                        field:
+                          type: text
+                          display: 'Link Text'
+                          validate: required
+                      -
+                        handle: url
+                        field:
+                          type: text
+                          display: URL
+                          validate: required

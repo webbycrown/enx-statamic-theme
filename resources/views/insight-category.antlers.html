@@ -1,0 +1,185 @@
+{{ setting }}
+<section class="relative 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div
+        class="relative w-full 3xl:h-[496px] md:h-[450px] h-[380px] 2xl:pt-[90px] xl:pt-[85px] lg:pt-20 sm:pt-[60px] pt-[55px] pb-20">
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-[linear-gradient(113.82deg,#F7F8FD_40%,rgba(245,245,245,0.48)_67.16%)] z-10">
+        </div>
+        <!-- Background image -->
+        {{ if background_image }}
+        <div class="absolute inset-0 bg-cover bg-center z-0"
+            style="background-image: url('{{ background_image:url }}')"></div>
+        {{ else }}
+        <div
+            class="absolute inset-0 bg-[url('{{ theme:asset }}assets/image/vector.png')] bg-auto bg-bottom bg-no-repeat z-0">
+        </div>
+        {{ /if }}
+        <!-- Content area -->
+        <div class="container h-full">
+            <div class="flex md:py-12.5 sm:py-6 py-5 h-full">
+                <div class="relative flex items-cente z-20 w-full h-full">
+                    <div class="absolute top-0 left-0">
+                        <!-- BREADCRUMB -->
+                        <div class="flex items-center gap-2.5 2xl:mb-9 1xl:mb-7.5 mb-6">
+                            <div class="flex items-center lg:gap-3 gap-2" data-aos="fade-right">
+                                {{ if breadcrumb }}
+                                {{ breadcrumb }}
+                                {{ if url }}
+                                <a href="{{ url }}" class="p2 opacity-60">{{ title }}</a>
+                                {{ else }}
+                                <span class="p2 text-black-100">{{ title }}</span>
+                                {{ /if }}
+                                {{ if !last }}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <g opacity="0.6">
+                                        <path d="M5 14L12 8L5 2" stroke="#000000" stroke-linecap="square" />
+                                    </g>
+                                </svg>
+                                {{ /if }}
+                                {{ /breadcrumb }}
+                                {{ /if }}
+                            </div>
+                        </div>
+                        <div class="flex justify-center flex-col h-full">
+                            <h1 class="2xl:mb-[30px] mb-5" data-aos="fade-right">{{ heading  }}</h1>
+                            <div data-aos="fade-right" class="flex items-start lg:gap-3 gap-2">
+                                <span
+                                    class="dash border-primary xl:mt-[13px] mt-[11px] lg:w-9! md:w-6! w-5! block"></span>
+                                <p class="p2 2xl:max-w-[70.5%] lg:max-w-3/5 sm:max-w-[84%] w-full text-black-100">
+                                    {{ description  }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ /setting }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+        <div class="flex items-center justify-between w-full 3xl:pb-8.5 2xl:pb-7 lg:pb-5 pb-4">
+           {{ setting }} <p class="p2 text-black-100 font-normal sm:block hidden">{{ section_label }}</p>{{ /setting }}
+
+            <div class="relative inline-block sm:w-fit w-full" id="insight-wrapper">
+                <!-- Trigger -->
+                <button id="insightDropdownBtn"
+                    class="flex items-center sm:justify-end justify-between w-full p2 font-normal text-black-100 gap-1 select-none focus:outline-none">
+                    <span class="flex items-center gap-1">
+                       {{ setting }} {{ if filter_label }} {{ filter_label }}: {{ /if }} {{ /setting }}<span class="text-primary">{{
+                            taxonomy:insight_categories }}{{ if slug == segment_3 }}{{ title }}
+                            {{ /if }} {{ /taxonomy:insight_categories }}</span></span>
+                    <svg id="insightChevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        viewBox="0 0 12 12" fill="none" class="ml-1 transition-all duration-300">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.37894 9.63163C6.16963 9.84093 5.83035 9.84093 5.62104 9.63163L0.156971 4.16755C-0.0523238 3.95824 -0.0523238 3.61896 0.156971 3.40965L0.409621 3.15698C0.618916 2.94767 0.958252 2.94767 1.16755 3.15698L5.99999 7.98944L10.8325 3.15698C11.0418 2.94767 11.381 2.94767 11.5903 3.15698L11.843 3.40965C12.0523 3.61896 12.0523 3.95824 11.843 4.16755L6.37894 9.63163Z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="insightMenu"
+                    class="hidden absolute 3xl:mt-9 2xl:mt-8 lg:mt-5.5 mt-4.5 2xl:w-[280px] lg:w-[260px] sm:w-[238px] w-full right-0 shadow-xl bg-white z-40 overflow-hidden">
+
+
+
+                    <ul class="2xl:py-1 py-1.5 2xl:px-6 lg:px-5 px-4">
+                        {{ taxonomy:insight_categories }}
+                        {{ if slug != segment_3 }}
+                        <li>
+                            <a href="/insight/category/{{ slug }}"
+                                class="block 2xl:py-2.5 py-1.5 text-slate-100 hover:text-primary p2 font-normal active:text-primary focus:text-primary w-full text-left">
+                                {{ title }}
+                            </a>
+                        </li>
+                        {{ /if }}
+                        {{ /taxonomy:insight_categories }}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {{ collection:insights as="insights" category:contains="{ category_slug }" paginate="true" limit="6" }}
+        <div class="grid-main-div">
+            {{ insights }}
+            <div class="tech-card group grid-item-append" data-aos="fade-up">
+                <div class="flex flex-col items-start justify-between h-auto 1xl:w-[630px] md:w-1/2 w-full">
+                    <div>
+                        <div class="flex items-start gap-3 1xl:mb-[25px] md:mb-5 mb-4">
+                            <span class="dash border border-primary mt-3"></span>
+
+                            <p class="p2">{{ if author_name }} By
+                                <span class="font-normal text-primary">{{ author_name }}</span>{{ /if }} {{ if
+                                publish_date }}—
+                                {{ publish_date }} {{ /if }}
+                            </p>
+                        </div>
+                        <a href="insight/{{ slug }}" class="block">
+                            <h4 class="2xl:mb-5 sm:mb-4 mb-3 group-hover:text-primary transition-all ease-in-out">
+                                {{ title }}
+                            </h4>
+                        </a>
+                        <p class="p2">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                    {{ buttons }}
+                    {{ if button_label }}
+                    <a href="{{ button_url }}{{ slug }}" class="btn btn-primary all-btn rounded-full group mt-6">
+                        {{ button_label }}
+                        <span
+                            class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                    {{ /buttons }}
+                </div>
+                <div class="1xl:w-[56.6%] md:w-1/2 w-full">
+                    <a href="insight/{{ slug }}"
+                        class="block relative before:block before:content-[''] 3xl:before:pt-[440px] 2xl:before:pt-[400px] xl:before:pt-[390px] sm:before:pt-[350px] before:pt-[240px] w-full h-full">
+                        {{ image }}
+                        <img loading="lazy" src="{{ url }}" alt="Tech Trend Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover" />
+                        {{ /image }}
+                    </a>
+                </div>
+            </div>
+            {{ /insights }}
+
+        </div>
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div
+            class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit">
+            Load More
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}"
+                    class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500 ajax-load-more-grid">
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more"
+                        class="animate-spin hidden">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+
+        {{ /collection:insights }}
+
+    </div>
+</section>

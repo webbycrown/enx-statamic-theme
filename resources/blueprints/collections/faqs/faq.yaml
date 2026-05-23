@@ -1,0 +1,42 @@
+title: FAQ
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Question
+          -
+            handle: answer
+            field:
+              type: textarea
+              display: Answer
+          -
+            handle: category
+            field:
+              max_items: 1
+              mode: select
+              taxonomies:
+                - faq_category
+              type: terms
+              display: Category
+              validate:
+                - required
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

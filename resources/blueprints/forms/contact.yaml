@@ -1,0 +1,67 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: full_name
+            field:
+              placeholder: 'Enter your full name'
+              type: text
+              display: 'Full Name'
+              validate:
+                - required
+          -
+            handle: email_address
+            field:
+              placeholder: you@company.com
+              type: text
+              display: 'Email Address'
+              validate:
+                - required
+                - email
+                - 'unique_form_submission:contact,email_address'
+          -
+            handle: phone
+            field:
+              placeholder: 'Type your phone number'
+              type: text
+              display: 'Phone (Optional)'
+          -
+            handle: company
+            field:
+              placeholder: 'Your company name'
+              type: text
+              display: 'Company / Organization'
+              validate:
+                - required
+          -
+            handle: project_type
+            field:
+              type: text
+              display: 'Project Type'
+              validate:
+                - required
+          -
+            handle: project_budget
+            field:
+              type: text
+              display: 'Project Budget'
+              validate:
+                - required
+          -
+            handle: message
+            field:
+              placeholder: 'Tell us how we can help'
+              type: textarea
+              display: Message
+              validate:
+                - required
+          -
+            handle: terms
+            field:
+              type: toggle
+              display: Terms
+              validate:
+                - required

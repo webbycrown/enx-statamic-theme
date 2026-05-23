@@ -1,0 +1,67 @@
+  <section class="">
+            <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 sm:py-12 py-9">
+                <!-- container -->
+                <div class="container">
+                    <!-- sub_title -->
+                    <div
+                        class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                        <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ section_title }}</p>
+                            </div>
+                            <h3>{{ title | explode(highlight_word) }}
+                                {{ if first }}
+                                {{ value }}
+                                {{ else }}
+                                <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                {{ /if }}
+                                {{ /title | explode }}
+                            </h3>
+                        </div>
+                        <p class="p2 2xl:max-w-[38%] 1xl:max-w-2/5 lg:max-w-[45%] md:w-1/2 w-full" data-aos="fade-left">
+                           {{ description }}
+                        </p>
+                    </div>
+
+                    <!-- grid column -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 3xl:gap-8.5 2xl:gap-7 xl:gap-6.5 gap-5">
+                        <!-- Card 1 -->
+                        {{ support_cards }}
+                        <div class="bg-white 2xl:p-[30px] xl:p-6 sm:p-5 p-4 rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1)]"
+                            data-aos="fade-up">
+                            <div class="flex items-start 2xl:gap-5.5 sm:gap-4 gap-3 flex-col">
+                                <div
+                                    class="bg-[#FAF0EB] 3xl:size-[74px] xl:size-17.5 md:size-15 sm:size-14 size-12.5 flex items-center justify-center rounded-full">
+                                  {{ icon_image }}<img src="{{ url }}" class="sm:size-9 size-7"> {{ /icon_image }} 
+                                 
+                                </div>
+                                <div>
+                                    <h5 class="2xl:mb-4 sm:mb-3 mb-2"> {{ title }}</h5>
+                                    <p class="p2">
+                                        {{ description }}
+                                    </p>
+
+
+
+                                    {{ if link_text }}
+                                    <a href="{{ link_type }}"
+                                        class="flex items-center gap-1 hover:text-primary group p2 text-slate-100 3xl:mt-4.5 mt-3 w-fit">
+                                        <span class="text-black-100 group-hover:text-primary">{{ link_label }}
+                                        </span>{{ link_text }}
+                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0.0006536 10.6839L9.58171 1.1028L1.36938 1.1028L1.29899 1.69823e-06L11.4666 2.5553e-06L11.4666 10.1677L10.3638 10.0973L10.3638 1.88493L0.782781 11.466L0.0006536 10.6839Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </a>
+                                    {{ /if }}
+                                </div>
+                            </div>
+                        </div>
+                        {{ /support_cards }}
+                    </div>
+                </div>
+            </div>
+        </section>

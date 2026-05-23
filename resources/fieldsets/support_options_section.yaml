@@ -1,0 +1,118 @@
+title: 'Support Options Section'
+fields:
+  -
+    handle: layout
+    field:
+      type: select
+      display: 'Section Layout'
+      options:
+        -
+          key: support_cards
+          value: 'Support Cards Grid'
+        -
+          key: count_cards
+          value: 'Count Cards Grid'
+        -
+          key: ecommerce_cards
+          value: 'E-Commerce Cards'
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'SUPPORT OPTIONS'
+  -
+    handle: section_title
+    field:
+      type: text
+      display: 'Section Title'
+      default: 'Choose the Help You Need'
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+      instructions: 'Part of title to highlight (e.g. "Help")'
+      default: Help
+  -
+    handle: description
+    field:
+      type: textarea
+      display: 'Right Side Description'
+  -
+    handle: background_color
+    field:
+      type: toggle
+      display: 'Background Color'
+  -
+    handle: support_cards
+    field:
+      type: replicator
+      display: 'Support Cards'
+      collapse: true
+      if:
+        layout: 'equals support_cards'
+      sets:
+        main:
+          display: Main
+          sets:
+            card:
+              display: Card
+              fields:
+                -
+                  handle: card_title
+                  field:
+                    type: text
+                    display: 'Card Title'
+                    validate: required
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: 'Card Description'
+                -
+                  handle: icon_image
+                  field:
+                    type: assets
+                    display: 'Icon Image'
+                    container: assets
+                    max_files: 1
+  -
+    handle: count_cards
+    field:
+      type: replicator
+      display: 'Count Cards'
+      unless:
+        layout: 'equals support_cards'
+      sets:
+        main:
+          display: Main
+          sets:
+            item:
+              display: Card
+              fields:
+                -
+                  handle: icon_image
+                  field:
+                    type: assets
+                    container: assets
+                    max_files: 1
+                    instructions: 'Paste SVG code'
+                -
+                  handle: card_title
+                  field:
+                    type: text
+                -
+                  handle: description
+                  field:
+                    type: textarea
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'

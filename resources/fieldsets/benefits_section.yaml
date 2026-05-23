@@ -1,0 +1,51 @@
+title: 'Benefits Section'
+fields:
+  -
+    handle: sub_title
+    field:
+      type: text
+      display: 'Sub Title'
+      instructions: 'Example: Why It Matters'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+      instructions: 'Main heading text'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      instructions: 'Word to highlight (e.g. Aerospace)'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: benefits
+    field:
+      type: replicator
+      display: 'Benefits Cards'
+      sets:
+        benefit:
+          display: Benefit
+          fields:
+            -
+              handle: icon_image
+              field:
+                type: assets
+                display: 'Icon Image'
+                container: assets
+                max_files: 1
+            -
+              handle: title
+              field:
+                type: text
+                display: 'Card Title'
+            -
+              handle: description
+              field:
+                type: textarea
+                display: 'Card Description'

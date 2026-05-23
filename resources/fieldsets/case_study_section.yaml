@@ -1,0 +1,88 @@
+title: 'Case Study Section'
+fields:
+  -
+    handle: show_type
+    field:
+      options:
+        -
+          key: case-study-one
+          value: 'Case Studies Page'
+        -
+          key: case-study-two
+          value: 'Case Studies Two Page'
+        -
+          key: home-page
+          value: 'Home Page'
+        -
+          key: home-two-page
+          value: 'Home Two Page'
+      default: case-study-one
+      type: select
+      display: 'Show Type'
+  -
+    handle: collections
+    field:
+      mode: select
+      type: collections
+      display: Collections
+      max_items: 1
+      unless:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: pagination
+    field:
+      default: 'false'
+      type: text
+      display: Pagination
+      unless:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: entries
+    field:
+      mode: select
+      collections:
+        - case_studies
+      type: entries
+      display: Entries
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+      if:
+        show_type: 'contains_any home-page,home-two-page'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'
+      if:
+        show_type: 'contains_any home-page,home-two-page'

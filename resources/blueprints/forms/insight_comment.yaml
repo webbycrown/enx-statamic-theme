@@ -1,0 +1,60 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: first_name
+            field:
+              type: text
+              display: 'First Name'
+              validate:
+                - required
+              placeholder: 'Your First Name'
+          -
+            handle: last_name
+            field:
+              type: text
+              display: 'Last Name'
+              validate:
+                - required
+              placeholder: 'Your Last Name'
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              validate:
+                - required
+              placeholder: 'Your Email'
+          -
+            handle: website
+            field:
+              type: text
+              display: Website
+              placeholder: 'Your Website'
+          -
+            handle: comment
+            field:
+              type: textarea
+              display: Comment
+              validate:
+                - required
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: parent_id
+            field:
+              type: text
+              display: 'Parent Id'
+          -
+            handle: insight_id
+            field:
+              type: text
+              display: 'Insight Id'

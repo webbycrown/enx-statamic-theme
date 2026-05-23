@@ -1,0 +1,115 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: favicon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Favicon
+              validate:
+                - required
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Logo
+              validate:
+                - required
+          -
+            handle: white_logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'White Logo'
+              validate:
+                - required
+          -
+            handle: footer_type
+            field:
+              type: select
+              display: 'Footer Select'
+              options:
+                -
+                  key: footer_one
+                  value: 'Footer Style One'
+                -
+                  key: footer_two
+                  value: 'Footer Style Two'
+              default: footer_one
+          -
+            import: social_section
+          -
+            handle: header_button
+            field:
+              type: group
+              display: 'Header Button'
+              fields:
+                -
+                  handle: label
+                  field:
+                    default: 'Get started'
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    default: /contact-us
+                    type: text
+                    display: URL
+      -
+        display: 'Insight Category'
+        fields:
+          -
+            handle: section_label
+            field:
+              default: 'Browse all Posts'
+              type: text
+              display: 'Section Label'
+          -
+            handle: filter_label
+            field:
+              default: 'Browse By'
+              type: text
+              display: 'Filter Label'
+          -
+            import: sitemap_header
+      -
+        display: Comments
+        fields:
+          -
+            handle: comment_title
+            field:
+              default: 'Leave a Comment'
+              type: text
+              display: 'Comment Title'
+          -
+            handle: comment_description
+            field:
+              default: 'Share your thoughts or questions — your feedback helps us create better content for the ENX community.'
+              type: textarea
+              display: 'Comment Description'
+          -
+            handle: reply_title
+            field:
+              default: 'Leave a Reply'
+              type: text
+              display: 'Reply Title'
+          -
+            handle: reply_description
+            field:
+              default: 'Share your thoughts or continue the discussion your feedback matters!'
+              type: textarea
+              display: 'Reply Description'
+      -
+        display: 'Case Study Category'
+        fields:
+          -
+            import: sitemap_header

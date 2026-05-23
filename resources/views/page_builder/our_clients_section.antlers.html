@@ -1,0 +1,75 @@
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] 1xl:py-20 xl:py-16 lg:py-14 md:py-12 py-12.5">
+                <div class="container">
+                    <!-- sub_title -->
+                    <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                        <div class="md:w-[70%] w-full flex flex-col 2xl:gap-8 1xl:gap-7 gap-5" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ subtitle }}</p>
+                            </div>
+                            <h3>{{ heading | explode(highlight_text) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /heading | explode }}</h3>
+
+                        </div>
+                        {{ if button_text }}
+                        <a href="{{ button_link }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit"
+                            data-aos="fade-left">
+                            {{ button_text }}
+                            <span
+                                class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+
+                    <div class="our-clients swiper">
+                        <div class="swiper-wrapper">
+                            <!-- brands-one -->
+                            {{ clients }}
+                            <div class="swiper-slide h-auto!">
+                                <div class="2xl:px-16 1xl:px-12 xl:px-10 lg:px-8 sm:px-7 px-6 2xl:py-15 1xl:py-11.5 md:py-9.5 sm:py-7.5 py-6.5 bg-white rounded-lg w-auto h-full">
+                                    <span class="flex items-center justify-center h-full">
+                                        {{ image }}<img loading="lazy" class="xl:w-auto xl:w-28 w-32 h-full object-contain"
+                                            src="{{ url }}" alt="Brands">{{ /image }}
+                                    </span>
+                                </div>
+                            </div>
+                            {{ /clients }}
+                        </div>
+                    </div>
+
+                    {{ if mobile_button_text }}
+                    <a href="{{ mobile_button_link }}" aria-label="Open Page"
+                        class="btn btn-primary all-btn rounded-full group flex md:hidden mt-[30px] w-fit">
+                        {{ mobile_button_text }}
+                        <span
+                            class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                </div>
+            </div>
+        </section>

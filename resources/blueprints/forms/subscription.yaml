@@ -1,0 +1,14 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+              validate:
+                - required
+                - email

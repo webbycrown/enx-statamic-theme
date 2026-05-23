@@ -1,0 +1,58 @@
+title: 'Media Solutions Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description_content
+    field:
+      type: replicator
+      display: 'Description Content'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: paragraph
+                  field:
+                    type: textarea
+                    display: Paragraph
+  -
+    handle: image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: Image
+  -
+    handle: left_side_image
+    field:
+      max_files: 1
+      container: assets
+      type: assets
+      display: 'Left Side Image'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_url
+    field:
+      type: text
+      display: 'Button URL'

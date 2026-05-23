@@ -1,0 +1,185 @@
+title: Footer
+data:
+  cta_title: 'Want to start a project?'
+  cta_button_text: 'Start a Project'
+  cta_button_link: /contact-us
+  footer_columns:
+    -
+      id: mn758drb
+      title: Company
+      links:
+        -
+          id: mn758if1
+          label: 'About Us'
+          url: /about-us
+        -
+          id: mn758t12
+          label: Careers
+          url: /career
+        -
+          id: mn759a32
+          label: Offices
+          url: /offices
+        -
+          id: mn75aa6u
+          label: Contact
+          url: /contact-us
+        -
+          id: mn75b1za
+          label: 'Why ENX?'
+          url: /why-enx
+      type: column
+      enabled: true
+    -
+      id: mn75bjdd
+      title: 'Quick Links'
+      links:
+        -
+          id: mn75bkqe
+          label: Services
+          url: /services
+        -
+          id: mn75c1u6
+          label: 'Case Studies'
+          url: /case-studies
+        -
+          id: mn75cf79
+          label: Insights
+          url: /insights
+        -
+          id: mn75cqeu
+          label: Support
+          url: /support
+        -
+          id: mn75cyzq
+          label: FAQs
+          url: /faq
+      type: column
+      enabled: true
+    -
+      id: mn75e01e
+      title: Solutions
+      links:
+        -
+          id: mn75e4hq
+          label: 'Aerospace & Defense'
+          url: /aerospace
+        -
+          id: mn75en8l
+          label: 'Healthcare & Life Sciences'
+          url: /healthcare
+        -
+          id: mn75ezsu
+          label: 'Financial Services'
+          url: /financial
+        -
+          id: mn75fbn1
+          label: 'Retail & E-Commerce'
+          url: /e-commerce
+        -
+          id: mn75g2tx
+          label: 'Manufacturing & Industrial'
+          url: /Manufacture
+      type: column
+      enabled: true
+    -
+      id: mn75gekw
+      title: Legal
+      links:
+        -
+          id: mn75hbb9
+          label: 'Privacy Policy'
+          url: /privacy-policy
+        -
+          id: mn75hovp
+          label: 'Terms of Use'
+          url: /terms-conditions
+        -
+          id: mn75i2ou
+          label: 'Cookie Policy'
+          url: /cookie-policy
+        -
+          id: mn75ii9h
+          label: Licensing
+          url: /licensing
+        -
+          id: mn75irge
+          label: 'Data Protection'
+          url: /data-protection
+      type: column
+      enabled: true
+  contact_info:
+    label: 'Connect Us'
+    contact:
+      -
+        id: mn75nh4n
+        label: 'Email:'
+        link: 'mailto:support@enxstudio.com'
+        value: support@enxstudio.com
+      -
+        id: mn75ozhy
+        label: 'Phone:'
+        link: 'tel:+12025550147'
+        value: '+1 202 555 0147'
+      -
+        id: mn75peel
+        label: 'Address:'
+        link: 'https://maps.app.goo.gl/D5hGpZESA22Eqw1H9'
+        value: 'ENX Digital Studio New York, USA'
+  marquee_items:
+    - 'Built for Global Businesses'
+    - 'Precision-Driven Design'
+    - 'Enterprise-Grade Quality'
+    - 'Solutions That Scale'
+    - 'Trusted by Industry Leaders'
+    - 'Innovate With Confidence'
+    - 'Design That Drives Growth'
+  menu_links:
+    -
+      id: mn75rcp1
+      label: 'About Us'
+      url: /about-us
+    -
+      id: mn75wgjq
+      label: Services
+      url: /services
+    -
+      id: mn75wpce
+      label: 'Case Studies'
+      url: /case-studies
+    -
+      id: mn75wyoc
+      label: Insights
+      url: /insights
+    -
+      id: mn75x5gt
+      label: Careers
+      url: /career
+    -
+      id: mn75xbpq
+      label: Contact
+      url: /contact-us
+  contact_info_two:
+    label: 'Connect Us'
+    contact:
+      -
+        id: mn760ctm
+        label: 'Email:'
+        link: 'mailto:contact@enxglobal.com'
+        value: contact@enxglobal.com
+      -
+        id: mn760vbm
+        label: 'HR:'
+        link: 'tel:+12024801120'
+        value: '+1 (202) 480-1120'
+  newsletter_title: 'Stay Updated With ENX'
+  legal_links:
+    -
+      id: mn763gn5
+      label: 'Privacy Policy'
+      url: /privacy-policy
+    -
+      id: mn763wsx
+      label: 'Terms of Use'
+      url: /terms-conditions
+  copyright_text: 'Copyright © 2026 <span class="text-primary">ENX</span>. All rights reserved.'

@@ -1,0 +1,52 @@
+title: Service
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Title
+          -
+            handle: icon
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Icon
+          -
+            handle: short_description
+            field:
+              type: textarea
+              display: 'Short Description'
+          -
+            handle: button_text
+            field:
+              default: 'READ MORE'
+              type: text
+              display: 'Button Text'
+          -
+            handle: button_url
+            field:
+              default: /service/
+              type: text
+              display: 'Button URL'
+          -
+            import: all_page_builder
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

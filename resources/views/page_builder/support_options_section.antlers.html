@@ -1,0 +1,404 @@
+{{ if layout == 'support_cards' }}
+
+{{ if !background_color }}
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 overflow-hidden">
+    <div class="container">
+        <!-- sub_title -->
+        <div
+            class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 lg:w-[70%] md:w-[50%] w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ subtitle }}</p>
+                </div>
+                <h3>
+                    {{ section_title | explode(highlight_text) }}
+                    {{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /section_title | explode }}
+                </h3>
+            </div>
+            {{ if description }}
+            <p class="p2 2xl:max-w-[37%] xl:max-w-2/5 lg:max-w-[45%] md:w-1/2 w-full" data-aos="fade-left">
+                {{ description }}
+            </p>
+            {{ /if }}
+
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+
+        <div
+            class="relative before:content-none after:content-none sm:before:content-[''] sm:before:absolute sm:before:top-0 sm:before:left-[-100vw] sm:before:w-[200vw] sm:before:h-px sm:before:bg-gray-100 sm:after:content-[''] sm:after:absolute sm:after:bottom-0 sm:after:left-[-100vw] sm:after:w-[200vw] sm:after:h-px sm:after:bg-gray-100">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 relative before:content-none sm:before:content-[''] sm:before:absolute sm:before:h-full sm:before:w-px sm:before:bg-gray-100">
+                <!-- Card 1 -->
+                {{ support_cards }}
+                <div class="2xl:p-10 md:p-7 sm:p-5 py-[30px] sm:border-r border-b border-[#DADDE9]" data-aos="fade-up">
+                    <div class="flex items-start xl:gap-[25px] sm:gap-4 gap-3 flex-col">
+                        <div
+                            class="bg-[#FAF0EB] 2xl:size-[90px] 1xl:size-[85px] sm:size-20 size-18 flex items-center justify-center rounded-full">
+                            <img src="{{ icon_image:url }}"
+                                class="3xl:w-12.5 3xl:h-12.5 2xl:w-12 2xl:h-12 xl:w-11 xl:h-11 w-10 h-10">
+                        </div>
+                        <div>
+                            <h5 class="1xl:mb-4 xl:mb-3 mb-2">
+                                {{ card_title }}</h5>
+                            <p class="p2">
+                                {{ description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {{ /support_cards }}
+            </div>
+        </div>
+        {{ if button_text }}
+        <a href="{{ button_url }}" aria-label="Open Page"
+            class="btn btn-primary all-btn rounded-full group flex md:hidden mt-[30px] w-fit">
+            {{ button_text }}
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    class="1xl:size-5.5 xl:size-5 size-4">
+                    <g clip-path="url(#clip0_421_92)">
+                        <path
+                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                            fill="currentColor" />
+                    </g> overflow-hidden
+                </svg>
+            </span>
+        </a>
+        {{ /if }}
+    </div>
+</section>
+
+{{ else }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 overflow-hidden">
+    <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5">
+        <!-- container -->
+        <div class="container">
+            <!-- sub_title -->
+            <div
+                class="flex md:items-center justify-between md:flex-row flex-col w-full gap-6 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase">{{ subtitle }}</p>
+                    </div>
+                    <h3>{{ section_title | explode(highlight_text) }}
+                        {{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /section_title | explode }}
+                    </h3>
+                </div>
+                {{ if description }}
+                <p class="p2 3xl:max-w-[33%] 2xl:max-w-[40%] xl:max-w-[510px] md:max-w-1/2 w-full" data-aos="fade-left">
+                    {{ description }}
+                </p>
+                {{ /if }}
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page"
+                    class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                    {{ button_text }}
+                    <span
+                        class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 bg-white sm:p-0 px-5 sm:divide-x divide-y divide-gray-100">
+                <!-- Card 1 -->
+                {{ support_cards }}
+                <div class=" {{ if index == 1 }}
+                max-xl:border-r-0
+            {{ /if }}
+            {{ if index == 2 }}
+                xl:border-r-0
+            {{ /if }}
+            
+            {{ if index == 3 }}
+                xl:border-b-0 max-xl:border-r-0
+            {{ /if }}
+            {{ if index == 4 }}
+                sm:border-b-0
+            {{ /if }}
+            bg-white 2xl:p-7.5 md:p-6.5 sm:p-5.5 py-5" data-aos="fade-up">
+                    <div class="flex items-start flex-col">
+                        <!-- Value_svg -->
+                        <div
+                            class="bg-[#FAF0EB] 3xl:p-5.5 sm:p-5 p-4.5 flex items-center justify-center rounded-full 3xl:mb-6 2xl:mb-5 mb-4">
+                            <img src="{{ icon_image:url }}"
+                                class="3xl:w-[30px] 3xl:h-[30px] 1xl:w-7 1xl:h-7 xl:w-6 xl:h-6 w-7 h-7 flex-shrink-0">
+
+                        </div>
+                        <!-- services_Content -->
+                        <h5 class="3xl:mb-4 2xl:mb-3.5 sm:mb-3 mb-2">{{ card_title }}</h5>
+                        <p class="p2">{{ description }}</p>
+                    </div>
+                </div>
+                {{ /support_cards }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ elseif layout == 'count_cards' }}
+{{ if !background_color }}
+<section
+    class="{{ if segment_2 == 'manufacturing-industrial' }}3xl:pt-25 2xl:pt-[90px] xl:pt-20 lg:pt-17 pt-12.5 {{else}}pt-0{{/if}} 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 relative">
+    <!-- container -->
+    <div class="container">
+        <!-- sub_title -->
+        <div
+            class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ subtitle }}</p>
+                </div>
+                <h3>{{ section_title | explode(highlight_text) }}{{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /section_title | explode }}
+                </h3>
+            </div>
+            {{ if description }}
+            <p class="p2 2xl:max-w-[535px] xl:max-w-[480px] lg:max-w-116 md:max-w-90 w-full" data-aos="fade-left">
+                {{ description }}
+            </p>
+            {{ /if }}
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+        <!-- Count grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 2xl:gap-[25px] xl:gap-5 lg:gap-4.5 gap-4">
+            <!-- Card 1 -->
+            {{ count_cards }}
+            <div class="2xl:p-7.5 1xl:p-6 lg:p-4 md:p-6 p-4 bg-white rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1)] border border-gray-100"
+                data-aos="fade-up">
+                <div class="{{ if segment_2 == 'healthcare-life-sciences' or segment_2 == 'manufacturing-industrial' or segment_2 == 'construction-infrastructure' }} xl:gap-7 md:gap-5 gap-4 flex items-start flex-col {{ else }}
+                                flex items-center 2xl:gap-[25px] lg:gap-5 gap-4 flex-col {{ /if }}">
+                    <div
+                        class="{{ if segment_2 == 'healthcare-life-sciences' or segment_2 == 'manufacturing-industrial' or segment_2 == 'construction-infrastructure' }} bg-white {{ else }}
+                                    bg-[#FAF0EB] 2xl:size-22.5 lg:size-20 md:size-16 size-18 flex items-center justify-center rounded-full p-2 {{ /if }}">
+
+                        <img src="{{ icon_image:url }}" class="{{ if segment_2 == 'healthcare-life-sciences' or segment_2 == 'manufacturing-industrial' or segment_2 == 'construction-infrastructure' }} 3xl:size-[60px] 2xl:size-12.5 1xl:size-11 md:size-10 size-9 {{ else }} 
+                                                                   2xl:size-12.5 lg:size-11 size-9.5  {{ /if }}">
+                    </div>
+                    <div>
+                        <h5
+                            class="{{ if segment_2 == 'healthcare-life-sciences' or segment_2 == 'manufacturing-industrial' or segment_2 == 'construction-infrastructure' }} 2xl:pb-[25px] xl:pb-5 sm:pb-4 pb-3 2xl:mb-[25px] sm:mb-5 mb-3 border-b border-[#DADDE9] {{ else }} 
+                                       2xl:pb-6 xl:pb-5 pb-4 text-black-100 text-center border-b border-gray-100 {{ /if }}">
+                            {{ card_title }}</h6>
+                            <p
+                                class="{{ if segment_2 == 'healthcare-life-sciences' or segment_2 == 'manufacturing-industrial' or segment_2 == 'construction-infrastructure' }} p2 leading-relaxed {{ else }} p2 text-center 2xl:pt-6 xl:pt-5 pt-4 {{ /if }}">
+                                {{ description }}
+                            </p>
+                    </div>
+                </div>
+            </div>
+            {{ /count_cards }}
+        </div>
+    </div>
+
+</section>
+{{ /if }}
+{{ if background_color }}
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 relative">
+    <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5">
+        <!-- container -->
+        <div class="container">
+            <!-- sub_title -->
+            <div
+                class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase">{{ subtitle }}</p>
+                    </div>
+                    <h3>{{ section_title | explode(highlight_text) }}{{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /section_title | explode }}
+                    </h3>
+                </div>
+                {{ if description }}
+                <p class="p2 2xl:max-w-[535px] xl:max-w-[480px] lg:max-w-116 md:max-w-90 w-full" data-aos="fade-left">
+                    {{ description }}
+                </p>
+                {{ /if }}
+
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page"
+                    class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                    {{ button_text }}
+                    <span
+                        class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+
+            <!-- Count grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 2xl:gap-[25px] xl:gap-5 lg:gap-4.5 gap-4">
+                <!-- Card 1 -->
+                {{ count_cards }}
+                <div class="2xl:p-7.5 1xl:p-6 lg:p-4 sm:p-6 p-5 bg-white rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.1)]"
+                    data-aos="fade-up">
+                    <div class="{{ if segment_1 == 'home-two' or segment_2 == 'media-entertainment' }} xl:gap-7 md:gap-5 gap-4 flex items-start flex-col {{ else }}
+                                flex items-center 2xl:gap-[25px] lg:gap-5 gap-4 flex-col {{ /if }}">
+                        <div
+                            class="{{ if segment_1 == 'home-two' or segment_2 == 'media-entertainment' }} bg-white {{ else }}
+                                    bg-[#FAF0EB] 2xl:size-22.5 lg:size-20 md:size-16 size-18 flex items-center justify-center rounded-full p-2 {{ /if }}">
+                            <img src="{{ icon_image:url }}" class="{{ if segment_1 == 'home-two' or segment_2 == 'media-entertainment' }} 3xl:size-[60px] 2xl:size-12.5 1xl:size-11 md:size-10 size-9 {{ else }} 
+                                                                   2xl:size-12.5 lg:size-11 size-9.5  {{ /if }}">
+                        </div>
+                        <div>
+                            <h5
+                                class="{{ if segment_1 == 'home-two' or segment_2 == 'media-entertainment' }} 2xl:pb-[25px] xl:pb-5 sm:pb-4 pb-3 2xl:mb-[25px] sm:mb-5 mb-3 border-b border-[#DADDE9] {{ else }} 
+                                       2xl:pb-6 xl:pb-5 pb-4 text-black-100 text-center border-b border-gray-100 {{ /if }}">
+                                {{ card_title }}</h6>
+                                <p
+                                    class="{{ if segment_1 == 'home-two' or segment_2 == 'media-entertainment' }} p2 leading-relaxed {{ else }} p2 text-center 2xl:pt-6 xl:pt-5 pt-4 {{ /if }}">
+                                    {{ description }}
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                {{ /count_cards }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ /if }}
+
+{{ elseif layout == 'ecommerce_cards' }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 relative h-fit">
+    <!-- container -->
+    <div class="container">
+        <div
+            class="flex items-start justify-between w-full lg:flex-row flex-col 3xl:gap-[140px] 1xl:gap-[110px] lg:gap-[55px] sm:gap-2">
+            <!-- sub_title -->
+            <div class="sm:mb-0 mb-[25px]" data-aos="fade-right">
+                <div class="flex flex-col 2xl:gap-[35px] md:gap-6 gap-5">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase">{{ subtitle }}</p>
+                    </div>
+                    <h3 class="lg:mb-5 mb-3">
+                        {{ if highlight_text }}
+                        {{ section_title | explode(highlight_text) }}{{ if first }}{{ value }}{{ else }}<span
+                            class="text-primary">{{ highlight_text }}</span>{{ value }}{{ /if }}{{ /section_title }}
+                        {{ else }}
+                        {{ section_title }}
+                        {{ /if }}
+                    </h3>
+                </div>
+                {{ if description }}
+                <p class="p2 sm:mb-[30px]">
+                    {{ description }}
+                </p>
+                {{ /if }}
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page"
+                    class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                    {{ button_text }}
+                    <span
+                        class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+            <div
+                class="3xl:max-w-[920px] 2xl:max-w-[860px] 1xl:max-w-[750px] xl:max-w-[650px] lg:max-w-[550px] w-full shrink-0 divide-y divide-gray-100 3xl:space-y-9 2xl:space-y-8 1xl:space-y-7 space-y-6">
+                {{ count_cards }}
+                <div class="flex sm:flex-row flex-col sm:gap-6 gap-5 items-start 3xl:pb-9 2xl:pb-8 1xl:pb-7 pb-6 last:pb-0"
+                    data-aos="fade-up">
+                    <div
+                        class="bg-white border border-gray-100 2xl:size-22.5 1xl:size-20 xl:size-19 size-18 flex items-center justify-center shrink-0 rounded-full p-2">
+                        <img src="{{ icon_image:url }}" class="2xl:size-12.5 xl:size-11 lg:size-10 size-9.5">
+
+                    </div>
+                    <div>
+                        <h5 class="text-black-100 1xl:mb-4 xl:mb-3 lg:mb-2 mb-3">{{ card_title }}</h5>
+                        <p class="p2">
+                            {{ description }}
+                        </p>
+                    </div>
+                </div>
+                {{ /count_cards }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ /if }}

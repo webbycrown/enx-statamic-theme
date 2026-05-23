@@ -1,0 +1,553 @@
+{{ if show_type == "insight-one" }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 wc-insight-section overflow-hidden">
+    <div class="container">
+        <div class="flex items-center justify-between w-full 3xl:pb-8.5 2xl:pb-7 lg:pb-5 pb-4">
+<p class="p2 text-black-100 font-normal sm:block hidden">Browse all Posts</p>
+            <div class="relative inline-block sm:w-fit w-full" id="insight-wrapper">
+                <!-- Trigger -->
+                <button id="insightDropdownBtn"
+                    class="flex items-center sm:justify-end justify-between w-full p2 font-normal text-black-100 gap-1 select-none focus:outline-none">
+                    <span class="flex items-center gap-1">
+                        {{ if filter_label }} {{ filter_label }}: {{ /if }} <span class="text-primary">All</span></span>
+                    <svg id="insightChevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                        viewBox="0 0 12 12" fill="none" class="ml-1 transition-all duration-300">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.37894 9.63163C6.16963 9.84093 5.83035 9.84093 5.62104 9.63163L0.156971 4.16755C-0.0523238 3.95824 -0.0523238 3.61896 0.156971 3.40965L0.409621 3.15698C0.618916 2.94767 0.958252 2.94767 1.16755 3.15698L5.99999 7.98944L10.8325 3.15698C11.0418 2.94767 11.381 2.94767 11.5903 3.15698L11.843 3.40965C12.0523 3.61896 12.0523 3.95824 11.843 4.16755L6.37894 9.63163Z"
+                            fill="currentColor" />
+                    </svg>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="insightMenu"
+                    class="hidden absolute 3xl:mt-9 2xl:mt-8 lg:mt-5.5 mt-4.5 2xl:w-[280px] lg:w-[260px] sm:w-[238px] w-full right-0 shadow-xl bg-white z-40 overflow-hidden">
+
+                    <ul class="2xl:py-1 py-1.5 2xl:px-6 lg:px-5 px-4">
+                        {{ taxonomy:insight_categories }}
+                        <li>
+                            <a href="/insight/category/{{ slug }}"
+                                class="block 2xl:py-2.5 py-1.5 text-slate-100 hover:text-primary p2 font-normal active:text-primary focus:text-primary w-full text-left">
+                                {{ title }}
+                            </a>
+                        </li>
+                        {{ /taxonomy:insight_categories }}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{ if collections_field == "insights" }}
+        {{ collection:insights as="insights" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+        <div class="grid-main-div insight_search">
+            {{ insights }}
+            <div class="tech-card group grid-item-append" data-aos="fade-up">
+                <div class="flex flex-col items-start justify-between h-auto 1xl:w-[41%] md:w-1/2 w-full">
+                    <div>
+                        <div class="flex items-start gap-3 1xl:mb-[25px] md:mb-5 mb-4">
+                            <span class="dash border border-primary mt-3"></span>
+
+                            <p class="p2">{{ if author_name }} By
+                                <span class="font-normal text-primary">{{ author_name }}</span>{{ /if }} {{ if
+                                publish_date }}—
+                                {{ publish_date }} {{ /if }}
+                            </p>
+                        </div>
+                        <a href="insight/{{ slug }}" class="block">
+                            <h4 class="2xl:mb-5 sm:mb-4 mb-3 group-hover:text-primary transition-all ease-in-out">
+                                {{ title }}
+                            </h4>
+                        </a>
+                        <p class="p2">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                    {{ buttons }}
+                    {{ if button_label }}
+                    <a href="{{ button_url }}{{ slug }}" class="btn btn-primary all-btn rounded-full group mt-6">
+                        {{ button_label }}
+                        <span
+                            class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                    {{ /buttons }}
+                </div>
+                <div class="1xl:w-[53%] md:w-1/2 w-full">
+                    <a href="insight/{{ slug }}"
+                        class="block relative before:block before:content-[''] 3xl:before:pt-[440px] 2xl:before:pt-[400px] xl:before:pt-[390px] sm:before:pt-[350px] before:pt-[240px] w-full h-full">
+                        {{ image }}<img loading="lazy" src="{{ url }}" alt="Tech Trend Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover" />{{ /image }}
+                    </a>
+                </div>
+            </div>
+            {{ /insights }}
+
+        </div>
+
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div
+            class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid">
+            Load More
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}"
+                    class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "insights" }}
+        {{ /collection:insights }}
+        {{ /if }}
+    </div>
+</section>
+{{ elseif show_type == "insight-two" }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+        <div class="flex items-center justify-between w-full 3xl:pb-8.5 2xl:pb-7 lg:pb-5 pb-4">
+            <p class="p2 text-black-100 font-normal sm:block hidden">{{ section_label }}</p>
+            <div class="flex items-center 2xl:gap-11 lg:gap-10 gap-7 justify-between sm:w-fit w-full">
+
+                <div class="relative inline-block sm:w-fit w-full" id="insight-wrapper">
+                    <!-- Trigger -->
+                    <button id="insightDropdownBtn"
+                        class="flex items-center sm:justify-end justify-between w-full p2 font-normal text-black-100 gap-1 select-none focus:outline-none">
+                        <span class="flex items-center gap-1">
+                            {{ if filter_label }} {{ filter_label }}: {{ /if }}<span
+                                class="text-primary">All</span></span>
+                        <svg id="insightChevron" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
+                            viewBox="0 0 12 12" fill="none" class="ml-1 transition-all duration-300">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.37894 9.63163C6.16963 9.84093 5.83035 9.84093 5.62104 9.63163L0.156971 4.16755C-0.0523238 3.95824 -0.0523238 3.61896 0.156971 3.40965L0.409621 3.15698C0.618916 2.94767 0.958252 2.94767 1.16755 3.15698L5.99999 7.98944L10.8325 3.15698C11.0418 2.94767 11.381 2.94767 11.5903 3.15698L11.843 3.40965C12.0523 3.61896 12.0523 3.95824 11.843 4.16755L6.37894 9.63163Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div id="insightMenu"
+                        class="hidden absolute 3xl:mt-9 2xl:mt-8 xl:mt-5.5 lg:mt-4.5 mt-3 2xl:w-[280px] lg:w-[260px] sm:w-[238px] w-full right-0 shadow-[0_2px_8px_rgba(0,0,0,0.25)] bg-white z-40 overflow-hidden">
+                        <ul class="2xl:py-1 py-1.5 2xl:px-6 lg:px-5 px-4">
+                            {{ taxonomy:insight_categories }}
+                            <li>
+                                <a href="/insight/category/{{ slug }}"
+                                    class="block 2xl:py-2.5 py-1.5 text-slate-100 hover:text-primary p2 font-normal active:text-primary focus:text-primary w-full text-left">
+                                    {{ title }}
+                                </a>
+                            </li>
+                            {{ /taxonomy:insight_categories }}
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- grid buttons -->
+                <div class="xl:flex hidden items-center lg:gap-2.5 gap-2 grid-toggle">
+                    <!-- Grid 2 -->
+                    <button id="grid2Btn" class="grid-btn active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16" fill="none">
+                            <rect width="2" height="16" fill="currentColor" />
+                            <rect x="10" width="2" height="16" fill="currentColor" />
+                        </svg>
+                    </button>
+
+                    <!-- Grid 3 -->
+                    <button id="grid3Btn" class="grid-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <rect width="2" height="16" fill="currentColor" />
+                            <rect x="7" width="2" height="16" fill="currentColor" />
+                            <rect x="14" width="2" height="16" fill="currentColor" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        {{ if collections_field == "insights" }}
+        {{ collection:insights as="insights" paginate="{pagination}" limit="{limit}" }}
+        {{ /if }}
+        <div id="insightGrid" class="insight-grid grid grid-main-div">
+            <!-- CARD 1 -->
+            {{ insights }}
+            <div class="group grid-item-append">
+                <div class="flex flex-col items-start 2xl:gap-7.5 lg:gap-6 gap-5 relative">
+                    <div class="w-full">
+                        <a href="insight/{{ slug }}" class="insight-img-before">
+                            {{ image }} <img loading="lazy" src="{{ url }}" alt="Tech Trend Image"
+                                class="absolute top-0 left-0 w-full h-full object-cover" />{{ /image }}
+                        </a>
+                    </div>
+                    <div class="flex flex-col items-start justify-between h-full w-full">
+                        <div class="flex items-center xl:gap-4.5 lg:gap-3 gap-2 1xl:mb-4 lg:mb-3 mb-2">
+                            <span class="dash border border-primary"></span>
+
+                            <p class="p2">{{ if author_name }} By
+                                <span class="text-primary hover:text-black">{{ author_name }}</span>{{ /if }} {{ if
+                                publish_date }}—
+                                {{ publish_date }} {{ /if }}
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="2xl:mb-4 xl:mb-3 mb-2.5 insight-title">
+                                <a href="insight/{{ slug }}" class="font-light">
+                                    {{ title }}
+                                </a>
+                            </h4>
+                            <p class="p2 text-slate-100">
+                                {{ short_description }}
+                            </p>
+                        </div>
+                        {{ buttons }}
+                        {{ if button_label }}
+
+                        <a href="{{ button_url }}{{ slug }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group 2xl:mt-7.5 xl:mt-6 mt-5">
+
+
+                            {{ button_label }}
+
+                            <span
+                                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                        {{ /buttons }}
+                    </div>
+                </div>
+            </div>
+            {{ /insights }}
+
+        </div>
+
+        <!-- Case studies btn -->
+        {{ paginate }}
+        <input type="hidden" class="lastPage" value="{{ total_pages }}">
+        {{ if next_page }}
+        <div
+            class="load-more-btn load-more-wrap btn btn-primary all-btn rounded-full group flex lg:mt-12.5 mt-[35px] mx-auto w-fit cursor-pointer ajax-load-more-grid">
+            Load More
+            <span
+                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <a href="{{ next_page }}"
+                    class="btn btn-arrow rounded-full all-btn-arrow transition-all ease-in-out duration-500">
+
+                    <img src="{{ theme:asset src='assets/image/lucide_loader.svg'}}" alt="load-more">
+                </a>
+            </span>
+        </div>
+        {{ /if }}
+        {{ /paginate }}
+        {{ if collections == "insights" }}
+        {{ /collection:insights }}
+        {{ /if }}
+    </div>
+</section>
+
+{{ elseif show_type == "home-page" }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+
+        <!-- sub_title -->
+        <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 lg:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="uppercase">{{ subtitle }}</p>
+                </div>
+                <h3>{{ section_title | explode:highlight_word }}{{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /section_title | explode }}
+                </h3>
+            </div>
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+        <!-- cards section -->
+        <div class="sm:border-b border-b border-gray-100">
+            <!-- CARD 1 -->
+            {{ entries limit="{limit}" }}
+            <div class="tech-card group" data-aos="fade-up">
+                <div class="flex flex-col items-start justify-between h-auto 1xl:w-[630px] md:w-1/2 w-full">
+                    <div>
+                        <div class="flex items-start gap-3 1xl:mb-[25px] md:mb-5 mb-4">
+                            <span class="dash border border-primary mt-3"></span>
+                            <p class="p2">
+                                {{ if author_name }} By
+                                <span class="font-normal text-primary">{{ author_name }}</span>{{ /if }} {{ if
+                                publish_date }}—
+                                {{ publish_date }} {{ /if }}
+                            </p>
+                        </div>
+                        <a href="insight/{{ slug }}" class="block">
+                            <h4 class="2xl:mb-5 sm:mb-4 mb-3 group-hover:text-primary transition-all ease-in-out">
+                                {{ title }}
+                            </h4>
+                        </a>
+                        <p class="p2">
+                            {{ short_description }}
+                        </p>
+                    </div>
+                    {{ buttons }}
+                    {{ if button_label }}
+                    <a href="{{ button_url }}{{ slug }}" class="btn btn-primary all-btn rounded-full group mt-6">
+                        {{ button_label }}
+                        <span
+                            class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+                    {{ /buttons }}
+                </div>
+                <div class="1xl:w-[56.6%] md:w-1/2 w-full">
+                    <a href="insight/{{ slug }}"
+                        class="block relative before:block before:content-[''] 3xl:before:pt-[440px] 2xl:before:pt-[400px] xl:before:pt-[390px] sm:before:pt-[350px] before:pt-[240px] w-full h-full">
+                        {{ image }}<img loading="lazy" src="{{ url }}" alt="Tech Trend Image"
+                            class="absolute top-0 left-0 w-full h-full object-cover" /> {{ /image }}
+                    </a>
+                </div>
+            </div>
+            {{ /entries }}
+        </div>
+        <!-- responsive btn -->
+        {{ if button_text }}
+        <a href="{{ button_url }}" aria-label="Open Page"
+            class="btn btn-primary p-1 1xl:ps-[27px] ps-5 1xl:gap-3 gap-2 rounded-full group flex md:hidden mt-[30px] w-fit">
+            {{ button_text }}
+            <span
+                class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    class="1xl:size-5.5 xl:size-5 size-4">
+                    <g clip-path="url(#clip0_421_92)">
+                        <path
+                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                            fill="currentColor" />
+                    </g>
+                </svg>
+            </span>
+        </a>
+        {{ /if }}
+
+    </div>
+</section>
+
+{{ elseif show_type == "home-two-page" }}
+
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="overflow-x-clip">
+        <div class="container">
+            <!-- sub_title -->
+            <div class="flex items-center justify-between w-full xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                <div class="flex flex-col lg:gap-8 1xl:gap-7 gap-5" data-aos="fade-right">
+                    <div class="flex items-center gap-[18px]">
+                        <span class="dash border border-primary"></span>
+                        <p class="p2 uppercase leading-[14px]">{{ subtitle }}</p>
+                    </div>
+                    <h3>{{ section_title | explode:highlight_word }}{{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /section_title | explode }}
+                    </h3>
+                </div>
+                <!-- sub_button -->
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page"
+                    class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit" data-aos="fade-left">
+                    {{ button_text }}
+                    <span
+                        class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+            </div>
+
+            <!-- Cards Swiper -->
+            <div class="mySwiper cards swiper overflow-visible! swiper-initialized swiper-horizontal swiper-backface-visible"
+                data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- 1st card -->
+                    {{ entries limit="{limit}" }}
+                    <div class="swiper-slide group">
+                        <div class="flex flex-col items-start md:gap-[25px] gap-5 relative">
+                            <div class="w-full">
+                                <a href="insight/{{ slug }}"
+                                    class="relative before:block before:content-[''] 2xl:before:pt-[348px] 1xl:before:pt-[260px] md:before:pt-[240px] before:pt-[218px] w-full h-full">
+                                    {{ image }}<img loading="lazy" src="{{ url }}" alt="Tech Trend Image"
+                                        class="absolute top-0 left-0 w-full h-full object-cover" />{{ /image }}
+                                </a>
+                            </div>
+                            <div class="flex flex-col items-start justify-between h-full w-full">
+                                <div class="flex items-center lg:gap-3 gap-2 lg:mb-[15px] mb-3">
+                                    <span class="dash border border-primary"></span>
+                                    <p class="p2"> {{ if author_name }} By
+                                        <span class="text-primary hover:text-black">{{ author_name }}</span>{{ /if }} {{
+                                        if publish_date }}—
+                                        {{ publish_date }} {{ /if }}
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <h4 class="2xl:mb-[15px] mb-2.5">
+                                        <a href="insight/{{ slug }}" class="font-light">
+                                            {{ title }}
+                                        </a>
+                                    </h4>
+                                    <p class="p2">
+                                        {{ short_description }}
+                                    </p>
+                                </div>
+                                {{ buttons }}
+                                {{ if button_label }}
+                                <a href="{{ button_url }}{{ slug }}" aria-label="Open Page"
+                                    class="btn btn-primary all-btn rounded-full group 2xl:mt-[25px] mt-5">
+                                    {{ button_label }}
+                                    <span
+                                        class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                            viewBox="0 0 22 22" fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                            <g clip-path="url(#clip0_421_92)">
+                                                <path
+                                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                                {{ /if }}
+                                {{ /buttons }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ /entries }}
+                </div>
+
+                <!-- arrows/buttons -->
+                <div
+                    class="flex items-center sm:justify-center justify-between w-auto 2xl:pt-[70px] 1xl:pt-12.5 lg:pt-12 md:pt-10 pt-8 xl:gap-[30px] gap-3 sm:border-0 border-t border-gray-100 sm:mt-0 mt-7">
+
+                    <!-- sub_button -->
+                    {{ if button_text }}
+                    <a href="{{ button_url }}" aria-label="Open Page"
+                        class="btn btn-primary all-btn rounded-full group sm:hidden w-fit">
+                        {{ button_text }}
+                        <span
+                            class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                    </a>
+                    {{ /if }}
+
+                    <div class="arrow flex items-center justify-end lg:gap-[18px] gap-2.5 w-auto!">
+                        <div class="swiper-button-prev relative! m-0 left-0! top-0! mt-0!">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_7135_4462)">
+                                    <path
+                                        d="M21.0602 10.5L3.70608 10.5L11.1436 3.0625L10.2086 2L1.00024 11.2083L10.2086 20.4167L11.1436 19.3542L3.70608 11.9167L21.0602 11.9167L21.0602 10.5Z"
+                                        fill="#08030E" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_7135_4462">
+                                        <rect width="22" height="22" fill="white"
+                                            transform="matrix(4.37114e-08 1 1 -4.37114e-08 0 9.61651e-07)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                        <div class="swiper-button-next relative! m-0 right-0! top-0! mt-0!">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_5062_2614)">
+                                    <path
+                                        d="M0.93976 10.5L18.2939 10.5L10.8564 3.0625L11.7914 2L20.9998 11.2083L11.7914 20.4167L10.8564 19.3542L18.2939 11.9167L0.93976 11.9167L0.93976 10.5Z"
+                                        fill="#08030E" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_5062_2614">
+                                        <rect width="22" height="22" fill="white"
+                                            transform="translate(22) rotate(90)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Range Slider -->
+                    <div class="slider-container w-full sm:block hidden">
+                        <input type="range" id="slideRange" min="1" max="4" value="1" class="custom-range w-full" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ /if }}

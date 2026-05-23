@@ -1,0 +1,195 @@
+<section id="open-position-form" class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+    <div class="container">
+
+        <div class="min-h-0 overflow-hidden">
+            <div class="transition-colors duration-200 delay-100">
+                <div>
+                    <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 w-full">
+                        <div class="flex items-center md:gap-[18px] gap-1.5">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ badge_text }}</p>
+                        </div>
+                        <h3>
+                            {{ section_title | explode(highlight_text) }}
+                            {{ if first }}
+                            {{ value }}
+                            {{ else }}
+                            <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                            {{ /if }}
+                            {{ /section_title | explode }}
+                        </h3>
+
+                    </div>
+                    <p class="sm:mt-5.5 mt-2.5 p2">
+                        {{ description }}
+                    </p>
+                </div>
+
+                {{ form:career id="contact-form" class="universal-form" novalidate }}
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:gap-6 lg:gap-5.5 sm:gap-4.5 gap-4 3xl:mt-12.5 2xl:mt-10.5 1xl:mt-9 lg:mt-8 md:mt-6.5 mt-5.5">
+                    <!-- full name -->
+
+                    {{ fields }}
+                    {{ if handle == "full_name" or handle == "email" or handle == "phone" or handle == "portfolio" or
+                    handle == "notice_period" or handle == "expected_salary" }}
+                    <div>
+                        <label class="input-label">{{ display }} {{ if validate }}
+                            {{ if validate contains="required" }} <span class="text-[#ED3636]">*</span>{{ /if }}
+                            {{ /if }}
+                        </label>
+                        <input type="{{ type }}" name="{{ handle }}"
+                            placeholder="{{ placeholder ?? 'Enter Your {{ display }}' }}"
+                            class="input-field p2 w-full border border-gray-100" />
+                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                            data-error-for="{{ handle }}">{{ error }}</div>
+                    </div>
+                    {{ /if }}
+                    {{ if handle == 'position' }}
+
+                    <div class="flex flex-col">
+                        <label for="project" class="p2 input-label">
+                            {{ display }} {{ if validate }}
+                            {{ if validate contains="required" }} <span class="text-[#ED3636]">*</span>{{ /if }}
+                            {{ /if }}
+                        </label>
+                        <div class="input-field p2 border border-gray-100 flex flex-col">
+                            <select id="{{ handle }}" name="{{ handle }}" class="w-full h-full outline-none! text-[#868686] invalid:text-[#868686] valid:text-neutral-700" required>
+                                <option value="">Please select...</option>
+                                {{ collection:job_positions }}
+                                <option value="{{ id }}">{{ title }}</option>
+                                {{ /collection:job_positions }}
+                            </select>
+                        </div>
+                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                            data-error-for="{{ handle }}">{{ error }}</div>
+                    </div>
+                    {{ /if }}
+
+
+
+                    {{ if type == "select" }}
+                    <div class="flex flex-col">
+                        <label for="project" class="p2 input-label">
+                            {{ display }} {{ if validate }}
+                            {{ if validate contains="required" }} <span class="text-[#ED3636]">*</span>{{ /if }}
+                            {{ /if }}
+                        </label>
+                        <div class="input-field p2 border border-gray-100">
+                            <select id="{{ handle }}" name="{{ handle }}" class="w-full h-full outline-none! text-[#868686] invalid:text-[#868686] valid:text-neutral-700" required>
+                                <option value="">Select your total experience</option>
+                                {{ foreach:options as="option|label" }}
+                                <option value="{{ option }}">{{ label !== null ? label : option }}</option>
+                                {{ /foreach:options }}
+                            </select>
+                            <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                                data-error-for="{{ handle }}">{{ error }}</div>
+                        </div>
+                    </div>
+                    {{ /if }}
+                    {{ if type == "assets" }}
+
+                    <div class="xl:col-span-1 sm:col-span-2">
+                        <label class="input-label"> {{ display }} {{ if validate }}
+                            {{ if validate contains="required" }} <span class="text-[#ED3636]">*</span>{{ /if }}
+                            {{ /if }}
+                        </label>
+                        <div class="relative">
+                            <input type="file" accept="image/*" name="{{ handle }}" class="resume-upload input-field lg:px-2! px-1.5! 2xl:py-[7px] py-[5px] p2 w-full border border-gray-100 cursor-pointer 
+                            file:mr-2 file:h-full file:px-4.5 file:rounded-full file:border-2 file:border-dashed file:border-gray-100 file:p2 file:bg-[#F4F3FF] hover:file:bg-[#c8c3fb] 
+                            file:transition-all file:ease-in-out file:cursor-pointer text-[#868686]" />
+                            {{ if instructions }}
+                            <p class="text-[15px] text-[#868686]">{{ instructions }}</p>
+                            {{ /if }}
+                        </div>
+                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                            data-error-for="{{ handle }}">{{ error }}</div>
+                    </div>
+                    {{ /if }}
+
+                    {{ if type == "textarea" }}
+
+                    <div class="xl:col-span-3 sm:col-span-2">
+                        <label class="input-label">{{ display }} {{ if validate }}
+                            {{ if validate contains="required" }} <span class="text-[#ED3636]">*</span>{{ /if }}
+                            {{ /if }}
+                        </label>
+                        <textarea placeholder="{{ placeholder ?? 'Enter Your {{ display }}' }} " name="{{ handle }}"
+                            class="w-full border border-gray-100 sm:min-h-[120px] min-h-25 h-full lg:px-[25px] px-[15px] xl:py-[19px] md:py-[15px] py-3 lg:rounded-3xl! md:rounded-[18px]! rounded-[12px]! p2 input-field"></textarea>
+                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                            data-error-for="{{ handle }}">{{ error }}</div>
+                    </div>
+                    {{ /if }}
+                    {{ /fields }}
+                    <!-- Upload Resume * -->
+
+                    <!-- comment -->
+
+                </div>
+                {{ fields }}
+                {{ if type == "toggle" }}
+                <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 xl:mt-5 md:mt-4 mt-3">
+                        <label class="relative flex items-start gap-2.5 cursor-pointer">
+                            <!-- peer input -->
+                            <input type="checkbox"
+                                class="peer absolute opacity-0 sm:size-5.5 size-3 cursor-pointer m-0 shrink-0"
+                                name="{{ handle }}" id="{{ handle }}">
+
+                            <!-- custom box -->
+                            <span
+                                class="sm:mt-0.5 mt-1 shrink-0 sm:size-5.5 size-4.5 flex items-center justify-center border border-[#DADDE9] rounded-[6px] bg-white peer-checked:bg-primary peer-checked:border-primary-dark transition-all">
+                                <svg class="hidden w-3.5 h-3.5 text-white" fill="none" stroke="currentColor"
+                                    stroke-width="3" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </span>
+
+                            <!-- text -->
+                            <p class="p2">
+                                {{ instructions }}
+                            </p>
+                        </label>
+
+                        <div class="error-msg text-red-600 text-sm mt-1 field-error text-danger"
+                            data-error-for="{{ handle }}">
+                            {{ error }}</div>
+                    </div>
+                    {{ /if }}
+                    {{ /fields }}
+                    {{ if button_label }}
+                    <button type="submit"
+                        class="btn btn-primary p-1 1xl:ps-[27px] xl:ps-5 ps-3.5 1xl:gap-3 gap-2 rounded-full group mt-7.5 w-fit">
+                        {{ button_label }}
+                        <span
+                            class="btn btn-arrow rounded-full xl:size-11 size-9 group-hover:rotate-45 transition-all ease-in-out duration-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                <g clip-path="url(#clip0_421_92)">
+                                    <path
+                                        d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+
+                            <!-- loading icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
+                                fill="none" class="hidden">
+                                <g clip-path="url(#clip0_296_2520)">
+                                    <path
+                                        d="M15 1V6.6M20.88 9.12L24.94 5.06M23.4 15H29M20.88 20.88L24.94 24.94M15 23.4V29M5.06 24.94L9.12 20.88M1 15H6.6M5.06 5.06L9.12 9.12"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                {{ endif }}
+                <div id="form-response" class="mt-2" style="color: rgb(8, 124, 69);"></div>
+                {{ /form:career }}
+            </div>
+
+        </div>
+    </div>
+</section>

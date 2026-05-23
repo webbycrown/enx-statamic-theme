@@ -1,0 +1,41 @@
+title: 'Job Position'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: tags
+            field:
+              type: list
+              display: Tags
+          -
+            handle: apply_link
+            field:
+              default: '#open-position-form'
+              type: text
+              display: 'Apply Link'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

@@ -1,0 +1,89 @@
+  <section class="{{if segment_2 == 'aerospace-defense'}}3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pt-0! lg:py-17 py-12.5 {{else}} 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5{{/if}} relative h-fit">
+            <!-- container -->
+            <div class="container">
+                <div
+                    class="flex items-start justify-between w-full lg:flex-row flex-col 3xl:gap-[140px] 1xl:gap-[90px] lg:gap-[55px] sm:gap-10 gap-6">
+                    <!-- sub_title -->
+                    <div class="" data-aos="fade-right">
+                        <div class="flex flex-col 2xl:gap-[35px] md:gap-6 gap-5">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ badge_text }}</p>
+                            </div>
+                            <h3 class="lg:mb-5 mb-3">
+                            {{ section_title | explode(highlight_text) }}
+                                                {{ if first }}
+                                                {{ value }}
+                                                {{ else }}
+                                                <span class="text-primary">{{ highlight_text }}</span>{{ value }}
+                                                {{ /if }}
+                                            {{ /section_title | explode }}
+                            
+                            </h3>
+                        </div>
+                        <p class="p2 ">
+                            {{ description }}
+                        </p>
+                        <!-- sub_button -->
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group lg:flex hidden w-fit mt-7.5">
+                            {{ button_text }}
+                            <span class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                    <div class="faq-outer-box" data-aos="fade-up">
+                        <!-- FAQ Item -->
+                        {{ faqs }}
+                        <div class="faq-inner-box">
+                          <button class="faq-toggle-button p text-[#08030E]" onclick="toggleFaq(this)">
+                                <h6 class="faq-title">{{ question }}</h6>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="faq-toggle-svg">
+                                    <g clip-path="url(#clip0_7273_5307)">
+                                        <rect x="16" y="7" width="2" height="16" transform="rotate(90 16 7)"
+                                            fill="black" />
+                                        <rect x="7" width="2" height="16" fill="black" />
+                                    </g>
+                                </svg>
+
+                            </button>
+                            <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                <div class="mt-4.5">
+                                    <span class="p2">
+                                       {{ answer }}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {{ /faqs }}
+                    </div>
+                  {{ if button_text }}
+                        <a href="{{ button_url }}" aria-label="Open Page"
+                            class="btn btn-primary all-btn rounded-full group flex lg:hidden w-fit">
+                            {{ button_text }}
+                            <span class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,104 @@
+        {{ if background_color }}
+
+         <section class="{{if segment_2 == 'retail-e-commerce'}}pb-0 {{else}} 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5{{/if}}">
+            <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 py-12.5">
+                <!-- container -->
+                <div class="container">
+                    <!-- sub_title -->
+                    <div
+                        class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                        <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                            <div class="flex items-center md:gap-[18px] gap-1.5">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase">{{ subtitle }}</p>
+                            </div>
+                            <h3>{{ title | explode(highlight_word) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /title | explode }}
+                            </h3>
+                        </div>
+                         <p class="p2 2xl:max-w-[37%] xl:max-w-2/5 lg:max-w-[45%] md:w-1/2 w-full" data-aos="fade-left">
+                          {{ description }}
+                        </p>
+                    </div>
+
+                    <div>
+                        <!-- Desktop Layout (Horizontal) -->
+                        <div class="timeline-desktop service-2">
+
+                            <!-- 01 - Discovery -->
+                            {{ process_steps }}
+                            <div class="timeline-step" data-aos="fade-up">
+                                <div
+                                    class="number-circle 2xl:size-21 1xl:size-[78px] xl:size-[74px] lg:size-[70px] sm:size-15 size-12.5">
+                                    {{ step_number }}
+                                </div>
+                                <div>
+                                    <h5 class="2xl:mb-4 lg:mb-3 sm:mb-2 mb-1.5">{{ step_title }}</h5>
+                                    <p class="p2">
+                                        {{ step_description }}
+                                    </p>
+                                </div>
+                            </div>
+                            {{ /process_steps }}
+                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{ else }}
+
+ <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 overflow-hidden">
+            <!-- container -->
+            <div class="container">
+                <!-- sub_title -->
+                <div
+                    class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                    <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                        <div class="flex items-center md:gap-[18px] gap-1.5">
+                            <span class="dash border border-primary"></span>
+                            <p class="p2 uppercase">{{ subtitle }}</p>
+                        </div>
+                        <h3>
+                            {{ title | explode(highlight_word) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /title | explode }}
+                        </h3>
+                    </div>
+                    <p class="p2 2xl:max-w-[37%] xl:max-w-2/5 lg:max-w-[45%] md:w-1/2 w-full" data-aos="fade-left">
+                        {{ description }}
+                    </p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <!-- Desktop Layout (Horizontal) -->
+                    <div class="timeline-desktop">
+
+                        <!-- 01 - Discovery -->
+                        {{ process_steps }}
+                        <div class="timeline-step">
+                            <div class="number-circle 2xl:size-21 1xl:size-[78px] xl:size-[74px] lg:size-[70px] sm:size-15 size-12.5">
+                                {{ step_number }}
+                            </div>
+                            <div>
+                                <h5 class="2xl:mb-4 lg:mb-3 sm:mb-2 mb-1.5">{{ step_title }}</h5>
+                                <p class="p2">{{ step_description }}</p>
+                            </div>
+                        </div>
+                        {{ /process_steps }}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        {{ /if }}

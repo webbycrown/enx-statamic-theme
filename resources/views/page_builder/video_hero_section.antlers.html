@@ -1,0 +1,54 @@
+
+  
+  <section
+            class="{{ if segment_2 == 'healthcare-life-sciences' 
+    or segment_2 == 'retail-e-commerce' 
+    or segment_2 == 'construction-infrastructure' }} 
+    pb-0
+    {{else}}  3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5
+    {{ /if }}2xl:pt-24 xl:pt-[85px] lg:pt-20 md:pt-18.5 sm:pt-[59px] pt-13.5">
+            <div class="relative w-full lg:min-h-[calc(100vh-90px)] lg:h-full overflow-hidden">
+
+                <!-- Background Video -->
+                {{ background_video }}
+                <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
+                    <source src="{{ url }}" type="video/mp4">
+                </video>
+                {{ /background_video }}
+
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-linear-to-t from-black/60 to-black/0 z-10"></div>
+
+                <!-- Content area -->
+                <div class="relative z-20">
+                    <div
+                        class="container 2xl:h-[calc(100vh-96px)] xl:h-[calc(100vh-85px)] lg:h-[calc(100vh-80px)] relative">
+                        <div class="flex items-end min-h-[450px] h-full">
+                            <div class="w-full 2xl:pb-15 lg:pb-12.5 pb-9" data-aos="fade-right">
+
+                                <!-- BREADCRUMB -->
+                                <div class="flex items-center gap-3">
+                                    {{ if page_title }}
+                                    <span class="p2 text-white opacity-60">{{ page_title }}</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <g opacity="0.6">
+                                            <path d="M5 14L12 8L5 2" stroke="#F8F8F8" stroke-linecap="square" />
+                                        </g>
+                                    </svg>
+                                    {{ /if }}
+                                    {{ if breadcrumb }}
+                                    <span class="p2 text-white">{{ breadcrumb }}</span>
+                                    {{ /if }}
+                                </div>
+
+                                <h1 class="text-white 2xl:mt-[60px] xl:mt-12.5 md:mt-10 sm:mt-[30px] mt-5">
+                                    {{ title }}
+                                </h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

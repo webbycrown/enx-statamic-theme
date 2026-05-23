@@ -1,0 +1,21 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "npx @tailwindcss/cli -i ./public/assets/css/style.css -o ./public/assets/css/output.css --watch",
+        "build": "npx tailwindcss -i ./public/assets/css/style.css -o ./public/assets/css/output.css --minify"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.10",
+        "@tailwindcss/postcss": "^4.1.18",
+        "@tailwindcss/typography": "^0.5.16",
+        "@tailwindcss/vite": "^4.0.6",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^2.0.0",
+        "postcss": "^8.5.6",
+        "swiper": "^11.2.8",
+        "tailwindcss": "^4.1.18",
+        "vite": "^7.0.7"
+    }
+}

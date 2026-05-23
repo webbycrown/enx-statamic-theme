@@ -1,0 +1,57 @@
+title: 'Digital Services'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: background_color
+    field:
+      type: color
+      display: 'Background Color'
+  -
+    handle: services
+    field:
+      type: replicator
+      display: Services
+      collapse: true
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: service_title
+                  field:
+                    type: text
+                    display: 'Service Title'
+                -
+                  handle: icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: Icon
+                -
+                  handle: service_description
+                  field:
+                    type: textarea
+                    display: 'Service Description'

@@ -1,0 +1,66 @@
+    <!-- Our Story -->
+        <section class="relative">
+            <div class="container sm:px-0 px-0">
+
+                <!-- Image Block -->
+                <div
+                    class="flex justify-between sm:flex-row flex-col sm:gap-[25px] gap-4 2xl:-mb-[510px] 1xl:-mb-[370px] xl:-mb-[300px] lg:-mb-[280px] md:-mb-[210px] sm:-mb-40">
+                    {{ left_image }}
+                    <div data-aos="fade-right"
+                        class="3xl:-ml-[190px] 2xl:-ml-[75px] 1xl:-ml-[107px] xl:-ml-[62px] lg:-ml-[35px] md:-ml-[73px] md:w-1/2 3xl:h-[616px] 2xl:h-[557px] 1xl:h-[495px] xl:h-[485px] lg:h-[395px] md:h-[305px] h-auto w-full">
+                        <img loading="lazy" src="{{ url }}" alt="Team Discussion"
+                            class="w-full h-full object-cover" />
+                    </div>
+                    {{ /left_image }}
+                    {{ right_image }}
+                    <div data-aos="fade-left"
+                        class="3xl:w-[700px] 2xl:w-[660px] lg:w-[44%] md:w-1/2 w-full 2xl:mt-[140px] 1xl:mt-[105px] lg:mt-15 md:mt-6">
+                        <img loading="lazy" src="{{ url }}" alt="Team Working"
+                            class="w-full md:h-auto h-full object-cover" />
+                    </div>
+                    {{ /right_image }}
+                </div>
+            </div>
+        </section>
+        <!--/ End Our Story section -->
+
+        <!-- Our Direction -->
+        <section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5">
+            <div class="bg-purple-100 3xl:pt-[340px] 2xl:pt-[310px] 1xl:pt-[285px] xl:pt-[270px] lg:pt-[215px] md:pt-[145px] sm:pt-52 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 sm:py-17 pt-9 pb-12.5"
+                data-aos="fade-right">
+                <div class="container">
+                    <div class="flex items-center justify-between w-full md:flex-row flex-col gap-10">
+                        <div class="xl:w-[54%]  w-full">
+                            <!-- sub_title -->
+                            <div class="w-full md:mt-6 relative z-1">
+                                <div
+                                    class="flex flex-col 3xl:mb-[25px] 2xl:mb-7 lg:mb-4.5 mb-3 2xl:gap-8 1xl:gap-7 gap-5">
+                                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                                        <span class="dash border border-primary"></span>
+                                        <p class="p2 uppercase">{{ subtitle }}</p>
+                                    </div>
+                                    <h3 class="xl:w-[570px] md:w-[470px]">{{ title | explode(highlight_word) }}
+                                        {{ if first }}
+                                        {{ value }}
+                                        {{ else }}
+                                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                                        {{ /if }}
+                                        {{ /title | explode }}
+                                    </h3>
+                                </div>
+                                {{ if description_one }}
+                                <p class="p2 text-#383838 xl:mb-3 mb-[15px]">
+                                    {{ description_one }}
+                                </p>
+                                {{ /if }}
+                                {{ if description_two }}
+                                <p class="p2 text-#383838">
+                                    {{ description_two }}
+                                </p>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

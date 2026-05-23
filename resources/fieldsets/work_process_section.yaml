@@ -1,0 +1,54 @@
+title: 'Work Process Section'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: highlight_word
+    field:
+      type: text
+      display: 'Highlight Word'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: background_color
+    field:
+      type: toggle
+      display: 'Background Color'
+  -
+    handle: process_steps
+    field:
+      type: replicator
+      display: 'Process Steps'
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: step_number
+                  field:
+                    type: text
+                    display: 'Step Number'
+                -
+                  handle: step_title
+                  field:
+                    type: text
+                    display: 'Step Title'
+                -
+                  handle: step_description
+                  field:
+                    type: textarea
+                    display: 'Step Description'

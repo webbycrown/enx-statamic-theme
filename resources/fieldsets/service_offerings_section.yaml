@@ -1,0 +1,92 @@
+title: 'Service Offerings Section'
+fields:
+  -
+    handle: layout_type
+    field:
+      options:
+        -
+          key: side
+          value: 'Side Tabs (Left Menu)'
+        -
+          key: top
+          value: 'Top Tabs (Horizontal)'
+      default: top
+      type: select
+      display: 'Layout Type'
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      default: 'SERVICE OFFERINGS'
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: section_bg
+    field:
+      type: select
+      display: 'Background Color'
+      options:
+        -
+          key: black
+          value: Black
+        -
+          key: white
+          value: White
+      default: black
+  -
+    handle: tabs
+    field:
+      type: replicator
+      display: 'Tabs / Services'
+      sets:
+        tab:
+          display: 'Tab Item'
+          fields:
+            -
+              handle: tab_label
+              field:
+                type: text
+                display: 'Tab Label'
+            -
+              handle: tab_key
+              field:
+                type: text
+                display: 'Tab Key'
+                instructions: 'Unique (e.g. network, info, asset)'
+            -
+              handle: image
+              field:
+                type: assets
+                max_files: 1
+            -
+              handle: content_title
+              field:
+                type: text
+                display: 'Content Title'
+            -
+              handle: content
+              field:
+                type: replicator
+                display: 'Content Paragraphs'
+                sets:
+                  paragraph:
+                    display: Paragraph
+                    fields:
+                      -
+                        handle: text
+                        field:
+                          type: textarea

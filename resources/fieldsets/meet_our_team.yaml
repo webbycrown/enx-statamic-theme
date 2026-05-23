@@ -1,0 +1,40 @@
+title: 'Meet Our Team'
+fields:
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+  -
+    handle: highlight_text
+    field:
+      type: text
+      display: 'Highlight Text'
+  -
+    handle: button_text
+    field:
+      type: text
+      display: 'Button Text'
+  -
+    handle: button_link
+    field:
+      type: text
+      display: 'Button Link'
+  -
+    handle: team_members
+    field:
+      mode: select
+      collections:
+        - teams
+      type: entries
+      display: 'Team Members'
+  -
+    handle: limit
+    field:
+      type: integer
+      display: Limit

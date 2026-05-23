@@ -1,0 +1,131 @@
+
+title: Cookie Consent
+
+tabs:
+  main:
+    display: Main
+    sections:
+
+      -
+        display: Popup Settings
+        fields:
+
+          -
+            handle: popup_title
+            field:
+              type: text
+              display: Popup Title
+              default: "Your Privacy Matters"
+
+          -
+            handle: popup_description
+            field:
+              type: textarea
+              display: Popup Description
+              default: "We use cookies to improve your browsing experience, analyze site traffic, and support our marketing efforts. You can accept all cookies or manage your preferences anytime."
+
+          -
+            handle: accept_all_label
+            field:
+              type: text
+              display: Accept All Label
+              default: "Accept All"
+
+          -
+            handle: settings_label
+            field:
+              type: text
+              display: Settings Label
+              default: "Settings"
+
+          -
+            handle: reject_all_label
+            field:
+              type: text
+              display: Reject All Label
+              default: "Reject All"
+
+      -
+        display: Sidebar Settings
+        fields:
+
+          -
+            handle: sidebar_title
+            field:
+              type: text
+              display: Sidebar Title
+              default: "Manage Cookie"
+
+          -
+            handle: sidebar_description
+            field:
+              type: textarea
+              display: Sidebar Description
+              default: "Choose which types of cookies you want to allow. You can change your settings at any time."
+
+          -
+            handle: save_now_label
+            field:
+              type: text
+              display: Save Now Label
+              default: "Save Now"
+
+          -
+            handle: cancel_label
+            field:
+              type: text
+              display: Cancel Label
+              default: "Cancel"
+
+      -
+        display: Cookie Categories
+        fields:
+
+          -
+            handle: categories
+            field:
+              type: replicator
+              display: Cookie Categories
+              collapse: false
+              sets:
+
+                cookie_category:
+                  display: Cookie Category
+                  fields:
+
+                    -
+                      handle: key
+                      field:
+                        type: text
+                        display: Key
+                        instructions: "Used for IDs and JS hooks (e.g. essential, performance, functional, targeting)."
+                        validate:
+                          - required
+
+                    -
+                      handle: title
+                      field:
+                        type: text
+                        display: Title
+                        validate:
+                          - required
+
+                    -
+                      handle: description
+                      field:
+                        type: textarea
+                        display: Description
+
+                    -
+                      handle: enabled_by_default
+                      field:
+                        type: toggle
+                        display: Enabled by Default
+                        default: false
+
+                    -
+                      handle: required
+                      field:
+                        type: toggle
+                        display: Required (non-editable)
+                        default: false

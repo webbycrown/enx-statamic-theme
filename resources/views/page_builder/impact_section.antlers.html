@@ -1,0 +1,164 @@
+{{ if image }}
+<section class="3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 overflow-hidden">
+    <!-- container -->
+    <div class="container">
+        <!-- sub_title -->
+        <div
+            class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+            <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                <div class="flex items-center md:gap-[18px] gap-1.5">
+                    <span class="dash border border-primary"></span>
+                    <p class="p2 uppercase">{{ subtitle }}</p>
+                </div>
+                <h3>
+                    {{ title | explode(highlight_word) }}
+                    {{ if first }}
+                    {{ value }}
+                    {{ else }}
+                    <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                    {{ /if }}
+                    {{ /title | explode }}
+                </h3>
+            </div>
+            {{ if description }}
+            <p class="p2 2xl:max-w-[544px] xl:max-w-[505px] md:max-w-100 w-full" data-aos="fade-left">
+                {{ description }}
+            </p>
+            {{ /if }}
+
+            {{ if button_text }}
+            <a href="{{ button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                {{ button_text }}
+                <span
+                    class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+
+        <div class="flex justify-between lg:flex-row flex-col lg:gap-[30px] gap-[22px]">
+            <!-- banner image-->
+            <div class="1xl:max-w-1/2 lg:max-w-[47%] w-full lg:h-auto h-full shrink-0" data-aos="fade-right">
+                {{ image }}<img loading="lazy" src="{{ url }}" alt="join team" class="w-full h-full object-cover">{{
+                /image }}
+            </div>
+            <!-- Global content -->
+            <div class="w-full my-auto" data-aos="fade-left">
+                <!-- Count grid -->
+                <div
+                    class="grid sm:grid-cols-2 grid-cols-1 w-full justify-center 1xl:gap-7.5 xl:gap-6 lg:gap-5 sm:gap-4 gap-[14px] success-projects flex-wrap">
+                    <!-- Count Content -->
+                    {{ stats }}
+                    <div
+                        class="2xl:p-[30px] 1xl:p-7 xl:p-6.5 lg:p-5 lg:py-5 p-4 bg-white border border-gray-100 w-auto h-full">
+                        <h4 class="count-up text-primary big-font" data-start="0" data-end="{{ number }}"
+                            data-duration="{{ duration }}" data-suffix="{{ suffix }}">{{ number }}{{ suffix }}</h4>
+                        <span
+                            class="block 1xl:w-15 sm:w-10 w-8 border 3xl:my-[35px] 2xl:my-10 1xl:my-8.5 xl:my-7.5 sm:my-6 my-4"></span>
+                        <p class="xl:text-lg sm:leading-7 text-base">
+                            {{ label }}</p>
+                    </div> {{ /stats }}
+                    <!-- Count Content -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ elseif !image }}
+<section class="{{ if segment_2 == 'healthcare-life-sciences'
+    or segment_2 == 'construction-infrastructure' }} 
+    pb-0
+    {{else}} 3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5
+    {{ /if }}">
+    <div class="bg-purple-100 3xl:py-25 2xl:py-[90px] 1xl:py-20 xl:py-16 lg:py-14 md:py-12 py-12.5">
+        <div class="container">
+            <!-- sub_title -->
+            <div class="flex md:items-center justify-between md:flex-row flex-col w-full gap-4 xl:pb-10 lg:pb-7 sm:pb-6 pb-5">
+                <div class="flex flex-col 2xl:gap-8 1xl:gap-7 gap-5 md:w-1/2 w-full" data-aos="fade-right">
+                    <div class="flex items-center md:gap-[18px] gap-1.5">
+                        <span class="dash border border-primary"></span>
+                        <p class="uppercase">{{ subtitle }}</p>
+                    </div>
+                    <h3>{{ title | explode(highlight_word) }}
+                        {{ if first }}
+                        {{ value }}
+                        {{ else }}
+                        <span class="text-primary">{{ highlight_word }}</span>{{ value }}
+                        {{ /if }}
+                        {{ /title | explode }}
+                    </h3>
+                </div>
+
+                {{ if description }}
+                <p class="p2 2xl:max-w-[544px] xl:max-w-[505px] md:max-w-100 w-full" data-aos="fade-left">
+                    {{ description }}
+                </p>
+                {{ else }}
+
+
+                {{ if button_text }}
+                <a href="{{ button_url }}" aria-label="Open Page"
+                    class="btn btn-primary all-btn rounded-full group md:flex hidden w-fit">
+                    {{ button_text }}
+                    <span
+                        class=" btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                            class="1xl:size-5.5 xl:size-5 size-4">
+                            <g clip-path="url(#clip0_421_92)">
+                                <path
+                                    d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                    fill="currentColor" />
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+                {{ /if }}
+                {{ /if }}
+            </div>
+
+            <div
+                class="grid lg:grid-cols-4 min-[387px]:grid-cols-2 grid-cols-1 w-full justify-center 1xl:gap-8 xl:gap-7 sm:gap-6 gap-[14px] success-projects flex-wrap">
+                {{ stats }}
+                <div class="2xl:p-[30px] xl:p-6 sm:p-5 py-5 p-4 bg-white border border-gray-100 w-auto h-full"
+                    data-aos="fade-up">
+                    <h4 class="count-up text-primary big-font" data-start="0" data-end="{{ number }}"
+                        data-duration="{{ duration }}" data-suffix="{{ suffix }}">{{ number }}{{ suffix }}</h4>
+                    <span class="block w-[60px] border 3xl:my-[35px] 1xl:my-[40px] sm:my-7 my-5"></span>
+                    <p class="p2 text-[#08030E]">{{ label }}</p>
+                </div>
+                {{ /stats }}
+
+            </div>
+            <!-- responsive btn -->
+            {{ if mobile_button_text }}
+            <a href="{{ mobile_button_url }}" aria-label="Open Page"
+                class="btn btn-primary all-btn rounded-full group flex md:hidden mt-[30px] w-fit">
+                {{ mobile_button_text }}
+                <span
+                    class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        class="1xl:size-5.5 xl:size-5 size-4">
+                        <g clip-path="url(#clip0_421_92)">
+                            <path
+                                d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                fill="currentColor" />
+                        </g>
+                    </svg>
+                </span>
+            </a>
+            {{ /if }}
+        </div>
+    </div>
+</section>
+
+{{ /if }}

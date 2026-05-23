@@ -1,0 +1,28 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: services
+            field:
+              mode: select
+              collections:
+                - services
+              type: entries
+              display: Services
+              if:
+                collection_show: 'equals true'
+          -
+            handle: collection_show
+            field:
+              type: toggle
+              display: 'Collection Show'

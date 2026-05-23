@@ -1,0 +1,48 @@
+<section class="{{ if segment_1 == 'home-two' 
+    or segment_1 == 'support'  }}
+3xl:pb-25 2xl:pb-[90px] xl:pb-20 lg:pb-17 pb-12.5 {{else}} pb-0 {{ /if }}" data-aos="fade-up">
+    <div class="relative md:py-0 py-12.5">
+        <div class="absolute inset-0 bg-cover bg-center z-0"
+            style="background-image: url('{{ theme:asset }}assets/image/about-us-bg.svg')"></div>
+        <div class="container">
+            <div
+                class="relative z-1 flex md:items-end items-center justify-between md:flex-row flex-col lg:gap-10 md:gap-3">
+                <div class="xl:max-w-[526px] lg:max-w-[400px] sm:max-w-[320px] max-w-[250px] flex items-end lg:pt-12">
+                    {{ image }} <img src="{{ url }}" alt="get-started" class="w-full" />{{ /image }}
+                </div>
+                <div class="3xl:py-25 2xl:py-[90px] xl:py-20 lg:py-17 md:py-10 relative h-fit flex items-center">
+                    <div
+                        class="bg-white 2xl:py-[70px] 1xl:py-15 1xl:px-15 xl:p-13 md:py-10 md:px-6 py-[35px] px-5 border border-gray-100 xl:max-w-[730px] lg:max-w-[515px] max-w-full">
+                        <div class="flex flex-col lg:gap-[30px] gap-5">
+                            <div class="flex items-center md:gap-2.5 gap-[7px]">
+                                <span class="dash border border-primary"></span>
+                                <p class="p2 uppercase leading-[14px]">{{ badge_text }}</p>
+                            </div>
+                            <h3 class="md:mb-5 mb-3">
+                                {{ title }}
+                            </h3>
+                        </div>
+                        <p class="p2 lg:mb-[35px] md:mb-6 mb-5">{{ description }}</p>
+
+                        {{ if button_text }}
+                        <a href="{{ button_url }}" class="btn btn-primary all-btn rounded-full group w-fit">
+                            {{ button_text }}
+                            <span
+                                class="btn btn-arrow rounded-full all-btn-arrow group-hover:rotate-45 transition-all ease-in-out duration-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none" class="1xl:size-5.5 xl:size-5 size-4">
+                                    <g clip-path="url(#clip0_421_92)">
+                                        <path
+                                            d="M3.37663 17.7995L15.6479 5.52821L5.12966 5.52821L5.03951 4.11577L18.0621 4.11577L18.0621 17.1383L16.6496 17.0482L16.6496 6.52995L4.37836 18.8012L3.37663 17.7995Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        {{ /if }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
