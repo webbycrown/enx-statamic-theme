@@ -1,9 +1,13 @@
 {
-    "name": "webbycrown/enx-statamic-theme",
-    "extra": {
-        "statamic": {
-            "name": "Enx - Statamic Theme",
-            "description": "A Statamic starter kit for agencies and corporate businesses, featuring services, case studies, insights, and a modern professional layout with intuitive content management."
-        }
+  "name": "webbycrown/enx-statamic-theme",
+  "type": "statamic-starter-kit",
+  "description": "A Statamic starter kit for agencies and corporate businesses, featuring services, case studies, insights, and a modern professional layout with intuitive content management.",
+  "require": {
+    "statamic/cms": "*"
+  },
+  "extra": {
+    "statamic": {
+      "starter-kit": true
     }
+  }
 }
