@@ -5,7 +5,7 @@ title: 'Transforming Digital Experiences with Smart Innovation'
 author_name: 'Sarah Jennings'
 date: '05 Sept, 2025'
 short_description: 'Explore how businesses are elevating customer interactions through intelligent automation, user-centric design, and scalable digital ecosystems that drive better engagement and long-term growth.'
-image: image/insight-1.webp
+image: image/blog-unique-09.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

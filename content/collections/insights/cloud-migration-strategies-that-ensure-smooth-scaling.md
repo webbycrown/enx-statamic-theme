@@ -5,7 +5,7 @@ title: 'Cloud Migration Strategies That Ensure Smooth Scaling'
 author_name: 'Sophia Turner'
 publish_date: '03 Oct, 2025'
 short_description: 'A deep dive into smart cloud adoption models that help organizations migrate faster, reduce downtime, and unlock flexible, scalable environments for future innovation.'
-image: image/insight-6.webp
+image: image/blog-unique-03.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

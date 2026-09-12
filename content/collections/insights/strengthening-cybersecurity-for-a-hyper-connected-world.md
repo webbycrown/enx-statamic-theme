@@ -5,7 +5,7 @@ title: 'Strengthening Cybersecurity for a Hyper-Connected World'
 author_name: 'Ethan Wells'
 publish_date: '27 Sept, 2025'
 short_description: 'Explore the evolving threat landscape and discover how proactive defense, zero-trust architecture, and automated monitoring are protecting modern enterprises from rising cyber risks.'
-image: image/insight-5.webp
+image: image/blog-unique-08.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

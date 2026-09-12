@@ -5,7 +5,7 @@ title: 'Powering Digital Growth with Data-Driven Strategies'
 author_name: 'Noah Jensen'
 publish_date: '19 Oct, 2025'
 short_description: 'See how enterprises are using advanced analytics, insights automation, and performance tracking to create smarter strategies that accelerate growth and improve ROI.'
-image: image/insight-9.webp
+image: image/blog-unique-06.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

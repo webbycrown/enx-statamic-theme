@@ -5,7 +5,7 @@ title: 'Automation as the Backbone of Business Efficiency'
 author_name: 'Liam Brooks'
 publish_date: '09 Oct, 2025'
 short_description: 'See how intelligent workflows, robotic automation, and integrated systems are reducing manual tasks, lowering costs, and empowering teams to focus on meaningful outcomes.'
-image: image/insight-7.webp
+image: image/blog-unique-01.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

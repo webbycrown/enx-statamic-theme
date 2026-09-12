@@ -5,7 +5,7 @@ title: 'How Data Intelligence Shapes Smarter Business Decisions'
 author_name: 'Daniel Foster'
 publish_date: '18 Sept, 2025'
 short_description: 'Discover the role of real-time analytics, machine learning, and predictive insights in helping companies make faster, more confident decisions that improve operations and drive measurable outcomes.'
-image: image/team-skill-3.webp
+image: image/blog-unique-04.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

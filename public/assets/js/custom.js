@@ -1863,7 +1863,7 @@ $(document).ready(function () {
 
           if (data.length === 0) {
             html =
-              '<p class="text-center fw-bold fs-5">Oops! No servicesa here right now.</p>';
+              '<p class="text-center fw-bold fs-5">Oops! No services here right now.</p>';
           } else {
             data.forEach(function (service) {
               html += `
@@ -1913,7 +1913,7 @@ $(document).ready(function () {
 
           if (data.length === 0) {
             html =
-              '<p class="text-center fw-bold fs-5">Oops! No servicesa here right now.</p>';
+              '<p class="text-center fw-bold fs-5">Oops! No services here right now.</p>';
           } else {
             data.forEach(function (service) {
               html += `
@@ -1930,7 +1930,7 @@ $(document).ready(function () {
                                         ${service.publish_date}
                                     </p>
                                 </div>
-                                <a href="insight/{{ slug }}" class="block">
+                                <a href="/insight/${service.slug}" class="block">
                                     <h4 class="2xl:mb-5 sm:mb-4 mb-3 group-hover:text-primary transition-all ease-in-out">
                                         ${service.title}
                                     </h4>
@@ -1953,7 +1953,7 @@ $(document).ready(function () {
 
                         </div>
                         <div class="1xl:w-[56.6%] md:w-1/2 w-full">
-                            <a href="insight/{{ slug }}" class="block relative before:block before:content-[''] 3xl:before:pt-[440px] 2xl:before:pt-[400px] xl:before:pt-[390px] sm:before:pt-[350px] before:pt-[240px] w-full h-full">
+                            <a href="/insight/${service.slug}" class="block relative before:block before:content-[''] 3xl:before:pt-[440px] 2xl:before:pt-[400px] xl:before:pt-[390px] sm:before:pt-[350px] before:pt-[240px] w-full h-full">
                                 <img loading="lazy" src="${service.image}" alt="Tech Trend Image" class="absolute top-0 left-0 w-full h-full object-cover" />
                             </a>
                         </div>
@@ -1981,7 +1981,10 @@ $(document).ready(function () {
 
     $.ajax({
       url: newsLetterUrl,
-      method: "get",
+      method: "POST",
+      headers: {
+        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+      },
       data: {
         email: email,
       },

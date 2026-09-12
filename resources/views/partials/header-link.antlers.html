@@ -1,15 +1,23 @@
 <head>
+  <style id="theme-fouc">
+    html { background: #fff; }
+    body { margin: 0; }
+    body:not(.is-ready) { overflow: hidden; }
+    body:not(.is-ready) > *:not(.preloader) { visibility: hidden !important; }
+    body.is-ready { overflow: visible !important; }
+  </style>
+  <noscript><style>body > * { visibility: visible !important; overflow: visible !important; }</style></noscript>
+
        <meta charset="utf-8">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <meta name="csrf-token" content="{{ csrf_token }}">
        <title>{{ title ?? site:name }}</title>
        {{ setting }} {{ favicon }} <link rel="icon" type="image/x-icon" href="{{ url }}" />{{/favicon}}{{ /setting }}
-       <!-- Swiper CSS -->
+       <link rel="preload" href="/assets/css/output.css" as="style">
+       <link rel="stylesheet" href="/assets/css/output.css">
        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-       <!-- StyleSheet -->
-       <link rel="stylesheet" href="{{ theme:asset src='assets/css/output.css'}}?v={{ now format="YmdHis" }}">
-       <!-- aos -->
        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 

@@ -5,7 +5,7 @@ title: 'Building Future-Ready Systems for Modern Enterprises'
 author_name: 'Michael Carter'
 publish_date: '12 Sept, 2025'
 short_description: 'Learn how organizations are modernizing their digital infrastructure, adopting cloud-native technologies, and creating resilient systems that support stability, security, and scalable performance.'
-image: image/insight-2.webp
+image: image/blog-unique-02.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

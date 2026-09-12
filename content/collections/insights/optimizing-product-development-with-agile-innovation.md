@@ -5,7 +5,7 @@ title: 'Optimizing Product Development with Agile Innovation'
 author_name: 'Emma Clarkson'
 publish_date: '14 Oct, 2025'
 short_description: 'Learn how agile methods, rapid prototyping, and iterative delivery cycles are helping teams build better products faster—while keeping user needs at the core.'
-image: image/insight-8.webp
+image: image/blog-unique-05.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

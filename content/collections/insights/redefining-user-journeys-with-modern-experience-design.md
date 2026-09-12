@@ -5,7 +5,7 @@ title: 'Redefining User Journeys with Modern Experience Design'
 author_name: 'Olivia Hart'
 publish_date: '22 Sept, 2025'
 short_description: 'Understand how intuitive interfaces, responsive layouts, and human-centered workflows are creating smoother digital journeys that boost engagement and customer satisfaction across platforms.'
-image: image/insight-4.webp
+image: image/blog-unique-07.jpg
 buttons:
   button_label: 'Read More'
   button_url: /insight/

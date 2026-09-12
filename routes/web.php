@@ -18,7 +18,7 @@ Site::all()->each(function (Statamic\Sites\Site $site) {
 Route::get('/header-search', [SearchController::class, 'headerSearch'])->name('header.search');
 Route::get('/service-search', [SearchController::class, 'serviceSearch'])->name('service.search');
 Route::get('/insight-search', [SearchController::class, 'insightSearch'])->name('insight.search');
-Route::get('/newsLetter', [NewsLetterController::class, 'newsLetter'])->name('newsLetter');
+Route::post('/newsLetter', [NewsLetterController::class, 'newsLetter'])->name('newsLetter');
 
 Route::post('/set-job-session', function (Request $request) {
 	

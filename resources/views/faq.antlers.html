@@ -17,7 +17,7 @@
                         <div class="faq-outer-box">
                             <!-- FAQ Item -->
                             
-                             {{ collection:faqs as="faqs" category:contains="{slug}"  }}
+                             {{ collection:faqs as="faqs" :category:contains="slug" }}
                              {{ faqs }}
                              
                             <div class="faq-inner-box" data-aos="fade-left">
