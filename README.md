@@ -2,6 +2,9 @@
 
 At Enx Statamic, we offer a modern and professional website for agencies and corporate businesses, built using Statamic CMS. Designed with performance and ease of use in mind, the Enx starter kit makes it simple to showcase services, case studies, insights, and more through a premium layout and intuitive content management.
 
+**Live demo:** https://enx-statamic.webbydemo.in/  
+Control Panel: `/cp` — `admin@example.com` / `password`
+
 ## Pages of Enx
 
 The Enx starter kit includes a comprehensive set of pages to cover all professional business needs:
@@ -56,6 +59,14 @@ Organize your content with built-in collections:
 - **Testimonials**: Showcase client feedback and success stories.
 - **FAQs**: Handle common support and business questions.
 - **Locations**: Manage your office locations and contact points.
+
+## Control Panel Forms
+
+- Career
+- Contact
+- Insight comment
+- Support
+- Subscription
 
 ## Features of Enx
 
