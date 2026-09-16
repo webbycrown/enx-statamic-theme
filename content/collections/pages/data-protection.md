@@ -3,7 +3,7 @@ id: d29c7e7b-b4df-4f20-a52b-ec4802325dca
 blueprint: page
 title: 'Data Protection'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: data-protection
+template: page
 page_builder:
   -
     id: mn7evn3s

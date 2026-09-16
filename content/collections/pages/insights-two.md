@@ -3,7 +3,7 @@ id: 90802eb2-ce3d-4cd0-8b28-a5870a4ceaee
 blueprint: page
 title: 'Insights Two'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: insights-two
+template: page
 page_builder:
   -
     id: mnfvziy0

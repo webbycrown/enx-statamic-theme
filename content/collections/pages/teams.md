@@ -3,7 +3,7 @@ id: be101a31-5179-406e-bdde-0e551a59bf55
 blueprint: page
 title: Teams
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: teams
+template: page
 page_builder:
   -
     id: mn9tbes1

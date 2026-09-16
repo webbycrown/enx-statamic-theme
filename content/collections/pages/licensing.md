@@ -3,7 +3,7 @@ id: 75195c38-026a-4b7e-ae47-d580e5f3bfb2
 blueprint: page
 title: Licensing
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: licensing
+template: page
 page_builder:
   -
     id: mn7fqks1

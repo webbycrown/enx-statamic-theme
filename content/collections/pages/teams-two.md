@@ -3,7 +3,7 @@ id: 52442e06-39c9-42f9-b5f4-8741f2bb496d
 blueprint: page
 title: 'Teams Two'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: teams-two
+template: page
 page_builder:
   -
     id: mn9vanl5

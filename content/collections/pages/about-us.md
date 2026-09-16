@@ -3,7 +3,7 @@ id: 92c2c6a0-ec77-461e-890f-98de27fb70ce
 blueprint: page
 title: 'About Us'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: abount-us
+template: page
 page_builder:
   -
     id: mna8sson

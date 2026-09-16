@@ -3,7 +3,7 @@ id: 067e8dcf-a72c-42b2-b6e5-0fe245119661
 blueprint: page
 title: Offices
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: offices
+template: page
 page_builder:
   -
     id: mn9t67zg
@@ -26,6 +26,10 @@ page_builder:
     type: sitemap_header
     enabled: true
     background_image: image/Vector.png
+  -
+    id: enxOfficesListing
+    type: offices_listing
+    enabled: true
 updated_by: b2e075fd-22d1-47f3-b8e1-81ef86db184b
 updated_at: 1778226285
 ---

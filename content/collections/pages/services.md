@@ -3,7 +3,7 @@ id: 250814e8-9fbe-4806-92b4-3685c876cca3
 blueprint: page
 title: Services
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: services
+template: page
 page_builder:
   -
     id: mncrqgtd

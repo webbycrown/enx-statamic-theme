@@ -1,6 +1,6 @@
 <header class="fixed w-full h-auto nav-section z-50 shadow-lg">
     <div
-        class="2xl:h-[96px] xl:h-[85px] lg:h-20 md:h-[75px] h-[60px] lg:px-10 min-[902px]:px-5 bg-white border-b border-gray-100 min-[902px]:flex min-[902px]:items-center relative z-50 xl:gap-7 lg:gap-5 gap-3">
+        class="header-bar 2xl:h-[96px] xl:h-[85px] lg:h-20 md:h-[75px] h-[60px] lg:px-10 min-[902px]:px-5 bg-white border-b border-gray-100 min-[902px]:flex min-[902px]:items-center relative z-50 xl:gap-7 lg:gap-5 gap-3">
         <div
             class="header-mobile-row min-[902px]:p-0 px-4 flex justify-between items-center h-full w-full min-[902px]:w-auto max-sm:flex-wrap max-sm:gap-y-0">
             {{ setting }}
@@ -82,7 +82,7 @@
         <div id="nav-links"
             class="m-auto flex-1 nav-links min-[902px]:flex min-[902px]:items-stretch justify-center hidden min-[902px]:static fixed left-0 min-[902px]:w-auto w-full h-[stretch] bg-white min-[902px]:py-0 pt-[5px] pb-4 transition-all duration-300 mt-px">
             <ul
-                class="ml-auto mr-0 min-[902px]:divide-y-0 divide-y divide-gray-100 min-[902px]:flex min-[902px]:items-stretch justify-center align-start 3xl:gap-10 2xl:gap-9 1xl:gap-6 gap-4">
+                class="header-nav-list mx-auto min-[902px]:divide-y-0 divide-y divide-gray-100 min-[902px]:flex min-[902px]:items-center justify-center align-start 3xl:gap-10 2xl:gap-9 1xl:gap-6 gap-4">
                 {{ nav:header_menu scope="item" }}
                 {{ if item:children || item:collection_show || item:image }}
                 {{ if !item:image }}
@@ -212,7 +212,7 @@
                 {{ else }}
                 <li>
                     <a href="{{ item:url }}"
-                        class="text-[#08030E] p2 h-full flex items-center min-[902px]:justify-center min-[902px]:p-0 md:py-4 py-[14px] min-[902px]:px-0 px-4 hover:text-primary">{{
+                        class="header-nav-link text-[#08030E] p2 h-full flex items-center min-[902px]:justify-center min-[902px]:p-0 md:py-4 py-[14px] min-[902px]:px-0 px-4 hover:text-primary">{{
                         item:title }}</a>
                 </li>
                 {{ /if }}
@@ -262,7 +262,10 @@
 
             </div>
 
-            <div class="ml-auto z-20 min-[902px]:flex hidden items-center justify-center">
+        </div>
+
+        <div class="header-actions min-[902px]:flex hidden items-center shrink-0">
+            <div class="z-20 flex items-center justify-center">
                 <div id="search-loader" class="hidden">
                     <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                         fill="currentColor"
@@ -282,9 +285,6 @@
                 </button>
                 <div class="nav-search-wrap"> </div>
             </div>
-        </div>
-
-        <div class="min-[902px]:flex hidden items-center shrink-0 ml-auto">
 
             {{ setting }}
             {{ if header_button:label }}

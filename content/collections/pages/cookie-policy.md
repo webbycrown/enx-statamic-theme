@@ -3,7 +3,7 @@ id: 2812d3f8-dab2-43c7-babb-d544182511e2
 blueprint: page
 title: 'Cookie Policy'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: cookie-policy
+template: page
 page_builder:
   -
     id: mn7fsb9l

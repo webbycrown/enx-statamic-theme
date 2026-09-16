@@ -3,7 +3,7 @@ id: 633d64d1-7b1c-4dca-945c-f9697f8bd8f1
 blueprint: page
 title: Clients
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: clients
+template: page
 page_builder:
   -
     id: mn7g2940

@@ -6,6 +6,64 @@
     body:not(.is-ready) > *:not(.preloader) { visibility: hidden !important; }
     body.is-ready { overflow: visible !important; }
   </style>
+  <style id="enx-header-center">
+    @media (min-width: 902px) {
+      .nav-section .header-bar {
+        display: grid !important;
+        grid-template-columns: minmax(160px, 1fr) auto minmax(160px, 1fr);
+        align-items: center;
+        column-gap: 28px;
+      }
+      .nav-section .header-mobile-row {
+        width: auto !important;
+        justify-self: start;
+      }
+      .nav-section #nav-links {
+        display: flex !important;
+        position: static;
+        width: auto;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: stretch;
+        justify-self: center;
+        background: transparent;
+      }
+      .nav-section .header-nav-list {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin: 0;
+        gap: 20px;
+      }
+      .nav-section .header-nav-list > li {
+        flex: 0 0 auto;
+        width: auto;
+        white-space: nowrap;
+      }
+      .nav-section .header-nav-list .dropdown-btn,
+      .nav-section .header-nav-list .header-nav-link {
+        width: auto;
+        justify-content: center;
+        gap: 6px;
+        white-space: nowrap;
+      }
+      .nav-section .header-actions {
+        display: flex !important;
+        align-items: center;
+        justify-self: end;
+        gap: 18px;
+      }
+    }
+    @media (min-width: 1280px) {
+      .nav-section .header-nav-list { gap: 40px; }
+    }
+    @media (min-width: 1536px) {
+      .nav-section .header-nav-list { gap: 44px; }
+    }
+  </style>
   <noscript><style>body > * { visibility: visible !important; overflow: visible !important; }</style></noscript>
 
        <meta charset="utf-8">
@@ -13,7 +71,12 @@
   
        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
        <meta name="csrf-token" content="{{ csrf_token }}">
-       <title>{{ title ?? site:name }}</title>
+       <title>{{ seo_title ?? title ?? site:name }}</title>
+       {{ if seo_description }}<meta name="description" content="{{ seo_description }}">{{ /if }}
+       {{ if seo_keywords }}<meta name="keywords" content="{{ seo_keywords }}">{{ /if }}
+       <meta name="robots" content="{{ seo_robots ?? 'index, follow' }}">
+       <link rel="canonical" href="{{ seo_canonical ?? permalink }}">
+       {{ if seo_image }}{{ seo_image }}<meta property="og:image" content="{{ permalink }}{{ url }}">{{ /seo_image }}{{ /if }}
        {{ setting }} {{ favicon }} <link rel="icon" type="image/x-icon" href="{{ url }}" />{{/favicon}}{{ /setting }}
        <link rel="preload" href="/assets/css/output.css" as="style">
        <link rel="stylesheet" href="/assets/css/output.css">

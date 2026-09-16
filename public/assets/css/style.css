@@ -321,6 +321,14 @@
     @apply flex items-center w-full tracking-[0.3px] justify-between 1xl:gap-2 lg:gap-1 gap-0.5 2xl:text-lg xl:text-[17px] font-normal leading-[24px] m-0 h-full min-[902px]:p-0 md:py-4 py-[14px];
   }
 
+  @media (min-width: 902px) {
+    .dropdown-btn {
+      width: auto;
+      justify-content: center;
+      white-space: nowrap;
+    }
+  }
+
   .dropdown-menu-banner {
     @apply 3xl:w-[580px] 3xl:h-[580px] 2xl:w-[550px] 2xl:h-[550px] 1xl:w-[500px] 1xl:h-[500px] xl:w-[450px] xl:h-[450px] lg:w-[400px] min-[900px]:w-[350px] lg:h-auto h-full lg:max-h-full md:max-h-[500px] sm:max-h-[450px] max-h-full overflow-hidden w-full shrink-0;
   }

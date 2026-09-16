@@ -3,7 +3,7 @@ id: 81305c95-9d79-47ac-ba97-e2fb244962d0
 blueprint: page
 title: Sitemap
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: site-map
+template: page
 updated_by: b2e075fd-22d1-47f3-b8e1-81ef86db184b
 updated_at: 1778647371
 page_builder:

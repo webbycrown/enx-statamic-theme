@@ -3,7 +3,7 @@ id: bb206960-c6fb-4fd3-a2b4-9348fc7d195d
 blueprint: page
 title: 'Case Studies Two'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: case-studies-two
+template: page
 page_builder:
   -
     id: mna75vuf

@@ -1,3 +1,6 @@
+title: ENX Theme
+user: webbycrown
+repo: webbycrown/enx-statamic-theme
 export_paths:
   - routes
   - content
@@ -8,7 +11,7 @@ export_paths:
   - resources/forms
   - resources/views
   - public/assets
-  - storage/forms
   - package.json
   - vite.config.js
   - README.md
+  - THIRD_PARTY.md

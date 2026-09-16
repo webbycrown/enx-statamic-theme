@@ -3,7 +3,7 @@ id: d24dbd5b-4857-47f3-ad9c-50e0d453f0a3
 blueprint: page
 title: Support
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: support
+template: page
 page_builder:
   -
     id: mn8cz9y7

@@ -3,7 +3,7 @@ id: b525a5d9-f223-4f0d-b3a5-4a2599d9b0cc
 blueprint: page
 title: Insights
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: insights
+template: page
 page_builder:
   -
     id: mnfle4ih

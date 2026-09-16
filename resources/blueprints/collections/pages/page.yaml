@@ -1,9 +1,10 @@
 title: Page
 tabs:
   main:
-    display: Main
+    display: Page
     sections:
       -
+        display: Content
         fields:
           -
             handle: title
@@ -13,27 +14,27 @@ tabs:
               validate:
                 - required
           -
-            handle: content
+            handle: excerpt
             field:
-              type: markdown
-              display: Content
-              localizable: true
+              type: textarea
+              display: Excerpt
+              instructions: Short intro. Optional.
+      -
+        display: Theme sections
+        instructions: Every marketing page uses the same Page template. Add any section here and drag to reorder. Collection details keep dedicated templates.
+        fields:
           -
-            handle: author
-            field:
-              type: users
-              display: Author
-              default: current
-              localizable: true
-              max_items: 1
+            import: all_page_builder
+      -
+        display: Page chrome
+        fields:
           -
             handle: template
             field:
               type: template
               display: Template
-              localizable: true
-          -
-            import: all_page_builder
+              default: page
+              hide: true
   sidebar:
     display: Sidebar
     sections:
@@ -54,3 +55,11 @@ tabs:
               max_items: 1
               listable: false
               localizable: true
+  seo:
+    display: SEO
+    sections:
+      -
+        display: Search and social
+        fields:
+          -
+            import: seo

@@ -3,7 +3,7 @@ id: 6c70a7c6-89f1-47da-848d-a67047a05c8e
 blueprint: page
 title: Testimonials
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: testimonials
+template: page
 page_builder:
   -
     id: mn8rmlx2
@@ -26,6 +26,10 @@ page_builder:
     type: sitemap_header
     enabled: true
     background_image: image/Vector.png
+  -
+    id: enxTestiListing
+    type: testimonials_listing
+    enabled: true
   -
     id: mn8t7d51
     image: image/Get-started.webp

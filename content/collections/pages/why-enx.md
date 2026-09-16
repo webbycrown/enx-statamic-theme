@@ -3,7 +3,7 @@ id: 07876740-248c-4747-9b62-0d6340115908
 blueprint: page
 title: 'Why Enx'
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: why-enx
+template: page
 page_builder:
   -
     id: mncpkx2m

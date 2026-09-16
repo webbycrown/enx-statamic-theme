@@ -3,7 +3,7 @@ id: 825ade52-8a82-4a0b-985a-5fd1888bc4c7
 blueprint: page
 title: Career
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
-template: career
+template: page
 page_builder:
   -
     id: mn8itbvo

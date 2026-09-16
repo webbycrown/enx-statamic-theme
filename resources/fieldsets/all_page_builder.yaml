@@ -220,3 +220,27 @@ fields:
               fields:
                 -
                   import: landing_showcase
+            faqs_listing:
+              display: 'FAQs listing'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+            testimonials_listing:
+              display: 'Testimonials listing'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading
+            offices_listing:
+              display: 'Offices listing'
+              fields:
+                -
+                  handle: heading
+                  field:
+                    type: text
+                    display: Heading

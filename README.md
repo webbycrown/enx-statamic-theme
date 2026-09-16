@@ -1,107 +1,97 @@
-# Enx - Statamic Starter Kit
+# ENX — Statamic Starter Kit
 
-At Enx Statamic, we offer a modern and professional website for agencies and corporate businesses, built using Statamic CMS. Designed with performance and ease of use in mind, the Enx starter kit makes it simple to showcase services, case studies, insights, and more through a premium layout and intuitive content management.
+An agency and corporate starter kit for [Statamic](https://statamic.com/) 5.  
+Built to showcase services, case studies, insights, team, careers, and support.
 
-**Live demo:** https://enx-statamic.webbydemo.in/  
-Control Panel: `/cp` — `admin@example.com` / `password`
+Every marketing page uses one global **Page** template. Add, remove, or reorder Theme sections in the Control Panel. Collection details (service, case study, insight, team) keep their own entry templates.
 
-## Pages of Enx
+Third-party library notices: [THIRD_PARTY.md](THIRD_PARTY.md).
 
-The Enx starter kit includes a comprehensive set of pages to cover all professional business needs:
+---
 
-- **Home Pages**: 2 Variants (Home, Home-Two)
-- **About Pages**:
-  - About Us
-  - Why Enx
-- **Services**:
-  - Services Listing
-  - Service Detail
-- **Case Studies**:
-  - Case Studies Listing (2 variants)
-  - Case Study Detail
-  - Case Study Category
-- **Insights**:
-  - Insights Listing (2 variants)
-  - Insight Detail
-  - Insight Category
-- **Team**:
-  - Teams Listing (2 variants)
-  - Team Member Detail
-- **Careers**:
-  - Career Page
-  - Job Positions Listing
-- **Support**:
-  - Support Page
-  - FAQ Page
-- **Other Pages**:
-  - Clients Page
-  - Offices Page
-  - Testimonial Page
-  - Sitemap Page
-  - Privacy Policy
-  - Terms & Conditions
-  - Cookie Policy
-  - Data Protection
-  - Licensing
-  - 404 Page
+## What's included
 
-## Collections
+### One Page template + Theme sections
 
-Organize your content with built-in collections:
+Editors add any section on any page and drag to reorder.
 
-- **Pages**: Manage your site structure and hierarchical content.
-- **Services**: Define your core business offerings.
-- **Case Studies**: Showcase your project successes.
-- **Insights**: Share news, articles, and thought leadership.
-- **Teams**: Highlight your staff and leadership.
-- **Job Positions**: Manage open roles and applications.
-- **Clients**: Manage your client portfolio and logos.
-- **Testimonials**: Showcase client feedback and success stories.
-- **FAQs**: Handle common support and business questions.
-- **Locations**: Manage your office locations and contact points.
+Available sections include home heroes, about, services, case studies, insights, team, careers, contact, support, FAQs listing, testimonials listing, offices listing, legal/policy copy, sitemap, and landing showcase. Listing variants (insights / case studies / teams) are composed from those sections — not extra page templates.
 
-## Control Panel Forms
+### Collections
 
-- Career
-- Contact
-- Insight comment
-- Support
-- Subscription
+| Collection | Purpose |
+|---|---|
+| Pages | Site pages — built with Theme sections |
+| Services | Service offerings (detail view dedicated) |
+| Case studies | Project write-ups (detail + category dedicated) |
+| Insights | Articles (detail + category dedicated) |
+| Teams | Staff profiles (detail dedicated) |
+| Job positions | Open roles |
+| Clients | Logos |
+| Testimonials | Quotes |
+| FAQs | Support answers |
+| Locations | Offices |
 
-## Features of Enx
+### Forms
 
-- **Rich Page Builder**: Create unique layouts using 41 flexible sets (hero sections, content blocks, galleries, etc.).
-- **Theme-Ready Design**: Modern, premium aesthetics with Tailwind CSS support.
-- **Global Settings**: Easily manage site-wide settings, headers, and footers through the Control Panel.
-- **Responsive Layout**: Optimized for all devices from mobile to desktop.
-- **Statamic 5 Ready**: Built for the latest version of Statamic for maximum performance and security.
+| Handle | Purpose |
+|---|---|
+| `contact` | Contact |
+| `career` | Job application |
+| `support` | Support ticket |
+| `subscription` | Newsletter |
+| `insight_comment` | Insight comments |
+
+> **Statamic forms note:** Statamic Core includes one form. Extra forms require a [Statamic Pro](https://statamic.com/pricing) licence.
+
+### Globals and navigation
+
+Site logo, header/footer chrome, and social links live in **Setting** / **Footer** globals. Header links use **Header menu** (`nav:header_menu`).
+
+---
 
 ## Installation
 
-Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit) to get started with Enx.
-Make sure you're running **Statamic 5.x** for compatibility.
-
-### Installing into an existing site
+Follow the [Starter Kit installation instructions](https://statamic.dev/starter-kits/installing-a-starter-kit).  
+Use **Statamic 5.x**.
 
 ```bash
 php please starter-kit:install webbycrown/enx-statamic-theme
 ```
 
-### Installing via the Statamic CLI Tool
-
-If you have the [Statamic CLI Tool](https://github.com/statamic/cli) installed, create a new Statamic installation with Enx in one command:
-
 ```bash
 statamic new my-site webbycrown/enx-statamic-theme
 ```
-## 📊 Changelog
+
+After installation:
+
+1. Open **Globals** for logo and footer copy.
+2. Edit **Navigation → Header menu**.
+3. Open any **Page** and reorder **Theme sections**.
+
+---
+
+## Pages in this kit
+
+Home, Home two, About, Why ENX, Services, Case studies (two layouts), Insights (two layouts), Team (two layouts), Careers, Support, FAQ, Clients, Offices, Testimonials, Sitemap, Contact, and legal pages (privacy, terms, cookie, data protection, licensing).
+
+Service, case study, insight, and team **detail** URLs use collection templates.
+
+---
+
+## Support
+
+[Submit an issue on GitHub →](https://github.com/webbycrown/enx-statamic-theme/issues)
+
+## Changelog
 
 ### v1.0.0
 
-  - ✨ Initial release
-  - 🏗️ Full set of pages, sections, and layouts
-  - 🛠️ Customizable global settings and forms
-  - 📱 Responsive design
+- Initial marketplace release
+- One global Page template with Theme sections
+- Services, case studies, insights, team, careers, and support
+- Native header menu and globals
+- Third-party notices for CDN libraries
 
 ---
 <div align="center">

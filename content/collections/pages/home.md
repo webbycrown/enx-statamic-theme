@@ -2,7 +2,7 @@
 id: home
 blueprint: pages
 title: Home
-template: home
+template: page
 author: b2e075fd-22d1-47f3-b8e1-81ef86db184b
 updated_by: b2e075fd-22d1-47f3-b8e1-81ef86db184b
 updated_at: 1779186405
