@@ -254,7 +254,7 @@
                         <div
                             class="min-h-0 overflow-hidden 2xl:pl-12.5 1xl:pl-11 sm:pl-9 pl-5 2xl:pt-12.5 xl:pt-8.5 sm:pt-6.5 pt-6">
                             <!-- flex items-start 2xl:gap-4 sm:gap-3 gap-2.5 relative 1xl:pl-10.5 sm:pl-9 pl-6 3xl:pt-11 2xl:pt-9 1xl:pt-7.5 sm:pt-6.5 pt-5 -->
-                            {{ form:insight_comment id="repplyForm" ajax="true" novalidate class="universal-form
+                            {{ form:insight_comment id="repplyForm" action="/!/forms/insight_comment" novalidate class="universal-form js-enx-comment
                             reply-body transition-colors duration-200 delay-100 2xl:pl-12.5 1xl:pl-11 sm:pl-9
                             2xl:pt-2.5"}}
 
@@ -386,7 +386,7 @@
                     <div id="replyForm" class="min-h-0 overflow-hidden">
                         <!-- flex items-start 2xl:gap-4 sm:gap-3 gap-2.5 relative 1xl:pl-10.5 sm:pl-9 pl-6 3xl:pt-11 2xl:pt-9 1xl:pt-7.5 sm:pt-6.5 pt-5 -->
 
-                        {{ form:insight_comment id="commentForm" ajax="true" novalidate class="universal-form
+                        {{ form:insight_comment id="commentForm" action="/!/forms/insight_comment" novalidate class="universal-form js-enx-comment
                         transition-colors duration-200 delay-100"}}
 
                         <input type="hidden" id="insight_id" name="insight_id" class="d-none" value="{{ id }}" />

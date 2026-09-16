@@ -1498,7 +1498,7 @@ $(document).ready(function () {
     );
   });
 
-  $(document).on("submit", "#commentForm, #repplyForm", function (e) {
+  $(document).on("submit", "#commentForm, #repplyForm, .js-enx-comment", function (e) {
     e.preventDefault();
     const $form = $(this);
     // find parent reply container

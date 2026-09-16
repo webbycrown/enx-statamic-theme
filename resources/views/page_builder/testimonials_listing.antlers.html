@@ -8,7 +8,7 @@
                 </h6>
                 <div class="flex sm:items-center items-start justify-start sm:gap-[11px] sm:w-[90%] w-[83%] ml-0 mr-auto">
                     <div class="flex items-start lg:gap-4.5 gap-2.5">
-                        {{ image }}<img loading="lazy" src="{{ url }}" alt="{{ title }}" class="2xl:w-17.5 1xl:w-15 xl:w-14 lg:w-13 w-11.5 h-full object-cover" />{{ /image }}
+                        {{ image }}<img loading="lazy" src="{{ partial:partials/media-url :file="url" }}" alt="{{ title }}" class="2xl:w-17.5 1xl:w-15 xl:w-14 lg:w-13 w-11.5 h-full object-cover" />{{ /image }}
                         <div class="text-left">
                             <h6 class="xl:mb-[5px] lg:mb-1">{{ title }}</h6>
                             <div class="flex items-start gap-2">

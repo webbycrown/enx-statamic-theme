@@ -30,7 +30,7 @@
     {{ /if }}           
     relative w-full h-full z-10">
     <!-- Background image -->
-    <div class=" bg-cover bg-center z-0" style="background-image: url('{{ background_image:url }}')">
+    <div class=" bg-cover bg-center z-0" style="background-image: url('{{ partial:partials/media-url :file="background_image:url ?? background_image" }}')">
         <!-- Content area -->
         <div class="{{ if segment_1 == 'case-studies' 
                     or segment_1 == 'case-studies-two' 

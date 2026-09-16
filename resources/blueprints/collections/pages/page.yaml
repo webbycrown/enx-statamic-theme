@@ -34,7 +34,7 @@ tabs:
               type: template
               display: Template
               default: page
-              hide: true
+              instructions: Marketing pages use page. Keep 404 for the error page.
   sidebar:
     display: Sidebar
     sections:

@@ -1,6 +1,6 @@
 <section class="relative w-full lg:min-h-[calc(100vh-90px)] lg:h-full 2xl:pt-24 xl:pt-[85px] lg:pt-20 md:pt-18.5 sm:pt-[59px] pt-13.5">
     <!-- Background image -->
-    <div class="bg-cover bg-center z-0" style="background-image: url('{{ background_image:url }}');">
+    <div class="bg-cover bg-center z-0" style="background-image: url('{{ partial:partials/media-url :file="background_image:url ?? background_image" }}');">
 
         <!-- Content area -->
         <div class="bg-linear-to-r from-[#020c36d1] from-[0%] via-[#020C36]/80 lg:via-[40%] md:via-[50%] via-[70%] to-[#020C36]/0 lg:to-[85%] md:to-[90%] to-[100%] z-10">
