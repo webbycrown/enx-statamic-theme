@@ -3,6 +3,12 @@
 {{ partial:header-link }}
 
 <body>
+    <div class="preloader fixed inset-0 z-[99999] flex items-center justify-center bg-white transition-opacity duration-300" aria-hidden="true">
+        {{ setting }}
+        {{ logo }}<img src="{{ url }}" alt="{{ site:name }}" class="max-h-16 w-auto" decoding="async" />{{ /logo }}
+        {{ /setting }}
+    </div>
+
     <div class="{{ if template == 'insight/show' }}overflow-visible{{ else }}overflow-hidden{{ /if }} relative">
 
         <!-- Header -->
